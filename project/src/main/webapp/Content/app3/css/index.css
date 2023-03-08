@@ -1,0 +1,1217 @@
+@charset "UTF-8";
+.top_banner {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #ffffff;
+}
+.top_banner .line_color {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 35px;
+}
+.top_banner .container {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 0 8px 0 5px;
+}
+.top_banner .link_banner {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+}
+.top_banner .banner_title {
+  width: 49px;
+  margin: 5px 73px 6px 3px;
+}
+.top_banner .banner_img {
+  width: 104px;
+}
+.top_banner .banner_text {
+  flex: 1;
+  padding-left: 75px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 35px;
+  letter-spacing: -0.25px;
+}
+.top_banner .btn_close {
+  margin-right: 8px;
+  width: 113px;
+  height: 35px;
+  line-height: 35px;
+  text-align: left;
+  font-size: 12px;
+  background: url(https://front-img.taling.me/Content/Images/Vod/btn/btn_close.png) no-repeat right center/8px;
+}
+
+/* ie 시맨틱 호환성 */
+main {
+  display: block;
+}
+
+.visual {
+  display: flex;
+  margin-bottom: 40px;
+}
+.visual .all_category {
+  position: relative;
+  z-index: 2;
+  width: 160px;
+  padding: 12.5px 0;
+  border-radius: 4px 0 0 4px;
+  background-color: #2d3132;
+}
+.visual .depth1 {
+  padding: 8px 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.visual .depth1:hover {
+  font-weight: 700;
+  color: #111111;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.visual .depth1:hover > .sub_content {
+  display: flex;
+}
+.visual .sub_content {
+  display: none;
+  position: absolute;
+  left: 160px;
+  top: 0;
+  height: 100%;
+  border: 1px solid #f2f2f2;
+  background-color: #ffffff;
+}
+.visual .sub_content ul {
+  width: 160px;
+  padding: 15px 0;
+  border-right: 1px solid #f2f2f2;
+}
+.visual .sub_content ul:last-child {
+  border-right: 0;
+}
+.visual .sub_content li {
+  padding: 5.5px 16px;
+  line-height: 19px;
+}
+.visual .sub_content li:hover a {
+  color: #ff0045;
+}
+.visual .sub_content a {
+  display: block;
+}
+.visual .depth2 {
+  font-weight: 700;
+}
+.visual .depth3 a::before {
+  content: "- ";
+  display: inline-block;
+  margin-right: 4px;
+}
+.visual .roll_visual {
+  flex: 1;
+  border-radius: 0 4px 4px 0;
+}
+.visual .roll_visual:hover .swiper_btn_next, .visual .roll_visual:hover .swiper_btn_prev {
+  opacity: 1;
+}
+.visual .roll_visual ul {
+  height: 100%;
+}
+.visual .roll_visual a {
+  display: block;
+  height: 100%;
+}
+.visual .roll_visual a::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.visual .roll_visual .img {
+  width: 100%;
+  height: 100%;
+  max-height: 375px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.visual .roll_visual .swiper_btn_next, .visual .roll_visual .swiper_btn_prev {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.visual .roll_visual .swiper_btn_prev {
+  left: 8px;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-left-white-48.png);
+}
+.visual .roll_visual .swiper_btn_next {
+  right: 8px;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-right-white-48.png);
+}
+.visual .roll_visual .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.visual .roll_visual .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.category {
+  margin-bottom: 60px;
+}
+.category .list_category {
+  display: flex;
+}
+.category li {
+  width: 10%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0;
+  color: #3c4043;
+}
+.category a {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 19px;
+}
+.category span {
+  display: block;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+  background-color: #f6f6f6;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 52px;
+}
+
+.main_content {
+  position: relative;
+  margin-bottom: 10px;
+}
+.main_content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.main_content .main_title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.column_left {
+  float: left;
+  width: 63.461%;
+}
+
+.column_right {
+  float: right;
+  width: 34.615%;
+}
+
+.talents_area .talent_box {
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+.talents_area .talent_box li {
+  margin-right: 15px;
+}
+.talents_area .talent_box .high_score li {
+  max-width: 100.5px;
+  pointer-events: auto;
+}
+
+.talent_list {
+  overflow: visible;
+}
+.talent_list li {
+  pointer-events: auto !important;
+}
+.talent_list .thumb {
+  overflow: hidden;
+  position: relative;
+  max-width: 210px;
+  height: 140px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+}
+.talent_list .sticker_live {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 8px 10px 8px 70px;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: 22px;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/img-LIVEsticker-60.png) rgba(0, 0, 0, 0.5) no-repeat left center/60px 38px;
+}
+.talent_list .sticker_live .time {
+  margin-left: 8px;
+}
+.talent_list .reward_badge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  width: auto;
+  height: 22px;
+  padding: 0 10px 0 23px;
+  border-radius: 22px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 22px;
+  color: #000000;
+  background-repeat: no-repeat;
+  background-position: 3px center;
+  background-size: 17px;
+}
+.talent_list .reward_badge.year {
+  left: 10px;
+  bottom: 8px;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border-radius: 0;
+  background-position: center;
+  background-size: cover;
+}
+.talent_list .talent_type {
+  display: none;
+}
+.talent_list .badge_list {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 7px;
+  letter-spacing: -0.025em;
+}
+.talent_list .badge_list .coupon, .talent_list .badge_list .book {
+  padding: 2px 6px 1px;
+  margin-left: 6px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 15px;
+  color: #7f8b96;
+  background-color: #e7e9ed;
+}
+.talent_list .badge_list .badge {
+  padding: 0 5px 0 20px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 16px;
+  background-repeat: no-repeat;
+  background-position: -1px;
+  background-size: 18px;
+}
+.talent_list .badge_list .badge.original {
+  background-size: 26px 18px;
+  padding-left: 32px;
+}
+.talent_list .badge_list .badge.offline {
+  border-color: #3390ff;
+  color: #3390ff;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/offline-blue600-18@2x.png);
+}
+.talent_list .badge_list .badge.recording {
+  border-color: #111111;
+  color: #111111;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/recordings-gray900-18@2x.png);
+}
+.talent_list .badge_list .badge.live {
+  border-color: #f20e42;
+  color: #f20e42;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/live-pink500-18@2x.png);
+}
+.talent_list .badge_list .badge.live.original {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/badge-taling-pink500-26@2x.png);
+}
+.talent_list .badge_list .badge.vod {
+  border-color: #9433ff;
+  color: #9433ff;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/vod-purple400-18@2x.png);
+}
+.talent_list .badge_list .badge.vod.original {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/badge-taling-purple400-26@2x.png);
+}
+.talent_list .badge_list .badge.ebook {
+  border-color: #00cf3d;
+  color: #00cf3d;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/ebook-green400-18@2x.png);
+}
+.talent_list .talent_title {
+  display: -webkit-box;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 38px;
+  line-height: 19px;
+}
+.talent_list .cate_tutor {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 11px;
+  color: #999999;
+  line-height: 23px;
+}
+.talent_list .cate_tutor .cate_main::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5px;
+  height: 1.5px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #999999;
+}
+.talent_list .price_info {
+  display: flex;
+  align-items: center;
+}
+.talent_list .price_info .price {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 21px;
+}
+.talent_list .price_info .origin_price {
+  margin: 0 2px 0 7px;
+  font-size: 11px;
+  line-height: 20px;
+  color: #bbbbbb;
+}
+.talent_list .price_info .sale {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 20px;
+  color: #ff0045;
+}
+.talent_list .class_detail {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 20px;
+}
+.talent_list .talent_info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.talent_list .talent_info .user {
+  padding-left: 16px;
+  font-weight: bold;
+  font-size: 11px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icClasscardWish@2x.png) no-repeat left/12px 12px;
+}
+.talent_list .talent_info > .reward_badge {
+  position: static;
+  margin: 0 0 0 6px;
+  padding: 0 0 0 15px;
+  border: none;
+  font-weight: bold;
+  font-size: 11px;
+  color: #000000;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 12px;
+}
+.talent_list .talent_info > .reward_badge.year {
+  left: 10px;
+  bottom: 8px;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border-radius: 0;
+  background-position: center;
+  background-size: cover;
+}
+.talent_list .region {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-width: 100%;
+  height: 16px;
+  margin-bottom: 11px;
+}
+.talent_list .region span {
+  flex: none;
+  padding: 0 6px 0 5px;
+  margin-left: 3px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+  color: #606a74;
+  background-color: #ecf1f8;
+}
+.talent_list .region span:first-child {
+  margin-left: 0;
+}
+.talent_list .btn_wish {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  width: 38px;
+  height: 38px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icWishUnclickedLine38Px@2x.png) no-repeat center/38px;
+}
+.talent_list .btn_wish.act {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/icWishClickedTalPink38Px@2x.png);
+}
+
+.high_score {
+  overflow: visible;
+}
+.high_score li {
+  text-align: center;
+}
+.high_score .profile {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 7px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.high_score p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.high_score .cate_main {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+}
+.high_score .name {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.talent_list .btn_swiper, .high_score .btn_swiper, .banner_area .btn_swiper {
+  top: -40px;
+  width: 26px;
+  height: 26px;
+  margin-top: 0;
+  opacity: 1 !important;
+}
+.talent_list .btn_swiper:after, .high_score .btn_swiper:after, .banner_area .btn_swiper:after {
+  display: none;
+}
+.talent_list .swiper-button-prev, .high_score .swiper-button-prev, .banner_area .swiper-button-prev {
+  left: initial;
+  right: 32px;
+  background: url(https://front-img.taling.me/Content/app3/img/btn/btn-category-left-active@2x.png) no-repeat center/25px;
+}
+.talent_list .swiper-button-prev.swiper-button-disabled, .high_score .swiper-button-prev.swiper-button-disabled, .banner_area .swiper-button-prev.swiper-button-disabled {
+  background-image: url(https://front-img.taling.me/Content/app3/img/btn/btn-category-left@2x.png);
+}
+.talent_list .swiper-button-next, .high_score .swiper-button-next, .banner_area .swiper-button-next {
+  right: 0;
+  background: url(https://front-img.taling.me/Content/app3/img/btn/btn-category-rignt-active@2x.png) no-repeat center/25px;
+}
+.talent_list .swiper-button-next.swiper-button-disabled, .high_score .swiper-button-next.swiper-button-disabled, .banner_area .swiper-button-next.swiper-button-disabled {
+  background-image: url(https://front-img.taling.me/Content/app3/img/btn/btn-category-right@2x.png);
+}
+
+.banner_area .main_title.hide {
+  opacity: 0;
+}
+.banner_area .swiper-container {
+  overflow: visible;
+}
+.banner_area li {
+  overflow: hidden;
+  border-radius: 6px;
+}
+.banner_area li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.banner_area .style_mini li {
+  width: 120px;
+  height: 160px;
+}
+.banner_area .style_big li {
+  width: 212px;
+  height: 212px;
+}
+.banner_area .style_line li {
+  width: 100%;
+  height: 96px;
+  margin-right: initial;
+  border-radius: initial;
+}
+.banner_area .style_line .btn_swiper {
+  top: 24px;
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+}
+.banner_area .style_line .swiper-button-prev {
+  left: 8px;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-left-white-48.png);
+}
+.banner_area .style_line .swiper-button-next {
+  right: 8px;
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-right-white-48.png);
+}
+.banner_area .style_line .swiper-pagination-bullet {
+  margin: 0 3px;
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.banner_area .style_line .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.banner_area .style_contents .content_item {
+  display: block;
+  position: relative;
+}
+.banner_area .style_contents .content_item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0.65;
+}
+.banner_area .style_contents .content_text {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+}
+.banner_area .style_contents span, .banner_area .style_contents p {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.banner_area .style_contents .hashtag {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 0 6px;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 18px;
+  color: #7f8b96;
+  background-color: #e7e9ed;
+}
+.banner_area .style_contents .title {
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+.banner_b2b {
+  margin-bottom: 40px;
+}
+.banner_b2b img {
+  width: 100%;
+}
+
+.login_box {
+  overflow: hidden;
+  height: 190px;
+  margin-bottom: 10px;
+  padding: 17px 20px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.login_box .login_msg {
+  margin-bottom: 22px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+.login_box .link_login {
+  display: block;
+  padding: 12px 0;
+  border-radius: 6px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: #ff0045;
+}
+.login_box .link_login:hover {
+  background-color: #f20e42;
+}
+.login_box .box_btns {
+  display: flex;
+  margin-top: 12px;
+}
+.login_box .box_btns a {
+  color: #999999;
+}
+.login_box .box_btns .find_pw::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 0 7px;
+  background-color: #999999;
+}
+.login_box .box_btns .link_join {
+  margin-left: auto;
+}
+.login_box .find_id {
+  width: auto;
+  padding: 0;
+}
+
+.status_logon {
+  padding: 0;
+  background-color: #fafafa;
+}
+.status_logon .area_info_top {
+  display: flex;
+  align-items: center;
+  padding: 24px 20px 19px;
+}
+.status_logon .my_profile {
+  position: relative;
+}
+.status_logon .my_profile::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon-setting@2x.png) no-repeat center/19px;
+}
+.status_logon .img_profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.status_logon .logon_msg {
+  width: calc(100% - 45px);
+  padding-left: 15px;
+  font-size: 0;
+}
+.status_logon .logon_msg b, .status_logon .logon_msg span {
+  font-size: 16px;
+  line-height: 22px;
+}
+.status_logon .logon_msg b {
+  display: block;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.status_logon .level {
+  margin-right: 3px;
+  font-size: 12px;
+  line-height: 17px;
+}
+.status_logon .btn_logout {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 18px;
+  color: #999999;
+  text-decoration: underline;
+  vertical-align: bottom;
+}
+.status_logon .btn_livechat {
+  display: none;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 1px solid #eeeeee;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon_liveChat@2x.png) white no-repeat center/17px;
+}
+.status_logon .btn_livechat.act::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 11px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ff1616;
+}
+.status_logon .area_info_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 15px;
+}
+.status_logon .btn_coupon {
+  padding: 0 17px 0 15px;
+  border-radius: 16px;
+  background-color: #eeeeee;
+  font-size: 0;
+}
+.status_logon .btn_coupon button {
+  font-size: 13px;
+  line-height: 32px;
+}
+.status_logon .btn_coupon em {
+  font-weight: 500;
+  color: #333333;
+}
+.status_logon .btn_coupon .coupon {
+  position: relative;
+  margin-right: 20px;
+}
+.status_logon .btn_coupon .coupon::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 9px;
+  width: 1px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #cccccc;
+}
+.status_logon .link_guide {
+  display: block;
+  width: 170px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 32px;
+  background-color: #eeeeee;
+}
+.status_logon .tutor_mode {
+  display: flex;
+  align-items: center;
+}
+.status_logon .tutor_mode b {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: normal;
+}
+.status_logon .tutor_mode .toggle {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 24px;
+  margin-left: 5px;
+  border-radius: 12px;
+  background-color: #cccccc;
+}
+.status_logon .tutor_mode .toggle small {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.status_logon .tutor_mode.on .toggle {
+  background-color: #ff0045;
+}
+.status_logon .tutor_mode.on .toggle small {
+  left: 50%;
+}
+.status_logon .lnb {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #eeeeee;
+}
+.status_logon .lnb li {
+  width: 33.333%;
+  padding: 15px 0;
+  border-left: 1px solid #eeeeee;
+}
+.status_logon .lnb li.act a::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ff1616;
+}
+.status_logon .lnb li:first-child {
+  border-left: none;
+}
+.status_logon .lnb a {
+  position: relative;
+  font-weight: 500;
+  line-height: 20px;
+}
+.status_logon .lnb a:first-child {
+  border-left: 0;
+}
+.status_logon .lnb .link_wish {
+  padding-left: 22px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon-wish-clicked@2x.png) no-repeat 28px center/24px;
+}
+
+.text_box span {
+  font-size: 12px;
+  line-height: 16px;
+  color: #999999;
+}
+.text_box em {
+  font-weight: 500;
+  color: #7814dc;
+}
+.text_box .average {
+  padding-left: 18px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon_review@2x.png) no-repeat 6px center/11px;
+}
+
+.hot_keyword {
+  padding: 18px 20px 8px;
+  margin-bottom: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.hot_keyword .keyword_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot_keyword .keyword_list a {
+  display: block;
+  padding: 0 10px 0 12px;
+  margin: 0 8px 8px 0;
+  border-radius: 4px;
+  border: 1px solid #94cfff;
+  line-height: 35px;
+  background-color: #f6fbff;
+}
+
+.ad_banner {
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.ad_banner img {
+  width: 100%;
+}
+
+.ad_event {
+  overflow: hidden;
+  height: 70px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.ad_event img {
+  width: 100%;
+}
+
+.ad_vod {
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.ad_vod .ad_vod_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.ad_vod .ad_vod_title .main_title {
+  margin-bottom: 0;
+}
+.ad_vod .ad_vod_title .btn_link {
+  padding-right: 9px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  color: #666666;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon-arrow-right-gray@2x.png) no-repeat right center/6px 9px;
+}
+.ad_vod li {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.ad_vod li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.ad_vod li a {
+  display: flex;
+}
+.ad_vod li .thumb {
+  width: 130px;
+  height: 77px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.ad_vod li .text_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 140px);
+}
+.ad_vod li .talent_title {
+  line-height: 23px;
+}
+.ad_vod li .talent_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ad_vod li .average {
+  padding-left: 12px;
+  background-position: left center;
+}
+.ad_vod li .earlybird {
+  margin-top: 5px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  color: #3390ff;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon-earlybird@2x.png) no-repeat 10px bottom/16px;
+}
+
+.vod_width_book {
+  padding: 19px 20px 47px;
+  margin-bottom: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+.vod_width_book li {
+  overflow: hidden;
+  width: 75.786%;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.vod_width_book .thumb {
+  height: 137px;
+}
+.vod_width_book .text_box {
+  padding: 13px 12px 13px;
+}
+.vod_width_book .cate_main {
+  display: flex;
+  align-items: baseline;
+  font-weight: bold;
+  font-size: 11px;
+  color: #7814dc;
+  line-height: 13px;
+}
+.vod_width_book .name {
+  position: relative;
+  padding-left: 8px;
+  font-size: 11px;
+  color: #7814dc;
+}
+.vod_width_book .name::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 50%;
+  background-color: #7814dc;
+}
+.vod_width_book .btn_wish {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  width: 38px;
+  height: 38px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icWishUnclickedLine38Px@2x.png) no-repeat center/38px;
+}
+.vod_width_book .btn_wish.act {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/icWishClickedTalPink38Px@2x.png);
+}
+.vod_width_book .swiper-pagination {
+  bottom: 12px;
+}
+.vod_width_book .swiper-pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  margin: 0 5px;
+  background-color: #b4b9c0;
+}
+
+.ad_vod .thumb, .vod_width_book .thumb {
+  background-size: cover;
+  background-position: center;
+}
+.ad_vod .talent_title, .vod_width_book .talent_title {
+  display: -webkit-box;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 46px;
+  word-break: break-all;
+  line-height: 23px;
+}
+
+.review_list {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.review_list li {
+  width: 92.452%;
+}
+.review_list a {
+  display: flex;
+}
+.review_list .thumb {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.review_list .text_box {
+  width: calc(100% - 110px);
+}
+.review_list .write_time {
+  display: block;
+  position: relative;
+  width: 54px;
+  margin-bottom: 5px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  line-height: 18px;
+  background-color: #ff0045;
+}
+.review_list .write_time::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -4px;
+  border-top: 4px solid #ff0045;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+.review_list .score_talent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.review_list .score_star {
+  width: 85px;
+  height: 16px;
+  margin-right: 8px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon_star-nonactive@2x.png) repeat-x left center/17px 16px;
+}
+.review_list .star {
+  display: inline-block;
+  height: 16px;
+  vertical-align: top;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/icon_star-p2p_active@2x.png) repeat-x left center/17px 16px;
+}
+.review_list .score {
+  font-weight: bold;
+  font-size: 12px;
+  color: inherit;
+}
+.review_list .score em {
+  font-weight: normal;
+  font-size: 10px;
+  color: #999999;
+}
+.review_list .review_text {
+  display: -webkit-box;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 46px;
+  line-height: 23px;
+}
+.review_list .review_vod .write_time {
+  background-color: #7814dc;
+}
+.review_list .review_vod .write_time::after {
+  border-top-color: #7814dc;
+}
+.review_list .review_vod .star {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/icon_star-vod_active@2x.png);
+}
+
+.ad_app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 20px;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.ad_app .logo {
+  width: 36px;
+}
+.ad_app h3 {
+  flex: 1;
+  padding-left: 12px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 17px;
+  color: #333333;
+}
+.ad_app a {
+  display: block;
+  width: 72px;
+  margin-left: 6px;
+}

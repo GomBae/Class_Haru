@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,70 +8,69 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<div class="wrapper row1">
-  <header id="header" class="clear"> 
-    <div id="logo" class="fl_left">
-      <h1><a href="../main/main.do">Recipe & Food</a></h1>
-    </div>
-    <div class="fl_right">
-      <c:if test="${sessionScope.id==null }">
-      <ul class="inline">
-        <li>ID :&nbsp;<input type="text" name="id" size="15" class="input-sm" v-model="id" ref="id"></li>
-        <li>PWD :&nbsp;<input type="password" name="pwd" class="input-sm" v-model="pwd" ref="pwd"></li>
-        <li><input type="button" value="로그인" class="btn btn-sm btn-outline-danger" v-on:click="login()"></li>
-      </ul>
-      </c:if>
-      <c:if test="${sessionScope.id!=null }">
-      <ul class="inline">
-        <li>${sessionScope.name }님 로그인 중입니다</li>
-        <li><input type="button" value="로그아웃" class="btn btn-sm btn-outline-success" v-on:click="logout()"></li>
-      </ul>
-      </c:if>
-    </div>
-    
-  </header>
-</div>
-<div class="wrapper row2">
-  <nav id="mainav" class="clear"> 
-    <ul class="clear">
-      <li class="active"><a href="../main/main.do">Home</a></li>
-      <li><a class="drop" href="#">회원</a>
-        <ul>
-          <li><a href="../pages/gallery.html">회원가입</a></li>
-          <li><a href="../pages/full-width.html">아이디찾기</a></li>
-          <li><a href="../pages/sidebar-left.html">비밀번호찾기</a></li>
-        </ul>
-      </li>
-      <li><a class="drop" href="#">맛집</a>
-        <ul>
-          <li><a href="../pages/gallery.html">지역별 찾기</a></li>
-          <li><a href="../pages/full-width.html">맛집 추천</a></li>
-        </ul>
-      </li>
-      <li><a class="drop" href="#">레시피</a>
-        <ul>
-          <li><a href="../pages/gallery.html">레시피</a></li>
-          <li><a href="../pages/full-width.html">쉐프</a></li>
-          <li><a href="../pages/sidebar-left.html">가격비교</a></li>
-        </ul>
-      </li>
-      <li><a class="drop" href="#">커뮤니티</a>
-        <ul>
-          <li><a href="../board/list.do">게시판</a></li>
-          <li><a href="../pages/full-width.html">공지사항</a></li>
-        </ul>
-      </li>
-      <c:if test="${sessionScope.id!=null }">
-      <li><a href="../chat/chat.do">채팅</a></li>
-      </c:if>
-      <li><a href="#">마이페이지</a></li>
-    </ul>
-  </nav>
-</div>
-
+	<header id="header" class="pof">
+		<div class="header_wrapper">
+			<!-- logo -->
+			<h1 class="logo">
+				<a href="../main/main.do"><span class="blind">클래스하루</span></a>
+			</h1>
+			<!-- // logo -->
+			<!-- gnb -->
+			<div class="gnb">
+				<a href="../main/main.do" class="act">홈HOME</a>
+			</div>
+			<!-- // gnb -->
+			<!-- search_area -->
+			<div class="search_area">
+				<form class="" action="#" name="search">
+					<fieldset>
+						<legend class="blind">통합검색</legend>
+						<input type="text" class="search_input" name="query"
+							id="searchcss" autocomplete="off" placeholder="배우고 싶은 재능을 찾아보세요."
+							value="">
+						<button type="submit" class="btn_search" onclick="searchQuery2();">
+							<span class="blind">검색</span>
+						</button>
+					</fieldset>
+				</form>
+			</div>
+			<!-- // search_area -->
+			<!-- nav_gnb -->
+			<nav class="nav_gnb">
+				<ul>
+					<li><a href="/tutor/Register/Manual">튜터등록</a></li>
+					<c:if test="${sessionScope.id!=null }">
+						<li class="depth"><a onclick="qPop(0)">메시지💬</a></li>
+						<li><a href="#">수업신청서</a></li>
+						<li class="depth">
+							<p role="button" class="depth1">수강목록</p>
+							<ul class="lnb">
+								<li><a href="/My/MyTuteeVodList/">VOD 수강목록</a></li>
+								<li><a href="/Vod/vodCollection.php">VOD Q&amp;A</a></li>
+								<li><a href="/vod/orderList">도서/준비물 배송정보</a></li>
+							</ul>
+						</li>
+						<li><a href="#">찜</a></li>
+						<li class="depth mypage">
+							<p role="button" class="depth1">
+								<img class="profile" src="#" onerror="profileImgError(this,);"
+									alt="프로필 이미지">
+							</p>
+							<ul class="lnb">
+								<li><a href="/My/MyTuteeProfile/">내 프로필</a></li>
+								<li><a href="javascript:void(0)" id="btn-menu-logout">로그아웃</a></li>
+							</ul>
+						</li>
+					</c:if>
+					<c:if test="${sessionScope.id==null }">
+						<li><a href="#">로그인</a></li>
+					</c:if>
+				</ul>
+			</nav>
+			<!-- // nav_gnb -->
+		</div>
+	</header>
 </body>
 </html>

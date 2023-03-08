@@ -1,6 +1,10 @@
 package com.sist.vo;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class MemberVO {
-///
-	//1234
+	private String id,pwd,tel,name,nickname,intro,image,tutor,admin;
 }

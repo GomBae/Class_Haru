@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body id="top">
-<div class="container" style="width:1200px;">	
+<div class="container">	
    <div style="height: 100px;width: 100%;background: lightgray">
 	 <tiles:insertAttribute name="header"/>
    </div>	

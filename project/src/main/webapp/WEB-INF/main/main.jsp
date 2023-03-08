@@ -10,27 +10,40 @@
 <!-- VueJs -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- Script -->
+<script src="../Scripts/app3/jquery-1.12.4.min.js"></script>
+<script src="../Scripts/app3/lazysizes.min.js"></script>
+<script src="../Scripts/app3/jquery-ui.js"></script>
 <!-- BootStrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="../Content/app3/css/common.css">
+<link rel="stylesheet" href="../Content/app3/css/notokr.css">
+<link rel="stylesheet" href="../Content/app3/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../Content/app3/css/header.css">
+<link rel="stylesheet" href="../Content/app3/css/footer_pc.css">
+<link rel="stylesheet" href="../Content/app3/css/swiper.min.css">
+<link rel="stylesheet" href="../Content/app3/css/index.css">
+<link rel="stylesheet" href="../Content/app3/css/login/login_pc.css">
+<script src="../Scripts/app3/header.js"></script>
+<script src="../Scripts/renewal2203/topbar.js"></script>
+<script src="../Scripts/app3/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- pc,mobile 공통 스크립트 -->
+<script src="../Scripts/renewal2203/prototype.js"></script>
+<script src="../Scripts/app3/controll.js"></script>
 </head>
-<body id="top">
-<div class="container">	
-   <div style="height: 100px;width: 100%;background: lightgray">
-	 <tiles:insertAttribute name="header"/>
-   </div>	
-   <div style="height: 700px;background: yellow">
-	<tiles:insertAttribute name="content"/>
-	</div>
-	<tiles:insertAttribute name="footer"/>
-</div>	
-
+<body>
+  <div class="wrap">
+    <tiles:insertAttribute name="header"/>
+    <tiles:insertAttribute name="content"/>
+    <tiles:insertAttribute name="footer"/> 
+  </div>
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
 <!-- JAVASCRIPTS --> 
-<script src="../layout/scripts/jquery.min.js"></script> 
-<script src="../layout/scripts/jquery.backtotop.js"></script> 
-<script src="../layout/scripts/jquery.mobilemenu.js"></script> 
-<script src="../layout/scripts/jquery.flexslider-min.js"></script>
+<!-- <script src="../layout/scripts/jquery.min.js"></script>  -->
+<!-- <script src="../layout/scripts/jquery.backtotop.js"></script>  -->
+<!-- <script src="../layout/scripts/jquery.mobilemenu.js"></script>  -->
+<!-- <script src="../layout/scripts/jquery.flexslider-min.js"></script> -->
 
 </body>
 </html>

@@ -10,26 +10,28 @@
 <!-- VueJs -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!-- Script -->
-<script src="../Scripts/app3/jquery-1.12.4.min.js"></script>
-<script src="../Scripts/app3/lazysizes.min.js"></script>
-<script src="../Scripts/app3/jquery-ui.js"></script>
 <!-- BootStrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../Content/app3/css/common.css">
-<link rel="stylesheet" href="../Content/app3/css/notokr.css">
-<link rel="stylesheet" href="../Content/app3/css/jquery.mCustomScrollbar.css">
-<link rel="stylesheet" href="../Content/app3/css/header.css">
-<link rel="stylesheet" href="../Content/app3/css/footer_pc.css">
+<link rel="stylesheet" href="../Content/app3/css/common.css" media="all">
+<link rel="stylesheet" href="../Content/app3/css/notokr.css" media="all">
+<link rel="stylesheet" href="../Content/app3/css/jquery.mCustomScrollbar.css" media="all">
+<link rel="stylesheet" href="../Scripts/renewal2203/css/header.css">
+<link rel="stylesheet" href="../Content/app3/css/footer_pc.css" media="all">
 <link rel="stylesheet" href="../Content/app3/css/swiper.min.css">
-<link rel="stylesheet" href="../Content/app3/css/index.css">
-<link rel="stylesheet" href="../Content/app3/css/login/login_pc.css">
-<script src="../Scripts/app3/header.js"></script>
-<script src="../Scripts/renewal2203/topbar.js"></script>
+<link rel="stylesheet" href="../Scripts/renewal2203/css/index.css">
+<link rel="stylesheet" href="../Content/app3/css/login/login_pc.css" media="all">
+<!-- Script -->
+<script src="../Scripts/app3/jquery-1.12.4.min.js"></script>
+<script src="../Scripts/app3/jquery-ui.js"></script>
+<script src="../Scripts/app3/swiper.min.js"></script>
+<script src="../Scripts/app3/lazysizes.min.js"></script>
+<script src="../Scripts/renewal2203/js/index.js"></script>
+<script src="../Scripts/renewal2203/js/header.js"></script>
+<script src="../Scripts/topbar.js"></script>
 <script src="../Scripts/app3/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- pc,mobile 공통 스크립트 -->
-<script src="../Scripts/renewal2203/prototype.js"></script>
+<script src="../Scripts/prototype.js"></script>
 <script src="../Scripts/app3/controll.js"></script>
 </head>
 <body>

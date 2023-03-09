@@ -1,0 +1,272 @@
+
+@media screen and (max-width: 1246px) {
+    #wrap {
+        min-width: 768px;
+    }
+    .p2p_class_wrap {
+        width: 97%;
+    }
+    .p2p_class_container {
+        margin-right: 20px;
+    }
+    .sticky_navi {
+        width: 30%;
+        right: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .f_nav .depth1 .tit {
+        padding: 0 80px 20px 0;
+    }
+    .f_bottom .f_sns {
+        padding-left: 50px;
+    }
+    .vod-box-big > ul > li {
+        position: relative;
+        padding-top: 56.26%;
+    }
+    .vod-box-big .main-cont {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .vod-top .txt-box {
+        padding: 100px 0 38px;
+    }
+    .vod-top .vod-box-thumb {
+        bottom: 98px;
+    }
+    .vod-top .scroll {
+        display: none;
+    }
+    .sound-box {
+        bottom: 38px;
+    }
+    .sect-class.side-open {
+        float: none;
+        width: 100%;
+    }
+    .f-class.side-open {
+        width: 100%;
+    }
+    .btn-top-box .btn_top {
+        right: -40px;
+    }
+    .p2p_class_wrap {
+        min-width: 768px;
+    }
+    .p2p_class_container {
+        margin-right: 0;
+    }
+    .p2p_class_nav ul {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .p2p_class_cmt .review_sum {
+        padding: 26px 20px 22px;
+    }
+    .p2p_class_cmt .review_sum .review_list li {
+        width: 31%;
+        margin-right: 3%;
+    }
+    .p2p_class_cmt .review_sum .review_list li .avg {
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .banner_coupon_area.banner_fixed_bottom {
+        display: block;
+    }
+    .btn_livechat button,
+    .btn_livechat a{
+        right: 20px;
+        z-index: 100;
+        width: 109px !important;
+    }
+    .btn_livechat button:hover::after,
+    .btn_livechat a:hover::after {
+        display: none;
+    }
+    .review-scores li {
+        display: block;
+    }
+    .f_nav .depth1 {
+        width: 20%;
+    }
+    .f_nav .depth1 .tit {
+        padding: 0 0 20px 0;
+    }
+    .f_bottom {
+        text-align: center;
+    }
+    .f_bottom .f_info {
+        float: none;
+        margin-bottom: 30px;
+    }
+    .f_bottom .f_sns {
+        float: none;
+        padding: 0;
+    }
+    .f_fix div.price {
+        width: calc(100% - 320px);
+    }
+    .f_fix .btn-box-vod {
+        width: 320px;
+    }
+    .f_fix .btn-box-vod li {
+        font-size: 14px;
+    }
+    .f_fix .btn-box-vod li a {
+        padding: 15px 20px;
+    }
+    .f_fix .layer-box {
+        right: initial;
+        left: 0;
+    }
+    .banner_coupon_list {
+        position: fixed;
+        right: 20px;
+        z-index: 105;
+    }
+    .vod-top .txt-box h2 {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+    .item_lst ul li {
+        width: calc(50% - 45px);
+    }
+    .mycourse-lst .r-box .btn_base {
+        margin-left: 0;
+        font-size: 13px;
+    }
+    .section_fixed_bottom {
+        display: block;
+        min-width: 768px;
+    }
+    .section_fixed_bottom .banner_coupon_area {
+        display: block;
+    }
+    .sticky_area {
+        display: none;
+    }
+    .p2p_class_container {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .f_fix {
+        width: 768px;
+    }
+    .p2p_class_nav {
+        height: 66px;
+    }
+    .p2p_class_nav ul {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .p2p_class_nav ul li a {
+        padding-top: 29px;
+    }
+    .p2p_class_wrap {
+        width: 100%;
+        margin: 97px auto 0;
+    }
+    .p2p_class_container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .p2p_class_info {
+        margin-bottom: 30px;
+    }
+    .p2p_class_info .p_title {
+        font-size: 24px;
+        line-height: 33px;
+    }
+    .p2p_class_info .p2p_tutor_info .tutor_img {
+        width: 39px;
+        height: 39px;
+    }
+    .p2p_class_info .p2p_tutor_info .short_info {
+        margin-left: 5px;
+    }
+    .p2p_class_info .p2p_tutor_info .short_info .t_nickname {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .p2p_class_info .p2p_tutor_info .short_info .class_review .star_img {
+        width: 12px;
+        height: 12px;
+    }
+    .p2p_class_info .p2p_tutor_info .short_info .class_review .grade_total {
+        margin-left: 5px;
+        font-size: 13px;
+    }
+    .img_slied_area {
+        margin-bottom: 50px;
+    }
+    .img_slied_area .gallery-top {
+        width: 79%;
+        height: 390px;
+    }
+    .img_slied_area .gallery-thumbs {
+        width: 18.82%;
+        height: 390px;
+    }
+    .img_slied_area .gallery-thumbs .swiper-slide {
+        height: 90px;
+        margin-bottom: 7px;
+    }
+    .img_slied_area .gallery-thumbs .swiper-button-prev {
+        padding: 9px 8px;
+        background-size: 12px 6px;
+    }
+    .img_slied_area .gallery-thumbs .swiper-button-prev::after {
+        display: none;
+    }
+    .sec_common {
+        margin-bottom: 90px;
+    }
+    .p_col_left {
+        width: 111px;
+    }
+    .p_col_left .col_title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .p_col_right {
+        margin-left: 44px;
+        width: calc(100% - 155px);
+    }
+    .p_col_right .cert_list li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .p_col_right .text_wrap {
+        font-size: 14px;
+        line-height: 23px;
+    }
+    .p2p_class_video .video_wrap iframe {
+        margin-bottom: 30px;
+    }
+    .p2p_class_cmt {
+        margin-bottom: 50px;
+    }
+    .sticky_navi {
+        display: none;
+    }
+    .fixed_navi {
+        width: 100%;
+    }
+    .banner_app {
+        display: none;
+    }
+    .banner_app.wide {
+        display: block;
+    }
+    #header .container,
+    footer .container {
+        width: 768px;
+    }
+}

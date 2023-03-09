@@ -1,0 +1,19 @@
+/* AEG Renner */
+@font-face {
+    font-family:'AEGRenner';
+    font-style:normal;
+    font-weight:400;
+    src:
+            url(/Content/font/AEGRenner-Regular.otf) format('woff2'),
+            url(/Content/font/AEGRenner-Regular.woff) format('woff'),
+            url(/Content/font/AEGRenner-Regular.otf) format('opentype')
+}
+@font-face {
+    font-family:'AEGRenner';
+    font-style:normal;
+    font-weight:900;
+    src:
+            url(/Content/font/AEGRenner-Bold.otf) format('woff2'),
+            url(/Content/font/AEGRenner-Bold.woff) format('woff'),
+            url(/Content/font/AEGRenner-Bold.otf) format('opentype')
+}

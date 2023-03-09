@@ -5,7 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="class_detail.css">
+<link rel="styleSheet" href="../Content/app3/css/login/login_pc.css">
+<link rel="styleSheet" href="../Content/app3/css/talent/detail.css">
+<link rel="styleSheet" href="../Content/app3/css/talent/photo_review.css">
+<link rel="styleSheet" href="../Content/app3/css/talent/respond.css">
+<link rel="styleSheet" href="../Content/app3/css/aegrenner.css">
+<link rel="styleSheet" href="../Content/app3/css/commons.css">
+<link rel="styleSheet" href="../Content/app3/css/footer_pc.css">
+<link rel="styleSheet" href="../Content/app3/css/header.css">
+<link rel="styleSheet" href="../Content/app3/css/index.css">
+<link rel="styleSheet" href="../Content/app3/css/jquery.mCustomScrollbar.css">
+<link rel="styleSheet" href="../Content/app3/css/notokr.css">
+<link rel="styleSheet" href="../Content/app3/css/swiper.min.css">
 </head>
 <body>
 <body>

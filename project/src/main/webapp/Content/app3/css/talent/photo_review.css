@@ -1,0 +1,220 @@
+/* 포토 리뷰 리스트 */
+.photo_list {
+    margin: 10px 0 0 -7px;
+    font-size: 0;
+}
+.photo_list li {
+    display: inline-block !important;
+    overflow: hidden;
+    width: calc(20% - 7px);
+    height: 68px;
+    margin-left: 7px;
+    padding: 0 !important;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.photo_list li img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+/* 포토 리뷰 팝업 */
+body.on {
+    overflow: hidden;
+
+}
+.pop_wrap {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+}
+.pop_wrap.db {
+    display: block;
+}
+.pop_wrap .bg::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.pop_wrap .pop_cont {
+    overflow: hidden;
+    position: relative;
+    z-index: 15;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.pop_wrap .w940 {
+    width: 940px;
+}
+.pop_wrap .h2_pop {
+    padding: 16px 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pop_wrap .btn_close {
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    width: 48px;
+    height: 48px;
+    text-indent: -9999px;
+    background: url(https://front-img.taling.me/Content/Images/Vod/icon_close_round.png) no-repeat center/15px;
+}
+.pop_wrap .cont {
+    padding: 0 40px 35px;
+}
+.comment_view {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.comment_view .gallery_top {
+    overflow: hidden;
+    width: 500px;
+    height: 400px;
+    margin: 10px 0 8px;
+    border-radius: 6px;
+}
+.comment_view .gallery_top .swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.comment_view .gallery_top .img {
+    width: auto;
+    height: 100%;
+}
+.comment_view .gallery_top .img.reverse {
+    width: 100%;
+    height: auto;
+}
+.comment_view .gallery_thumbs {
+    position: relative;
+}
+.comment_view .gallery_thumbs .swiper-container {
+    position: initial;
+    width: 400px;
+}
+.comment_view .gallery_thumbs .swiper-slide {
+    overflow: hidden;
+    width: 94px;
+    height: 71px;
+    border-radius: 6px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.comment_view .swiper_button {
+    width: 42px;
+    height: 42px;
+    background-size: 42px;
+}
+.comment_view .swiper_button::after {
+    display: none;
+}
+.comment_view .swiper_button.swiper-button-disabled {
+    opacity: 0.5;
+}
+.comment_view .swiper-button-next {
+    right: 0;
+    background-image: url(https://front-img.taling.me/Content/Images/Vod/btn_page_next_box.png);
+}
+.comment_view .swiper-button-prev {
+    left: 0;
+    background-image: url(https://front-img.taling.me/Content/Images/Vod/btn_page_prev_box.png);
+}
+.comment_view .r_box {
+    width: calc(100% - 535px);
+}
+.comment_view .r_box h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.5px;
+}
+.comment_view .r_box .review_txt {
+    position: relative;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+}
+.comment_view .r_box .review_txt::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.14)), color-stop(68%, rgba(255, 255, 255, 0.8)), to(#ffffff));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.8) 68%, #ffffff);
+}
+.comment_view .r_box .user_info {
+    margin-bottom: 15px;
+}
+.comment_view .user_info img {
+    display: table;
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 7px;
+}
+.comment_view .user_info .img {
+    display: table-cell;
+    width: 40px;
+    vertical-align: middle;
+}
+.comment_view .user_info .profile {
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.comment_view .user_info .profile img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.comment_view .user_info .txt {
+    display: table-cell;
+}
+.comment_view .user_info .txt .user {
+    line-height: 20px;
+}
+.comment_view .user_info .txt .date {
+    font-size: 12px;
+    line-height: 18px;
+    color: #999;
+}
+.comment_view .r_box .user_review {
+    overflow-y: scroll;
+}
+.comment_view .r_box .user_review p {
+    line-height: 180%;
+    padding-bottom: 30px;
+}

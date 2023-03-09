@@ -1,0 +1,307 @@
+#header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  background-color: #ffffff;
+}
+
+#header .header_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1070px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 32px 0 36px;
+}
+
+#header .logo {
+  margin-right: 88px;
+}
+
+#header .logo a {
+  display: block;
+  width: 150px;
+  height: 50px;
+  background: url("../../../images/logo3.png") no-repeat center/cover;
+}
+
+#header .gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header .gnb a {
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: #2d3132;
+}
+
+#header .gnb a.act {
+  color: #ff0045;
+}
+
+#header .gnb a:last-child {
+  margin-left: 16px;
+}
+
+#header .search_area {
+  position: relative;
+  width: 280px;
+  margin-left: 30px;
+}
+
+#header .search_area .search_input {
+  width: 100%;
+  height: 44px;
+}
+
+#header .search_area input {
+  width: 100%;
+  height: 100%;
+  padding: 0 58px 0 16px;
+  border-radius: 22px;
+  border-color: #f6f6f6;
+  font-size: 13px;
+  background-color: #f9f9f9;
+}
+
+#header .search_area input:focus {
+  border-color: #666666;
+  background-color: #ffffff;
+}
+
+#header .search_area input::-webkit-input-placeholder {
+  color: #bbbbbb;
+}
+
+#header .search_area input:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+#header .search_area input::-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+#header .search_area input::placeholder {
+  color: #bbbbbb;
+}
+
+#header .search_area .btn_search {
+  position: absolute;
+  right: 8px;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/search-40.png) no-repeat center/cover;
+}
+
+#header .box_keyword {
+  display: none;
+  position: absolute;
+  top: 52px;
+  z-index: 10;
+  width: 100%;
+  padding: 17px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+#header .box_keyword.act {
+  display: block;
+}
+
+#header .box_keyword h2 {
+  font-weight: bold;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+#header .keyword_list li {
+  margin-top: 9px;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+#header .keyword_list a {
+  display: block;
+}
+
+#header .nav_gnb {
+  margin-left: auto;
+}
+
+#header .nav_gnb > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .nav_gnb > ul > li {
+  margin-left: 16px;
+}
+
+#header .nav_gnb > ul > li:first-child {
+  margin-left: 0;
+}
+
+#header .nav_gnb li {
+  position: relative;
+}
+
+#header .nav_gnb a, #header .nav_gnb p {
+  font-size: 13px;
+  line-height: 36px;
+  letter-spacing: -0.025em;
+  cursor: pointer;
+}
+
+#header .nav_gnb .profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#header .nav_gnb .noti > a::before, #header .nav_gnb .noti > p::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ff0045;
+}
+
+#header .nav_gnb .depth1 {
+  padding-right: 14px;
+  background: url(https://front-img.taling.me/Content/app3/img/icon/arrow-down-black-12.png) no-repeat center right/12px;
+}
+
+#header .nav_gnb .depth1.open {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-up-black-12.png);
+}
+
+#header .nav_gnb .depth1.open + .lnb {
+  display: block;
+}
+
+#header .nav_gnb .lnb {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 22px);
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
+  background-color: #ffffff;
+}
+
+#header .nav_gnb .lnb li {
+  white-space: nowrap;
+}
+
+#header .nav_gnb .lnb li:hover {
+  background-color: #eef0f4;
+}
+
+#header .nav_gnb .lnb li.noti > a::before {
+  left: 12px;
+}
+
+#header .nav_gnb .lnb a {
+  display: block;
+  padding: 9px 16px 8px;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#header .mypage .lnb {
+  right: -2px;
+}
+
+#header.mode_dark {
+  position: absolute;
+  border-bottom: 0;
+  background-color: transparent;
+}
+
+#header.mode_dark .logo a {
+  background-image: url(https://front-img.taling.me/Content/app3/img/logo/img-logo-white-66.png);
+}
+
+#header.mode_dark .gnb a {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+#header.mode_dark .gnb a.act {
+  color: #ffffff;
+}
+
+#header.mode_dark .search_area input {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#header.mode_dark .search_area input:focus {
+  border-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#header.mode_dark .search_area .btn_search {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/search-white-40.png);
+}
+
+#header.mode_dark .nav_gnb a, #header.mode_dark .nav_gnb p {
+  color: #ffffff;
+}
+
+#header.mode_dark .depth1 {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-down-white-12.png);
+}
+
+#header.mode_dark .depth1.open {
+  background-image: url(https://front-img.taling.me/Content/app3/img/icon/arrow-up-white-12.png);
+}
+
+#header.mode_dark .lnb a {
+  color: #111111;
+}
+
+#header.home_fix {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-color: #eeeeee;
+}
+
+#header.dark_fix {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #111111;
+}
+
+#header.vod_fix {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-bottom: 0;
+}

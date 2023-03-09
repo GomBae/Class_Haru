@@ -17,6 +17,8 @@
 <link rel="styleSheet" href="../Content/app3/css/jquery.mCustomScrollbar.css">
 <link rel="styleSheet" href="../Content/app3/css/notokr.css">
 <link rel="styleSheet" href="../Content/app3/css/swiper.min.css">
+<link rel="stylesheet" href="../Content/app3/css/class_detail.css">
+<link rel="stylesheet" href="../Content/app3/css/class_detail2.css">
 </head>
 <body>
 <body>

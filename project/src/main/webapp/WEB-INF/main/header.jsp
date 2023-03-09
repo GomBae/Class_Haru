@@ -10,7 +10,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-	<header id="header" class="pof">
+	<header id="header" class="pof" style="border-bottom:1px solid #eeeeee;">
 		<div class="header_wrapper">
 			<!-- logo -->
 			<h1 class="logo">

@@ -36,6 +36,9 @@ public interface ClassMapper {
 		TUTOR_INFO_IMG                 VARCHAR2(500) 
 		TUTOR_INFO_GRADE_TOTAL          NUMBER(2,1)   
 	 */
-	
+	@Select("SELECT cno,title,image,location,perprice,jjim_count,cateno,detail_cateno,onoff,tutor_info_nickname "
+    +"FROM ch_classdetail_2_3 "
+    +"WHERE cateno=#{cateno} AND detail_cateno=#{detail_cateno}")
+	public List<ClassDetailVO> classListData(Map map);
 	
 }

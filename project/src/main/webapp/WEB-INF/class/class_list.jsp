@@ -5,7 +5,103 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="../Content/app3/css/common.css" media="all">
+<link rel="stylesheet" href="../Content/app3/css/class_list.css">
+<style type="text/css">
+.dropdown_filed {
+    position: relative;
+    padding: 10px 44px 10px 16px;
+    border: 1px solid #eef0f4;
+    border-radius: 4px;
+    text-align: left;
+    line-height: 18px;
+    color: #333333;
+    background-color: #fafafc;
+}
+button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    vertical-align: top;
+}
+label, button {
+    cursor: pointer;
+}
+input, select, button, textarea {
+    padding: 0;
+    border: 1px solid #ddd;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, pre {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #111;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+}
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+li {
+    list-style: none;
+}
+body {
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    word-break: keep-all;
+    *word-break: keep-all;
+    -ms-word-break: keep-all;
+}
+.dropdown_filed::after {
+    content: "";
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 24px;
+    height: 24px;
+    background: url(https://front-img.taling.me/Content/app3/img/icon/arrow-down-darkgray-thin-24.png) no-repeat center/cover;
+}
+</style>
 </head>
 <body>
 <main class="search container">

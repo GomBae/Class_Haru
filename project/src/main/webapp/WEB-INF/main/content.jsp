@@ -14,244 +14,15 @@
 		<div class="visual">
 			<!-- all_category -->
 			<ul class="all_category">
+				<!-- v-for 작성 -->
 				<li class="depth1">실무·취업·자기계발
 					<div class="sub_content">
 						<ul>
-							<li class="depth2"><a href="../class/class_list.do?cateno=1&detail_cateno=1">필수역량</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=288">생산성
-									툴</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=286">보고서/발표</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=13">엑셀</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=12">PPT</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=311">직장생활·노하우</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기
-									계발</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=285">자기
-									관리</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=233">인문·교양</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=14">스피치</a></li>
-						</ul>
-						<ul>
+							<li class="depth2"><a
+								href="../class/class_list.do?cateno=1&detail_cateno=1">필수역량</a></li>
+							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li>
 							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=293">자소서·면접</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=17">취업/이직/진로</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=182">자격증·시험</a></li>
-						</ul>
-						<ul>
 							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=287">기획·PM</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=294">세무·회계·법률</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=282">마케팅</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=304">영업·MD</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=283">다양한
-									직무</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">디자인·영상
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=48">디자인</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=296">그래픽
-									디자인</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=297">브랜드
-									디자인</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=309">포트폴리오</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=295">디자인
-									툴</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=3">건축
-									디자인</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=206">UX/UI</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=209">제품
-									디자인</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=49">영상·3D</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=298">영상
-									기획/제작</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=303">모션그래픽</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=299">영상
-									촬영</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=306">유튜브</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=300">영상
-									편집/색보정</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=310">드론</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=301">3D</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">데이터·개발
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=46">데이터</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=291">업무
-									자동화</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=292">데이터
-									일반·통계</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=289">Python·R</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=290">SQL</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=42">개발·테크</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=277">백엔드</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=281">개발
-									공통</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=278">프론트엔드</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=279">모바일</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=276">개발
-									입문</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=280">ML·AI</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">외국어
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=50">영어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=271">1:1
-									영어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=314">그룹
-									영어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=315">메신저
-									영어</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=35">외국어일반</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=272">일본어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=273">중국어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=51">기타
-									외국어</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=34">자격증/시험</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=44">토익·오픽·토스</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=312">토플·아이엘츠</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=313">제2외국어
-									자격증</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">재테크·투잡
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=32">재테크</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=267">주식</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=265">가상자산</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=266">금융지식</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=244">부동산</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=33">투잡·창업</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=269">쇼핑몰</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=270">블로그·인스타</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=268">다양한
-									투잡</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=15">창업</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">댄스·뮤직
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=24">댄스</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=235">댄스</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=123">연기/무용/뮤지컬</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=25">뮤직</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=60">보컬</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=59">악기</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=61">작곡/작사/프로듀싱</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">피트니스·스포츠
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=26">피트니스</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=255">요가/필라테스</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=256">그룹운동</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=254">헬스/PT</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=27">스포츠</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=259">실내스포츠</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=260">야외스포츠</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=257">레저/액티비티</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=261">이색스포츠</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=258">농구/축구/야구</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">뷰티·마인드·펫
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=28">키즈/반려동물</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=88">반려동물</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=248">부모/육아</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=29">마인드
-									케어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=262">심리/상담/명상</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=263">습관만들기</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=127">사주/타로</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=30">메이크업</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=305">스킨케어</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=28">메이크업</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=31">스타일링</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=264">헤어/네일</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=32">퍼스널컬러</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=31">패션</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">드로잉·사진·글
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=36">드로잉·미술</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=222">취미미술</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=232">디지털드로잉</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=76">캘리그래피</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=37">사진</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=79">사진</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=38">글쓰기</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=275">글쓰기</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=274">출판</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="depth1">요리·공예·취미
-					<div class="sub_content">
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=39">공예/DIY</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=307">라탄</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=308">액세서리/패션소품</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=302">뜨개/자수</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=246">인테리어/소품</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=125">플라워/가드닝</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=249">향/초/비누</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=126">가죽/목공/도예</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=40">요리/음료</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=84">요리/베이킹</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=83">커피/차/술</a></li>
-						</ul>
-						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=41">이색
-									취미</a></li>
-							<li class="depth3"><a href="/Home/Search/?cateSub=81">모임/노하우/체험</a></li>
 						</ul>
 					</div>
 				</li>
@@ -266,9 +37,8 @@
 						class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
 						data-swiper-slide-index="3"
 						style="width: 880px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-						<a
-						href="https://taling.me/Promotion/promotionList.php?id=528&amp;query=플라워"
-						onclick="traceClick('mainTopBanner', 257);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 257);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/42ad12cc026dede4fdcdcfac70429d39e89f3a25.png"
 							alt="">
 					</a>
@@ -276,25 +46,24 @@
 					<li class="swiper-slide swiper-slide-duplicate-active"
 						data-swiper-slide-index="0"
 						style="width: 880px; opacity: 1; transform: translate3d(-880px, 0px, 0px); transition-duration: 0ms;">
-						<a href="https://taling.me/vod/view/37128"
-						onclick="traceClick('mainTopBanner', 263);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 263);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/6cc03f984146702e93d24606dd9cbf83dbc8ed10.png"
 							alt="">
 					</a>
 					</li>
 					<li class="swiper-slide" data-swiper-slide-index="1"
 						style="width: 880px; opacity: 1; transform: translate3d(-1760px, 0px, 0px); transition-duration: 0ms;">
-						<a
-						href="https://taling.me/Promotion/promotionList.php?id=531&amp;query=위스키"
-						onclick="traceClick('mainTopBanner', 260);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 260);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/48d8c3c037eef078baab7b9443fc61d4d0777d05.png"
 							alt="">
 					</a>
 					</li>
 					<li class="swiper-slide" data-swiper-slide-index="2"
 						style="width: 880px; opacity: 1; transform: translate3d(-2640px, 0px, 0px); transition-duration: 0ms;">
-						<a href="https://taling.me/Talent/Detail/50826"
-						onclick="traceClick('mainTopBanner', 258);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 258);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/96bc7b892354f9cc05eb9c197575551955d16d23.png"
 							alt="">
 					</a>
@@ -303,9 +72,8 @@
 						class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
 						data-swiper-slide-index="3"
 						style="width: 880px; opacity: 1; transform: translate3d(-3520px, 0px, 0px); transition-duration: 0ms;">
-						<a
-						href="https://taling.me/Promotion/promotionList.php?id=528&amp;query=플라워"
-						onclick="traceClick('mainTopBanner', 257);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 257);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/42ad12cc026dede4fdcdcfac70429d39e89f3a25.png"
 							alt="">
 					</a>
@@ -313,8 +81,8 @@
 					<li class="swiper-slide swiper-slide-duplicate swiper-slide-active"
 						data-swiper-slide-index="0"
 						style="width: 880px; opacity: 1; transform: translate3d(-4400px, 0px, 0px); transition-duration: 0ms;">
-						<a href="https://taling.me/vod/view/37128"
-						onclick="traceClick('mainTopBanner', 263);"> <img class="img"
+						<a href="#" onclick="traceClick('mainTopBanner', 263);"> <img
+							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/6cc03f984146702e93d24606dd9cbf83dbc8ed10.png"
 							alt="">
 					</a>
@@ -345,31 +113,25 @@
 		<!-- category -->
 		<div class="category" id="homeIconCuration">
 			<ul class="list_category">
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=513&amp;query=Top100"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/3bea9ebb29c4445a50c5719d669be5846e8d84e9.png)"></span>실시간랭킹</a></li>
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=474&amp;query=%ED%99%88%EC%88%8F%EC%BB%B7_%EC%8B%A0%EA%B7%9C%EC%98%A4%ED%94%88"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/4e178e7f3b976d755554d38004d87bd370881cb9.png)"></span>신규클래스</a></li>
-				<li><a href="https://taling.me/Home/Search/?cateSub=235"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/5e4623a4053b7bfb84865bc2947dac29349471d3.png)"></span>도전!댄스</a></li>
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=515&amp;query=%ED%97%A4%EB%A9%94%EC%BD%94"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/18cde21b43f8fd1f0331ad4fd2d05208cf1a83e9.png)"></span>헤메코</a></li>
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=518&amp;query=%EC%9D%BC%EC%83%81%ED%83%88%EC%B6%9C	"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/6869b8c8cab9ad327b7bb95f81e607d098ce8418.png)"></span>일상탈출</a></li>
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=514&amp;query=N%EC%9E%A1%EB%9F%AC"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/4199e05ef0f70409feb651237118ddd1d912f22e.png)"></span>N잡러</a></li>
-				<li><a href="https://taling.me/Home/Search/?cateSub=127"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/7280fa3f49f47a550e9f287331a53699df9400ed.png)"></span>사주/타로</a></li>
-				<li><a
-					href="https://taling.me/Promotion/promotionList.php?id=516&amp;query=%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC	"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/44cb86fde1f60db71c68bced923bf37a61a69c9b.png)"></span>액세서리</a></li>
-				<li><a href="https://taling.me/Home/Search/?cateSub=84"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/9e0433a2911d0b11eb9569fc9477f6356865ebcb.png)"></span>쿠킹/베이킹</a></li>
-				<li><a href="https://taling.me/Home/Search/?cateMain=50"><span
+				<li><a href="#"><span
 						style="background-image: url(https://img.taling.me/Content/Uploads/Images/7356716c49a8d19a2fc4ece690cde60f3faa9d55.png)"></span>외국어</a></li>
 			</ul>
 		</div>
@@ -379,8 +141,6 @@
 			<section class="column_left">
 				<!-- talents_area -->
 				<div class="talents_area">
-
-
 					<!-- curationSections -->
 					<div class="talent_box">
 						<h2 class="main_title">세상을 바꿀 ChatGPT, 이젠 배워야 할 때!</h2>
@@ -1005,7 +765,7 @@
 											<div class="badge_list">
 												<span class="badge live ">LIVE</span>
 											</div>
-											<h3 class="talent_title">탈잉2021년 최고매출,카톡으로 만나는 일대일영어튜터</h3>
+											<h3 class="talent_title">하루2021년 최고매출,카톡으로 만나는 일대일영어튜터</h3>
 											<p class="cate_tutor">
 												<span class="name">방인영 튜터</span>
 											</p>
@@ -2089,7 +1849,7 @@
 											<div class="badge_list">
 												<span class="badge live ">LIVE</span>
 											</div>
-											<h3 class="talent_title">[탈잉 최초 무의식 분석상담] 10회차의 효과를 단
+											<h3 class="talent_title">[하루 최초 무의식 분석상담] 10회차의 효과를 단
 												한번의 상담으로!</h3>
 											<p class="cate_tutor">
 												<span class="name">이월쌤 튜터</span>
@@ -2247,7 +2007,7 @@
 											<div class="badge_list">
 												<span class="badge offline">영등포</span>
 											</div>
-											<h3 class="talent_title">탈잉 최다 참여,리뷰 수업 - 미디의 모든것 -</h3>
+											<h3 class="talent_title">하루 최다 참여,리뷰 수업 - 미디의 모든것 -</h3>
 											<p class="cate_tutor">
 												<span class="name">조동근 튜터</span>
 											</p>
@@ -5186,7 +4946,7 @@
 											<div class="badge_list">
 												<span class="badge offline">영등포</span>
 											</div>
-											<h3 class="talent_title">탈잉 최다 참여,리뷰 수업 - 미디의 모든것 -</h3>
+											<h3 class="talent_title">하루 최다 참여,리뷰 수업 - 미디의 모든것 -</h3>
 											<p class="cate_tutor">
 												<span class="name">조동근 튜터</span>
 											</p>
@@ -5500,9 +5260,9 @@
 					<div class="login_box">
 						<h2 class="blind">회원 로그인 영역</h2>
 						<p class="login_msg">
-							로그인 하시고 탈잉의<br>다양한 튜터를 만나보세요.
+							로그인 하시고 하루의<br>다양한 튜터를 만나보세요.
 						</p>
-						<a class="link_login" href="/Account/LoginPage.php">탈잉 로그인</a>
+						<a class="link_login" href="/Account/LoginPage.php">하루 로그인</a>
 						<div class="box_btns">
 							<a class="find_id" href="/Account/AccountFindId/findAccount.php">아이디
 								찾기</a> <a class="find_pw" href="/Account/AccountFindPassword.php">비밀번호
@@ -7159,7 +6919,7 @@
 						<h2 class="logo">
 							<img
 								src="//front-img.taling.me/Content/app3/img/logo/app-logo@2x.png"
-								alt="탈잉">
+								alt="하루">
 						</h2>
 						<h3>언제 어디서나 하루하기!</h3>
 						<a href="//play.google.com/store/apps/details?id=com.taling"

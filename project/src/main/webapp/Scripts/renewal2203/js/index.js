@@ -286,30 +286,30 @@ $(document).ready(function() {
     });
 
     //알림 api연동
-    $.ajax({
-        type: 'GET',
-        url: '/api3/account/badgeCount.php',
-        success: function (data) {
-            const obj = JSON.parse(data);
-            if(obj.result =="success"){
-                const badgeTutuee = obj.data.tutee;
-                const badgeTutor = obj.data.tutor;
-                if(badgeTutor.qna > 0 || badgeTutor.space > 0){
-                    $('.chat_tutor').addClass('act')
-                }
-                if(badgeTutuee.qna > 0 || badgeTutuee.space > 0){
-                    $('.chat_tutee').addClass('act')
-                }
-
-            }else{
-                return false;
-            }
-        },
-        error: function(response) {
-            console.log("조회가 실패하였습니다.");
-            return false;
-        }
-    });
+//    $.ajax({
+//        type: 'GET',
+//        url: '/api3/account/badgeCount.php',
+//        success: function (data) {
+//            const obj = JSON.parse(data);
+//            if(obj.result =="success"){
+//                const badgeTutuee = obj.data.tutee;
+//                const badgeTutor = obj.data.tutor;
+//                if(badgeTutor.qna > 0 || badgeTutor.space > 0){
+//                    $('.chat_tutor').addClass('act')
+//                }
+//                if(badgeTutuee.qna > 0 || badgeTutuee.space > 0){
+//                    $('.chat_tutee').addClass('act')
+//                }
+//
+//            }else{
+//                return false;
+//            }
+//        },
+//        error: function(response) {
+//            console.log("조회가 실패하였습니다.");
+//            return false;
+//        }
+//    });
 
     $('.btn_coupon button').on('click', function() {
         let idx = $('.btn_coupon button').index(this);
@@ -460,34 +460,6 @@ function traceClick(bannerType, bannerId) {
     });
 }
 
-$(document).ready(function(){
-    $.ajax({
-        type: 'GET',
-        url: '/api3/home/iconCurationList.php',
-        contentType: 'json',
-        success: function(response) {
-            response = JSON.parse(response);
-            let {data} = response;
-            if (response.result === 'success') {
-                $('#homeIconCuration').show();
-                data.list.forEach(function(curation, index){
-                    let curationHtml = '';
-                    curationHtml += `<li>`;
-                    curationHtml += `<a href="${curation.weblinkValue}">`;
-                    curationHtml += `<span style="background-image: url(${curation.coverThumbnailUrl})"></span>${curation.name}</a>`;
-                    curationHtml += `</li>`;
-                    $('#homeIconCuration .list_category').append(curationHtml);
-                });
-            } else {
-                $('#homeIconCuration').hide();
-                return false;
-            }
-        },
-        error: function(response) {
-            $('#homeIconCuration').hide();
-        },
-    });
-});
 
 
 function profileImgError(el, isMode) {

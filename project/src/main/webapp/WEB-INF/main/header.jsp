@@ -40,16 +40,17 @@
 			<!-- nav_gnb -->
 			<nav class="nav_gnb">
 				<ul>
-					<li><a href="/tutor/Register/Manual">튜터등록</a></li>
+					<li><a href="#">튜터등록</a></li>
+					<li><a href="#">커뮤니티</a></li>
 					<c:if test="${sessionScope.id!=null }">
 						<li class="depth"><a onclick="qPop(0)">메시지💬</a></li>
 						<li><a href="#">수업신청서</a></li>
 						<li class="depth">
 							<p role="button" class="depth1">수강목록</p>
 							<ul class="lnb">
-								<li><a href="/My/MyTuteeVodList/">VOD 수강목록</a></li>
-								<li><a href="/Vod/vodCollection.php">VOD Q&amp;A</a></li>
-								<li><a href="/vod/orderList">도서/준비물 배송정보</a></li>
+								<li><a href="#">VOD 수강목록</a></li>
+								<li><a href="#">VOD Q&amp;A</a></li>
+								<li><a href="#">도서/준비물 배송정보</a></li>
 							</ul>
 						</li>
 						<li><a href="#">찜</a></li>
@@ -59,7 +60,7 @@
 									alt="프로필 이미지">
 							</p>
 							<ul class="lnb">
-								<li><a href="/My/MyTuteeProfile/">내 프로필</a></li>
+								<li><a href="#">내 프로필</a></li>
 								<li><a href="javascript:void(0)" id="btn-menu-logout">로그아웃</a></li>
 							</ul>
 						</li>

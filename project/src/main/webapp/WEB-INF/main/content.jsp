@@ -17,7 +17,7 @@
 				<li class="depth1">실무·취업·자기계발
 					<div class="sub_content">
 						<ul>
-							<li class="depth2"><a href="/Home/Search/?cateMain=44">필수역량</a></li>
+							<li class="depth2"><a href="../class/class_list.do?cateno=1&detail_cateno=1">필수역량</a></li>
 							<li class="depth3"><a href="/Home/Search/?cateSub=288">생산성
 									툴</a></li>
 							<li class="depth3"><a href="/Home/Search/?cateSub=286">보고서/발표</a></li>

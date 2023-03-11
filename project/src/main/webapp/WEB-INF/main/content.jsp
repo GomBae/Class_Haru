@@ -15,14 +15,14 @@
 			<!-- all_category -->
 			<ul class="all_category">
 				<!-- v-for 작성 -->
-				<li class="depth1">실무·취업·자기계발
+				<li class="depth1"  v-for="vo in cate_list" @mouseover="onMouseOver(vo.cateno)">{{vo.catename}}
 					<div class="sub_content">
 						<ul>
-							<li class="depth2"><a
-								href="../class/class_list.do?cateno=1&detail_cateno=1">필수역량</a></li>
-							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li>
-							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li>
-							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li>
+							<li class="depth2" v-for="dvo in detail_cate_list"><a
+								:href="'../class/class_list.do?cateno='+vo.cateno+'&detail_cateno='+dvo.detail_cateno">{{dvo.detail_catename}}</a></li>
+<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li> -->
+<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li> -->
+<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li> -->
 						</ul>
 					</div>
 				</li>
@@ -357,11 +357,11 @@
 						<p class="login_msg">
 							로그인 하시고 하루의<br>다양한 튜터를 만나보세요.
 						</p>
-						<a class="link_login" href="/Account/LoginPage.php">하루 로그인</a>
+						<a class="link_login" href="#">하루 로그인</a>
 						<div class="box_btns">
-							<a class="find_id" href="/Account/AccountFindId/findAccount.php">아이디
-								찾기</a> <a class="find_pw" href="/Account/AccountFindPassword.php">비밀번호
-								찾기</a> <a class="link_join" href="/Account/LoginPage.php">회원가입</a>
+							<a class="find_id" href="#">아이디
+								찾기</a> <a class="find_pw" href="#">비밀번호
+								찾기</a> <a class="link_join" href="#">회원가입</a>
 						</div>
 					</div>
 					<!-- //로그인 전 -->
@@ -423,10 +423,62 @@
 										</div>
 									</div>
 							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
+							<li><a href="/Talent/Detail/37128">
+									<div class="thumb lazyloaded"
+										data-bg="//img.taling.me/Content/Uploads/Images/b07c81dbc82e5b5bb7ee58383e6e9a7f59e9117d.png"
+										style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/b07c81dbc82e5b5bb7ee58383e6e9a7f59e9117d.png&quot;);">
+									</div>
+									<div class="text_box">
+										<h3 class="talent_title">실무에 진짜 필요한 엑셀 노하우</h3>
+										<div class="talent_info">
+											<span class="user"><em>10,515명</em>이 찜했습니다!</span> <span
+												class="average">4.9(568)</span>
+										</div>
+									</div>
+							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
+							<li><a href="/Talent/Detail/40880">
+									<div class="thumb lazyloaded"
+										data-bg="//img.taling.me/Content/Uploads/Images/941d3e2967a1ac6840458355beb909cfd2282113.png"
+										style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/941d3e2967a1ac6840458355beb909cfd2282113.png&quot;);">
+									</div>
+									<div class="text_box">
+										<h3 class="talent_title">투깝스 보컬의 정석 숨만 잘 쉬어도 고음 완성</h3>
+										<div class="talent_info">
+											<span class="user"><em>838명</em>이 찜했습니다!</span> <span
+												class="average">5(82)</span>
+										</div>
+									</div>
+							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
+							<li><a href="/Talent/Detail/42555">
+									<div class="thumb lazyloaded"
+										data-bg="//img.taling.me/Content/Uploads/Images/20d71f73087f7040b3429db9864cdf1164bbac1e.png"
+										style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/20d71f73087f7040b3429db9864cdf1164bbac1e.png&quot;);">
+									</div>
+									<div class="text_box">
+										<h3 class="talent_title">150만원으로 30억을 만들어낸 비트코인 차트 분석의 기술</h3>
+										<div class="talent_info">
+											<span class="user"><em>605명</em>이 찜했습니다!</span> <span
+												class="average">4.9(46)</span>
+										</div>
+									</div>
+							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
+							<li><a href="/Talent/Detail/29848">
+									<div class="thumb lazyloaded"
+										data-bg="//img.taling.me/Content/Uploads/Cover/s_174f25e8ef11cf06cfa4f5cb699b1e2659e52292.jpeg"
+										style="background-image: url(&quot;//img.taling.me/Content/Uploads/Cover/s_174f25e8ef11cf06cfa4f5cb699b1e2659e52292.jpeg&quot;);">
+									</div>
+									<div class="text_box">
+										<h3 class="talent_title">21년 최고매출, 22년 최다판매 친절한 쁨선생 케이팝</h3>
+										<div class="talent_info">
+											<span class="user"><em>2,703명</em>이 찜했습니다!</span> <span
+												class="average">5(253)</span>
+										</div>
+									</div>
+							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
+							
 						</ul>
 					</div>
 					<!-- // ad_vod -->
-
 					<!-- ad_app -->
 					<div class="ad_app">
 						<h2 class="logo">
@@ -452,5 +504,31 @@
 			<!-- // column_right -->
 		</div>
 	</main>
+	<script>
+		new Vue({
+		   el:'.all_category',
+		   data:{
+			  cate_list:[],
+			  detail_cate_list:[]	
+		   },
+		   mounted:function(){
+			  let _this=this;
+			  axios.get("http://localhost/web/class/class_cate_vue.do").then(function(response){
+				  console.log(response.data)
+				  _this.cate_list=response.data
+			  })
+			},
+			  methods:{
+				  onMouseOver : function(cateno){
+					  let _this=this;
+					  axios.get("http://localhost/web/class/class_detail_cate_vue.do?cateno="+cateno).then(function(response){
+						  console.log(response.data)
+						  _this.detail_cate_list=response.data
+					  })
+				  }
+			  
+			  }
+			})
+	  </script>
 </body>
 </html>

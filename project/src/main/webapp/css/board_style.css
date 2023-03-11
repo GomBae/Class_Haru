@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/*----- board_main 관련 -----*/
+/* 게시판 메뉴(type) */
+.board_menu a{
+  display:block;
+  margin:0 0 30px 0;
+}
+.board_menu a:last-child{
+  margin:0;
+}
+.write_btn:hover{
+  color:white;
+}
+/* 게시글 제목 */
+.board_title{
+  margin:0 0 15px 0;
+  font-weight:bold;
+}
+.msgBox{
+  padding:15px; margin-bottom:30px;
+  width:93%; height:90px;
+  resize:none;
+  border:1px solid lightgray; border-radius:4px;
+}
+.msgBox:focus{
+  outline:none;
+}
+/* 게시판 검색창 */
+.board_search input{
+  margin:0 10px 15px 0;
+  padding:0 20px 0 45px;
+  width:86%;
+  height:45px;
+}
+.board_search i{
+  margin: 3px 0 0 15px;
+  position:absolute;
+  z-index:10;
+  font-size:20px;
+  line-height:40px;
+}
+/* 정렬버튼 : 최신순/조회수순/댓글많은순 */
+.view_btn{
+  width:70%;
+  float:left;
+}
+/* 글작성 버튼 */
+.write_btn{
+  width:110px;height:45px;background:#45c5c5;
+  color:white;border:0;line-height:25px;text-align:center;
+}
+/* 게시글 내용입력란 */
+.board_content{
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-size: 16px;
+}
+/* 게시글 하단 작성자, 작성시간, 조회수, 댓글수 */
+.board_bottom > div,.board_bottom > * > *{
+  color:gray;
+}
+/* 게시글 상세보기 댓글버튼 */
+.reply_btn{
+  display:block;margin:0 0 0 5px;padding:15px 25px;
+  background:#45c5c5;color:white;border:0;border-radius:4px;float:left;
+}
+/* 댓글입력란 */
+.replyInsertArea .msgBox{
+  margin:0 0 15px 0;width:70%;height:100px;float:left;
+}
+/*----- board_insert 관련 -----*/
+/* 제목, 태그입력 관련 */
+.input_text{
+  padding: 0 20px;
+  width:100%;
+  height:45px;
+  border:1px solid lightgray;
+}
+.input_name{
+  margin:0 0 10px 0;
+}
+.all_btn{
+  display:inline-block;
+}
+#select_board a{
+  margin:0 10px 0 0;
+  border:0;
+  background:#f0f0f0;
+}
+.textBox{
+padding:15px;width:100%;height:400px;border:1px solid lightgray;border-radius:4px;resize:none;overflow:auto;
+
+}
+.textBox:focus{
+  outline:none;
+}

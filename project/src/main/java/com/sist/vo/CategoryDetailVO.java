@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class CategoryDetailVO {
 	private int detail_cateno,cateno;
-	private String detail_catename;
+	private String detail_catename,catename;
 }

@@ -52,6 +52,14 @@
 							</li>
 						</ul>
 					</li>
+					<li class="depth1 taling_biz">
+						<p class="tit">확인용임시</p>
+						<ul class="depth2">
+							<li><a href="../mypage/main.do">마이페이지</a></li>
+							<li><a href="../adminpage/main.do">관리자페이지</a></li>
+							<li><a href="../tutorpage/main.do">튜터페이지</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div id="custom-button-1"></div>

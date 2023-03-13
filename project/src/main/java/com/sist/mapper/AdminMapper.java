@@ -9,10 +9,18 @@ import org.apache.ibatis.annotations.Update;
 
 public interface AdminMapper {
 	//공지 목록
-	@Select("SELECT * FROM ch_board_2_3 "
-			+ "WHERE btype=3")
-	public List<BoardVO> noticeList();
+	@Select("SELECT bno,btype,id,title,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,hit,tag,num "
+			+ "FROM (SELECT bno,btype,id,title,regdate,hit,tag,rownum as num "
+			+ "FROM (SELECT bno,btype,id,title,regdate,hit,tag "
+			+ "FROM ch_board_2_3 "
+			+ "WHERE btype=1 "
+			+ "ORDER BY bno))"
+			+ "WHERE num BETWEEN #{start} AND #{end}")
+	public List<BoardVO> noticeList(Map map);
 	
+	@Select("SELECT CEIL(COUNT(*)/10.0) FROM ch_board_2_3")
+	public int noticeTotalPage();
+
 	//강의 승인
 	@Update("UPDATE ch_classdetail_2_3 "
 			+ "SET ok='y' "
@@ -22,7 +30,7 @@ public interface AdminMapper {
 	//회원 관리
 	@Delete("DELETE FROM ch_member_2_3 "
 			+ "WHERE id=#{id}")
-	public void memberDelete(Map map);
+	public void memberDelete(String id);
 	
 	//튜터 승인
 	@Update("UPDATE ch_member_2_3 "

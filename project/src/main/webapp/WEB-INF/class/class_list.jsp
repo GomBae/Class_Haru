@@ -82,7 +82,6 @@
     <div class="category_path">
       <span>요리·공예·취미</span>
       <span>공예/DIY</span>
-      <span>라탄</span>
    </div>
     <!-- result_count -->
     <p class="result_count">검색 결과 27개</p>
@@ -93,7 +92,7 @@
       <!-- class_card_list -->
       <ul class="class_card_list" >
         <li class="swiper-slide" v-for="cvo in class_list">
-            <a href="href="/vod/view/37602">
+            <a href="/vod/view/37602">
             <div class="thumb lazyloaded" data-bg="//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png" style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png&quot;);">        
             </div>      
           <div class="card_cnt">            
@@ -109,7 +108,7 @@
             </p>            
             <div class="talent_info">                
               <span class="user">{{cvo.jjim_count}}</span>
-              <span class="reward_badge" style="background-image:url('//front-img.taling.me/Content/app3/img/icon/icClasscardReview@2x.png')">{{cvo.rivew}}</span>            
+              <!-- <span class="reward_badge" style="background-image:url('//front-img.taling.me/Content/app3/img/icon/icClasscardReview@2x.png')">{{cvo.rivew}}</span>    리뷰 개수 출력   -->      
             </div>        
           </div>    
           </a>    

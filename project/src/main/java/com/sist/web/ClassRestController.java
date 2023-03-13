@@ -60,7 +60,17 @@ public class ClassRestController {
 			obj.put("title", vo.getTitle());
 			obj.put("cateno", vo.getCateno());
 			obj.put("detail_cateno", vo.getDetail_cateno());
-			obj.put("locateion", vo.getLocation());
+			String location=vo.getLocation();
+			if(location==null)
+			{
+				location=location;
+			}
+			else
+			{
+				location=location.replace("^", ",");
+			}
+			
+			obj.put("location", location);
 			
 			obj.put("perprice", vo.getPerprice());
 			obj.put("jjim_count", vo.getJjim_count());

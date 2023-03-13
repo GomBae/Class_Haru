@@ -47,4 +47,15 @@ public interface ClassMapper {
     +"WHERE cateno=#{cateno} AND detail_cateno=#{detail_cateno}")
 	public List<ClassDetailVO> classListData(Map map);
 	
+	@Select("SELECT cno,title,image,place,location,schedule,notice,time,perprice,totalprice, "
+	         + "summary,target,tutor_intro,class_intro,class_curri,class_video,onoff,inwon,tutor_info_nickname,tutor_info_img, "
+	         + "jjim_count FROM CH_CLASSDETAIL_2_3 "
+	         + "WHERE cno=#{cno}")
+	 public ClassDetailVO classDetailData(int cno);
+	
+//	@Select("SELECT rno,content,heart,comment_count,curriculum,preparation,kindness,delivery,time,id,cno,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
+//			+"FROM (SELECT /*+(ch_review_2_3 ch_rv_rno_pk_2_3)*/rno,content,heart,comment_count,curriculum,preparation,kindness,delivery,time,id,cno,regdate "
+//			+"FROM ch_review_2_3) "
+//			+"WHERE cno=#{cno}")
+//	public List<ReviewVO> classReview(int cno);
 }

@@ -18,11 +18,6 @@
 </head>
 <body>
 <div class="container">
-	<div style="margin-left:20px"> 
-		<span style="font-size: 20px;font-weight: 700;line-height: 50px;">최선형</span>님 &gt; 
-		클래스 하루와 <span style="font-size:18px;color:#45c5c5;font-weight:400">30</span>일째 성장 중!
-	</div>
-	
 	<div style="width:20%;height:100%;padding:5px;float:left;">
 	  <div class=rows>
 	  	<div style="height:150px;margin:5px;padding:10px;border:2px solid #45c5c5;">

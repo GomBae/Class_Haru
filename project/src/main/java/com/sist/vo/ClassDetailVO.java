@@ -10,5 +10,5 @@ public class ClassDetailVO {
 	private double tutor_info_grade_total;
 	private String title,image,place,location,schedule,notice,time,
 					perprice,totalprice,summary,target,tutor_intro,class_intro,
-					class_curri,class_video,onoff,inwon,tutor_info_nickname,tutor_info_img;
+					class_curri,class_video,onoff,inwon,tutor_info_nickname,tutor_info_img,ok;
 }

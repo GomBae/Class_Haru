@@ -9,15 +9,33 @@ import org.apache.ibatis.annotations.Update;
 import com.sist.vo.*;
 
 public interface MypageMapper {
-	//쪽지 목록
-	@Select("SELECT tno,id,msg,receiver,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,ok,num "
-			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok,rownum as num "
-			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok "
+	//보낸 쪽지 목록
+	@Select("SELECT tno,id,msg,receiver,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,ok,TO_CHAR(recvdate,'YYYY-MM-DD') as recvday,nickname,num "
+			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok,recvdate,nickname,rownum as num "
+			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok,recvdate,nickname "
 			+ "FROM ch_text_2_3 "
-			+ "WHERE id=#{id} OR receiver=#{nickname} "
+			+ "WHERE id=#{id} "
 			+ "ORDER BY tno)) "
 			+ "WHERE num BETWEEN #{start} AND #{end}")
-	public List<TextVO> myTextList(Map map);
+	public List<TextVO> myTextsList(Map map);
+
+	@Select("SELECT CEIL(COUNT(*)/10.0) FROM ch_text_2_3 "
+			+ "WHERE id=#{id}")
+	public int stextTotalPage(Map map);
+
+	//받은 쪽지 목록
+	@Select("SELECT tno,id,msg,receiver,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,ok,TO_CHAR(recvdate,'YYYY-MM-DD') as recvday,nickname,num "
+			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok,recvdate,nickname,rownum as num "
+			+ "FROM (SELECT tno,id,msg,receiver,regdate,ok,recvdate,nickname "
+			+ "FROM ch_text_2_3 "
+			+ "WHERE receiver=#{receiver} "
+			+ "ORDER BY tno)) "
+			+ "WHERE num BETWEEN #{start} AND #{end}")
+	public List<TextVO> myTextrList(Map map);
+	
+	@Select("SELECT CEIL(COUNT(*)/10.0) FROM ch_text_2_3 "
+			+ "WHERE receiver=#{receiver}")
+	public int rtextTotalPage(Map map);
 	
 	//쪽지 확인
 	@Update("UPDATE ch_text_2_3 "
@@ -33,7 +51,7 @@ public interface MypageMapper {
 	@SelectKey(keyProperty = "tno", resultType = int.class, before = true, 
 			statement = "SELECT NVL(MAX(tno)+1,1) as tno FROM ch_text_2_3")
 	@Insert("INSERT INTO ch_text_2_3 "
-			+ "VALUES(#{tno},#{id},#{msg},#{receiver},sysdate,'n')")
+			+ "VALUES(#{tno},#{id},#{msg},#{receiver},sysdate,'n',null,#{nickname})")
 	public void textInsert(TextVO vo);
 	
 	//강의실

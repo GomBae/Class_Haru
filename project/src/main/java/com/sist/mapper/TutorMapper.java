@@ -10,7 +10,8 @@ import org.apache.ibatis.annotations.Update;
 public interface TutorMapper {
 	//강의 수정
 	@Update("UPDATE ch_classdetail_2_3 "
-			+ "SET ")
+			+ "SET #{title},#{image},#{onoff},#{info},#{place},#{location},#{schedule},"
+			+ "#{notice},#{inwon},#{time},#{perPrice},#{totalprice},#{cateno},#{tno}")
 	public void classUpdate(ClassDetailVO vo);
 	
 	//수강생 목록

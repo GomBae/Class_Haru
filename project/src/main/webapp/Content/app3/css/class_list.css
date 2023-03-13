@@ -9,7 +9,7 @@
 	border-radius: 4px;
 }
 
-.dropdown_filed {
+.category_filed {
 	position: relative;
 	padding: 10px 44px 10px 16px;
 	border: 1px solid #eef0f4;
@@ -19,7 +19,7 @@
 	color: #333333;
 	background-color: #fafafc;
 }
-.dropdown_filed::after {
+.category_filed::after {
 	content: "";
 	position: absolute;
 	right: 7px;
@@ -28,7 +28,7 @@
 	height: 24px;
 	background: url(https://front-img.taling.me/Content/app3/img/icon/arrow-down-darkgray-thin-24.png) no-repeat center/cover;
 }
-.dropdown_filed:hover {
+.category_filed:hover {
 	background-color: #e7e9ed;
 }
 .dropdown_filed:active {
@@ -477,9 +477,10 @@
 	padding-left: 32px;
 }
 .class_card_list .badge_list .badge.offline {
-	border-color: #3390ff;
-	color: #3390ff;
+	border-color: #49A6A6;
+	color: #49A6A6;
 	background-image: url(https://front-img.taling.me/Content/app3/img/icon/offline-blue600-18@2x.png);
+	background-color: white;
 }
 .class_card_list .badge_list .badge.recording {
 	border-color: #111111;
@@ -518,6 +519,7 @@
 	font-weight: 500;
 	line-height: 19px;
 	letter-spacing: -0.25px;
+	
 }
 .class_card_list .cate_tutor {
 	margin-bottom: 5px;

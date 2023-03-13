@@ -14,19 +14,22 @@ public class ClassController {
 	private ClassDAO dao;
 	
 	@GetMapping("class/class_list.do")
-	public String class_list(String cateno,String detail_cateno,Model model)
+	public String class_list(int cateno,int detail_cateno,Model model)
 	{
+		System.out.println(cateno);
+		System.out.println(detail_cateno);
 		Map map = new HashMap();
-		int i_cateno = Integer.parseInt(cateno);
-		int i_dcateno = Integer.parseInt(detail_cateno);
-		map.put("cateno", i_cateno);
-		map.put("detail_cateno", i_dcateno);
+
+		map.put("cateno", cateno);
+		map.put("detail_cateno", detail_cateno);
 		List<ClassDetailVO> list=dao.classListData(map);
+		List<CategoryVO> cList=dao.classCateData();
 		
-		model.addAttribute("cateno",i_cateno );
-		model.addAttribute("detail_cateno",i_dcateno );
-		model.addAttribute("list",list);
+		model.addAttribute("cateno",cateno );
+		model.addAttribute("detail_cateno",detail_cateno );
+		model.addAttribute("cList",cList);
 		
 		return "class/class_list";
 	}
+	
 }

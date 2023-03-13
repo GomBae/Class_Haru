@@ -43,4 +43,46 @@ public class ClassRestController {
 		}
 		return arr.toJSONString();
 	}
+	@GetMapping(value="class/class_list_vue.do",produces="text/plain;charset=utf-8")
+	public String class_list_vue(int cateno,int detail_cateno)
+	{
+		Map map=new HashMap();
+		map.put("cateno", cateno);
+		map.put("detail_cateno", detail_cateno);
+		List<ClassDetailVO> list=dao.classListData(map);
+		JSONArray arr=new JSONArray();
+		for(ClassDetailVO vo:list)
+		{
+			//cno,title,image,location,perprice,jjim_count,cateno,
+			//detail_cateno,onoff,tutor_info_nickname
+			JSONObject obj=new JSONObject();
+			obj.put("cno", vo.getCno());
+			obj.put("title", vo.getTitle());
+			obj.put("cateno", vo.getCateno());
+			obj.put("detail_cateno", vo.getDetail_cateno());
+			obj.put("locateion", vo.getLocation());
+			
+			obj.put("perprice", vo.getPerprice());
+			obj.put("jjim_count", vo.getJjim_count());
+			obj.put("onoff", vo.getOnoff());
+			obj.put("tutor_info_nickname", vo.getTutor_info_nickname());
+			String image=vo.getImage();
+			int size=image.indexOf("^");
+			if(size<0)
+			{
+				image=image;
+			}
+			else
+			{
+				image=image.substring(0,image.indexOf("^"));
+			}
+			
+			obj.put("image", image);
+			
+			arr.add(obj);
+		}
+		return arr.toJSONString();
+	}
+	
+	
 }

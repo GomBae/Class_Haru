@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,21 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<style type="text/css">
+.login_box .link_login {
+  display: block;
+  padding: 12px 0;
+  border-radius: 6px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: #45c5c5;
+}
+.login_box .link_login:hover {
+  background-color: #45c5c5;
+}
+</style>
 </head>
 <body>
 	<main class="container">
@@ -15,14 +31,15 @@
 			<!-- all_category -->
 			<ul class="all_category">
 				<!-- v-for 작성 -->
-				<li class="depth1"  v-for="vo in cate_list" @mouseover="onMouseOver(vo.cateno)">{{vo.catename}}
+				<li class="depth1" v-for="vo in cate_list"
+					@mouseover="onMouseOver(vo.cateno)">{{vo.catename}}
 					<div class="sub_content">
 						<ul>
 							<li class="depth2" v-for="dvo in detail_cate_list"><a
 								:href="'../class/class_list.do?cateno='+vo.cateno+'&detail_cateno='+dvo.detail_cateno">{{dvo.detail_catename}}</a></li>
-<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li> -->
-<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li> -->
-<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li> -->
+							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li> -->
+							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li> -->
+							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li> -->
 						</ul>
 					</div>
 				</li>
@@ -40,15 +57,6 @@
 						<a href="#" onclick="traceClick('mainTopBanner', 257);"> <img
 							class="img"
 							src="https://img.taling.me/Content/Uploads/Images/42ad12cc026dede4fdcdcfac70429d39e89f3a25.png"
-							alt="">
-					</a>
-					</li>
-					<li class="swiper-slide swiper-slide-duplicate-active"
-						data-swiper-slide-index="0"
-						style="width: 880px; opacity: 1; transform: translate3d(-880px, 0px, 0px); transition-duration: 0ms;">
-						<a href="#" onclick="traceClick('mainTopBanner', 263);"> <img
-							class="img"
-							src="https://img.taling.me/Content/Uploads/Images/6cc03f984146702e93d24606dd9cbf83dbc8ed10.png"
 							alt="">
 					</a>
 					</li>
@@ -352,19 +360,62 @@
 				style="transform: translate(0px, 0px);">
 				<div class="wrapper">
 					<!-- 로그인 전 -->
-					<div class="login_box">
-						<h2 class="blind">회원 로그인 영역</h2>
-						<p class="login_msg">
-							로그인 하시고 하루의<br>다양한 튜터를 만나보세요.
-						</p>
-						<a class="link_login" href="#">하루 로그인</a>
-						<div class="box_btns">
-							<a class="find_id" href="#">아이디
-								찾기</a> <a class="find_pw" href="#">비밀번호
-								찾기</a> <a class="link_join" href="#">회원가입</a>
+					<c:if test="${sessionScope.mvo.id==null }">
+						<div class="login_box">
+							<h2 class="blind">회원 로그인 영역</h2>
+							<p class="login_msg">
+								로그인 하시고 하루의<br>다양한 튜터를 만나보세요.
+							</p>
+							<a class="link_login" href="../member/loginpage.do">하루 로그인</a>
+							<div class="box_btns">
+								<a class="find_id" href="#">아이디 찾기</a> <a class="find_pw"
+									href="#">비밀번호 찾기</a> <a class="link_join"
+									href="../member/loginpage.do">회원가입</a>
+							</div>
 						</div>
-					</div>
+					</c:if>
 					<!-- //로그인 전 -->
+					<!-- 로그인 후 -->
+					<c:if test="${sessionScope.mvo.id!=null }">
+						<div class="login_box status_logon">
+							<div class="area_info_top">
+								<a class="my_profile" href="#"> <img class="img_profile"
+									src="${sessionScope.mvo.image }" onerror="profileImgError(this,);"
+									alt="프로필 이미지">
+								</a>
+								<div class="logon_msg">
+									<b><em class="level"></em>${sessionScope.mvo.name }님</b> <span>반가워요</span>
+									<!-- 								<button class="btn_logout" type="button" id="btn-menu-logout">로그아웃</button> -->
+									<button class="btn_logout" type="button" id="btn-menu-logout"
+										onclick="location.href='../member/logout.do'">로그아웃</button>
+								</div>
+								<button class="btn_livechat " type="button" onclick="qPop(0)">
+									<span class="blind">메시지💬</span>
+								</button>
+							</div>
+							<div class="area_info_bottom">
+								<div class="btn_coupon" id="coupon">
+									<button type="button" class="coupon">
+										쿠폰 <em>0</em>
+									</button>
+									<button type="button" class="point">
+										포인트 <em>0P</em>
+									</button>
+								</div>
+								<!-- pub -->
+								<button class="tutor_mode" type="button" data-tutormode="">
+									<b>튜터모드</b> <span class="toggle"><small></small></span>
+								</button>
+							</div>
+							<ul class="lnb">
+								<li claas="chat_tutee"><a onclick="qPop(0)"
+									style="cursor: pointer;">메시지💬</a></li>
+								<li class=""><a href="#">수업신청서</a></li>
+								<li><a href="#">수강목록</a></li>
+								<li class="link_wish"><a href="#">찜</a></li>
+							</ul>
+						</div>
+					</c:if>
 					<!-- // 로그인 후 -->
 					<!-- hot_keyword -->
 					<!-- // hot_keyword -->
@@ -384,7 +435,7 @@
 						<ul class="swiper-wrapper"
 							style="transition-duration: 0ms; transform: translate3d(-5029.6px, 0px, 0px);">
 							<li class="swiper-slide" data-swiper-slide-index="0"
-								style="margin-right: 20px;"><a href="/Talent/Detail/40248">
+								style="margin-right: 20px;"><a href="#">
 									<div class="thumb lazyload"
 										data-bg="//img.taling.me/Content/Uploads/Images/10a830d5244fd058777f220389c62013cdad5600.png"></div>
 									<div class="text_box">
@@ -475,7 +526,7 @@
 										</div>
 									</div>
 							</a> <!-- <p class="earlybird">얼리버드 마감임박!</p> --></li>
-							
+
 						</ul>
 					</div>
 					<!-- // ad_vod -->
@@ -483,7 +534,7 @@
 					<div class="ad_app">
 						<h2 class="logo">
 							<img
-								src="//front-img.taling.me/Content/app3/img/logo/app-logo@2x.png"
+								src="../images/favicon.png"
 								alt="하루">
 						</h2>
 						<h3>언제 어디서나 하루하기!</h3>
@@ -506,29 +557,32 @@
 	</main>
 	<script>
 		new Vue({
-		   el:'.all_category',
-		   data:{
-			  cate_list:[],
-			  detail_cate_list:[]	
-		   },
-		   mounted:function(){
-			  let _this=this;
-			  axios.get("http://localhost/web/class/class_cate_vue.do").then(function(response){
-				  console.log(response.data)
-				  _this.cate_list=response.data
-			  })
+			el : '.all_category',
+			data : {
+				cate_list : [],
+				detail_cate_list : []
 			},
-			  methods:{
-				  onMouseOver : function(cateno){
-					  let _this=this;
-					  axios.get("http://localhost/web/class/class_detail_cate_vue.do?cateno="+cateno).then(function(response){
-						  console.log(response.data)
-						  _this.detail_cate_list=response.data
-					  })
-				  }
-			  
-			  }
-			})
-	  </script>
+			mounted : function() {
+				let _this = this;
+				axios.get("http://localhost/web/class/class_cate_vue.do").then(
+						function(response) {
+							console.log(response.data)
+							_this.cate_list = response.data
+						})
+			},
+			methods : {
+				onMouseOver : function(cateno) {
+					let _this = this;
+					axios.get(
+							"http://localhost/web/class/class_detail_cate_vue.do?cateno="
+									+ cateno).then(function(response) {
+						console.log(response.data)
+						_this.detail_cate_list = response.data
+					})
+				}
+
+			}
+		})
+	</script>
 </body>
 </html>

@@ -666,10 +666,10 @@ main {
   color: #ffffff;
   font-size: 15px;
   line-height: 24px;
-  background-color: #ff0045;
+  background-color: #45c5c5;
 }
 .login_box .link_login:hover {
-  background-color: #f20e42;
+  background-color: #45c5c5;
 }
 .login_box .box_btns {
   display: flex;
@@ -1131,14 +1131,14 @@ main {
   font-size: 10px;
   color: #ffffff;
   line-height: 18px;
-  background-color: #ff0045;
+  background-color: #45c5c5;
 }
 .review_list .write_time::after {
   content: "";
   position: absolute;
   left: 10px;
   bottom: -4px;
-  border-top: 4px solid #ff0045;
+  border-top: 4px solid #45c5c5;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
 }

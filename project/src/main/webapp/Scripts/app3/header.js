@@ -617,3 +617,4 @@ function profileImgError(el, isMode) {
 	}
 	$(el).attr('src',  replaceImgPath);
 }
+

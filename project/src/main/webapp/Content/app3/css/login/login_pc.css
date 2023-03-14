@@ -37,7 +37,7 @@ body.on{
 }
 
 .box_login .info_error {
-  display: none;
+  
   margin-top: 10px;
   padding-left: 25px;
   text-align: left;

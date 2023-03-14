@@ -238,16 +238,16 @@ $(document).ready(function() {
     });
 
     // logout click event
-    $(document).on('click', '#btn-menu-logout', function () {
-        $.ajax({
-            url: '/Account/Logout.php',
-            method: 'post',
-            data: null,
-            success: function (response) {
-                location.href = '/';
-            }
-        })
-    });
+//    $(document).on('click', '#btn-menu-logout', function () {
+//        $.ajax({
+//            url: '/Account/Logout.php',
+//            method: 'post',
+//            data: null,
+//            success: function (response) {
+//                location.href = '/';
+//            }
+//        })
+//    });
 
     // 튜터모드 전환
     $(document).on('click', 'button.tutor_mode', function () {

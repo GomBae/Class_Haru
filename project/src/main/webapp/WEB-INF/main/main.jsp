@@ -26,6 +26,7 @@
 <script src="../Scripts/app3/jquery-ui.js"></script>
 <script src="../Scripts/app3/swiper.min.js"></script>
 <script src="../Scripts/app3/lazysizes.min.js"></script>
+<script src="../Scripts/app3/header.js"></script>
 <script src="../Scripts/renewal2203/js/index.js"></script>
 <script src="../Scripts/renewal2203/js/header.js"></script>
 <script src="../Scripts/topbar.js"></script>

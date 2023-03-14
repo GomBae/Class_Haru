@@ -5,6 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.sist.dao.BoardDAO;
 import com.sist.vo.BoardVO;
 
@@ -23,8 +28,8 @@ public class BoardController {
 		
 		BoardVO wvo=new BoardVO();
 		
-		List<BoardVO> writerList=dao.boardWriterTop5(wvo); //게시글수 0
-				
+		List<BoardVO> writerList=dao.boardWriterTop5(wvo);
+		
 		model.addAttribute("btype",btype);
 		model.addAttribute("writerList",writerList);
 		return "board/board_main";
@@ -38,8 +43,12 @@ public class BoardController {
 	}
 	
 	@GetMapping("board/board_insert.do")
-	public String board_insert(int btype,Model model)
+	public String board_insert(int btype,Model model,HttpServletRequest request)
 	{
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("id");
+		
+		model.addAttribute("id",id);
 		model.addAttribute("btype",btype);
 		return "board/board_insert";
 	}

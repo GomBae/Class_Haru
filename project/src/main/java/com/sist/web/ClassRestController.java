@@ -46,12 +46,32 @@ public class ClassRestController {
 		return arr.toJSONString();
 	}
 	@GetMapping(value="class/class_list_vue.do",produces="text/plain;charset=utf-8")
-	public String class_list_vue(int cateno,int detail_cateno)
+	public String class_list_vue(int cateno,int detail_cateno,String page)
 	{
+		if(page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		System.out.println("page="+page);
+		System.out.println("detail_cateno"+detail_cateno);
+		System.out.println("cateno"+cateno);
 		Map map=new HashMap();
 		map.put("cateno", cateno);
 		map.put("detail_cateno", detail_cateno);
+		map.put("start", (curpage*20)-19);
+		map.put("end", curpage*20);
+		System.out.println((curpage*20)-19);
+		System.out.println(curpage*20);
 		List<ClassDetailVO> list=service.classListData(map);
+		int totalpage=service.classTotalPage();
+		String count=service.classRowCount(map);
+		map.put("count", count);
+	    final int BLOCK=5;
+		int startPage=((curpage-1)/BLOCK*BLOCK)+1;
+		int endPage=((curpage-1)/BLOCK*BLOCK)+BLOCK;
+		if(endPage>totalpage)
+			  endPage=totalpage;
+		  
+		  int i=0;
 		JSONArray arr=new JSONArray();
 		for(ClassDetailVO vo:list)
 		{
@@ -62,7 +82,17 @@ public class ClassRestController {
 			obj.put("title", vo.getTitle());
 			obj.put("cateno", vo.getCateno());
 			obj.put("detail_cateno", vo.getDetail_cateno());
-			obj.put("locateion", vo.getLocation());
+			String location=vo.getLocation();
+			if(location==null)
+			{
+				location=location;
+			}
+			else
+			{
+				location=location.replace("^", ",");
+			}
+			
+			obj.put("location", location);
 			
 			obj.put("perprice", vo.getPerprice());
 			obj.put("jjim_count", vo.getJjim_count());
@@ -80,8 +110,16 @@ public class ClassRestController {
 			}
 			
 			obj.put("image", image);
-			
+			if(i==0)
+			{
+				obj.put("curpage", curpage);
+				  obj.put("totalpage", totalpage);
+				  obj.put("startPage", startPage);
+				  obj.put("endPage", endPage);
+				  obj.put("count", count);
+			}
 			arr.add(obj);
+			i++;
 		}
 		return arr.toJSONString();
 	}

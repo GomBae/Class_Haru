@@ -42,7 +42,7 @@
 				<ul>
 					<li><a href="../class/class_detail.do?cno=179">튜터등록</a></li>
 					<li><a href="../board/board_main.do">커뮤니티</a></li>
-					<c:if test="${sessionScope.id!=null }">
+					<c:if test="${sessionScope.mvo.id!=null }">
 						<li class="depth"><a onclick="qPop(0)">메시지</a></li>
 						<li><a href="#">수업신청서</a></li>
 						<li class="depth">
@@ -66,7 +66,7 @@
 							</ul>
 						</li>
 					</c:if>
-					<c:if test="${sessionScope.id==null }">
+					<c:if test="${sessionScope.mvo.id==null }">
 						<li><a href="../member/loginpage.do">로그인</a></li>
 					</c:if>
 				</ul>

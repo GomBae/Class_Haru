@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 public class BoardVO {
 	private int bno,btype,hit,replyCnt,boardCnt;
-	private String id,nickname,title,content,tag,dbday;
+	private String id,nickname,title,content,tag,dbday,image;
 	private Date regdate;
 }

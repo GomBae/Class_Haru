@@ -23,12 +23,15 @@ public class ClassController {
 	{
 		System.out.println(cateno);
 		System.out.println(detail_cateno);
-		Map map = new HashMap();
-
-		map.put("cateno", cateno);
-		map.put("detail_cateno", detail_cateno);
-		List<ClassDetailVO> list=service.classListData(map);
-		List<CategoryVO> cList=service.classCateData();
+		
+		  //Map map = new HashMap();
+		  
+		  //map.put("cateno", cateno); 
+		  //map.put("detail_cateno", detail_cateno);
+		 // map.put("start", map)
+		  //List<ClassDetailVO> list=service.classListData(map);
+		  List<CategoryVO> cList=service.classCateData();
+		 
 		
 		model.addAttribute("cateno",cateno );
 		model.addAttribute("detail_cateno",detail_cateno );
@@ -37,6 +40,7 @@ public class ClassController {
 		return "class/class_list";
 	}
 	
+
 	@GetMapping("class/class_before_detail.do")
 	public String class_before_detail(int cno,HttpServletResponse response,RedirectAttributes ra)
 	{

@@ -27,19 +27,29 @@ public interface BoardMapper {
 	
 	
 	//게시판 검색결과 리스트
-	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,regdate,rownum "
+	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,rownum "
 			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
-			+"      FROM btype,bno,a.id,nickname,title,content,tag,hit,regdate "
-			+"      WHERE a.id=b.id "
-			+"      AND btype=#{btype} "
+			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
+			+"            WHERE a.id=b.id "
+			+"            AND btype=#{btype}) "
 			+"      WHERE title LIKE '%'||#{word}||'%' "
-			+"      OR CONTENT LIKE '%'||#{word}||'%' "
-			+"      ORDER BY bno DESC "
+			+"      OR CONTENT LIKE '%'||#{word}||'%') "
 			+"WHERE rownum BETWEEN #{start} AND #{end} ")
 	public List<BoardVO> boardSearchList(Map map);
 	
+	//게시판 검색결과 총개수
+//	@Select("SELECT count(*) "
+//			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
+//			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+//			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
+//			+"            WHERE a.id=b.id "
+//			+"            AND btype=#{btype}) "
+//			+"      WHERE title LIKE '%'||#{word}||'%' "
+//			+"      OR CONTENT LIKE '%'||#{word}||'%') ")
+//	public int boardSearchCount();
 	
-	//게시판 검색결과 총페이지
+	//게시판 검색결과 총페이지`
 	@Select("SELECT CEIL(count(*)/4.0) FROM ch_board_2_3 "
 			+"WHERE btype=#{btype} "
 			+"AND title LIKE '%'||#{word}||'%' "
@@ -52,7 +62,7 @@ public interface BoardMapper {
 			+"hit=hit+1 "
 			+"WHERE bno=#{bno} ")
 	public void boardHitUpdate(int bno);
-	@Select("SELECT btype,a.bno,a.id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
+	@Select("SELECT btype,a.bno,a.id,image,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
 			+"FROM ch_board_2_3 a, ch_member_2_3 b "
 			+"WHERE a.id=b.id "
 			+"AND bno=#{bno} ")
@@ -127,7 +137,9 @@ public interface BoardMapper {
 	@SelectKey(keyProperty="bno",resultType=int.class,before=true,
 			   statement="SELECT NVL(MAX(bno)+1,1) as bno FROM ch_board_2_3 ")
 	@Insert("INSERT INTO ch_board_2_3 VALUES("
-			+"#{bno},#{btype},'haruharu@naver.com',#{title},#{content},SYSDATE,0,#{tag}) ")
+			+"#{bno},#{btype},#{id},#{title},#{content},SYSDATE,0,#{tag}) ")
+//	@Insert("INSERT INTO ch_board_2_3 VALUES("
+//			+"#{bno},#{btype},'haruharu@naver.com',#{title},#{content},SYSDATE,0,#{tag}) ")
 	public void boardInsert(BoardVO vo);
 	
 	

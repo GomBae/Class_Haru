@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,7 +79,9 @@ $(function(){
 		  <div>
 		    <a id="btype1" class="all_btn">자유주제</a>
 		    <a id="btype2" class="all_btn">스터디 & 모임</a>
-		    <a id="btype3" class="all_btn">공지사항</a>
+		    <c:if test="${sessionScope.mvo.admin=='y'}">
+		      <a id="btype3" class="all_btn">공지사항</a>
+		    </c:if>
 		    <input type=hidden id=btype :btype="btype">
 		  </div>
 		</div>
@@ -90,13 +93,19 @@ $(function(){
 		</div>
 		
 		<%-- 태그 입력란 --%>
-		<div id="insert_tag" style="margin:0 0 30px 0;">
+<%-- 		<div id="insert_tag" style="margin:0 0 30px 0;">
 			  <div class="input_name">태그<span style="color:lightgray;">&nbsp;&nbsp;&nbsp;본문과 관련된 태그를 입력해주세요.</span></div>
 			  <input type="text" class="input_text" v-model="tag">
-			  <%-- 입력된 태그 출력 --%>
+			  입력된 태그 출력
 			  <div id="print_tag">
 			  
 			  </div>
+		</div> --%>
+		
+		<div class="board_tag" style="margin: 20px 0 20px 0;">
+		   <div v-if="tag!=null">
+		      <span class="all_btn all_tag" v-for="t in tag.split(' ')" style="background:#d1eeee;margin:0 10px 0 0;padding:5px 10px;border:0;border-radius:50px;">{{t}}</span>
+		   </div>
 		</div>
 		
 		<%-- 내용 입력란 --%>

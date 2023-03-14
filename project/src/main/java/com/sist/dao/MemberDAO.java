@@ -34,6 +34,12 @@ public class MemberDAO {
 				vo.setMsg("OK");
 				vo.setId(dbvo.getId());
 				vo.setName(dbvo.getName());
+				vo.setAdmin(dbvo.getAdmin());
+				vo.setImage(dbvo.getImage());
+				vo.setNickname(dbvo.getNickname());
+				vo.setIntro(dbvo.getIntro());
+				vo.setTel(dbvo.getTel());
+				vo.setTutor(dbvo.getTutor());				
 			}
 			else
 			{

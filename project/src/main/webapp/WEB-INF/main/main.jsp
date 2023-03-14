@@ -7,6 +7,7 @@
 <title>클래스 하루</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="icon" href="../images/favicon.png">
 <!-- VueJs -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -31,6 +32,11 @@
 <script src="../Scripts/renewal2203/js/header.js"></script>
 <script src="../Scripts/topbar.js"></script>
 <script src="../Scripts/app3/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('c089c8172def97eb00c07217cae17495'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 <!-- pc,mobile 공통 스크립트 -->
 <script src="../Scripts/prototype.js"></script>
 <script src="../Scripts/app3/controll.js"></script>

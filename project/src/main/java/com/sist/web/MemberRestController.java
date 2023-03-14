@@ -24,15 +24,8 @@ public class MemberRestController {
 		if(res.equals("OK"))
 		{
 			//id,pwd,tel,name,nickname,intro,image,tutor,admin,msg
-			session.setAttribute("id", vo.getId());
-			session.setAttribute("pwd", vo.getPwd());
-			session.setAttribute("tel", vo.getTel());
-			session.setAttribute("name", vo.getName());
-			session.setAttribute("nickname", vo.getNickname());
-			session.setAttribute("intro", vo.getIntro());
-			session.setAttribute("image", vo.getImage());
-			session.setAttribute("tutor", vo.getTutor());
-			session.setAttribute("admin", vo.getAdmin());
+			session.setAttribute("mvo", vo);
+
 		}
 		return res;
 	}

@@ -8,6 +8,21 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<style type="text/css">
+.login_box .link_login {
+  display: block;
+  padding: 12px 0;
+  border-radius: 6px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: #45c5c5;
+}
+.login_box .link_login:hover {
+  background-color: #45c5c5;
+}
+</style>
 </head>
 <body>
 	<main class="container">
@@ -345,7 +360,7 @@
 				style="transform: translate(0px, 0px);">
 				<div class="wrapper">
 					<!-- 로그인 전 -->
-					<c:if test="${sessionScope.id==null }">
+					<c:if test="${sessionScope.mvo.id==null }">
 						<div class="login_box">
 							<h2 class="blind">회원 로그인 영역</h2>
 							<p class="login_msg">
@@ -361,15 +376,15 @@
 					</c:if>
 					<!-- //로그인 전 -->
 					<!-- 로그인 후 -->
-					<c:if test="${sessionScope.id!=null }">
+					<c:if test="${sessionScope.mvo.id!=null }">
 						<div class="login_box status_logon">
 							<div class="area_info_top">
 								<a class="my_profile" href="#"> <img class="img_profile"
-									src="${sessionScope.image }" onerror="profileImgError(this,);"
+									src="${sessionScope.mvo.image }" onerror="profileImgError(this,);"
 									alt="프로필 이미지">
 								</a>
 								<div class="logon_msg">
-									<b><em class="level"></em>${sessionScope.name }님</b> <span>반가워요</span>
+									<b><em class="level"></em>${sessionScope.mvo.name }님</b> <span>반가워요</span>
 									<!-- 								<button class="btn_logout" type="button" id="btn-menu-logout">로그아웃</button> -->
 									<button class="btn_logout" type="button" id="btn-menu-logout"
 										onclick="location.href='../member/logout.do'">로그아웃</button>
@@ -420,7 +435,7 @@
 						<ul class="swiper-wrapper"
 							style="transition-duration: 0ms; transform: translate3d(-5029.6px, 0px, 0px);">
 							<li class="swiper-slide" data-swiper-slide-index="0"
-								style="margin-right: 20px;"><a href="/Talent/Detail/40248">
+								style="margin-right: 20px;"><a href="#">
 									<div class="thumb lazyload"
 										data-bg="//img.taling.me/Content/Uploads/Images/10a830d5244fd058777f220389c62013cdad5600.png"></div>
 									<div class="text_box">
@@ -519,7 +534,7 @@
 					<div class="ad_app">
 						<h2 class="logo">
 							<img
-								src="//front-img.taling.me/Content/app3/img/logo/app-logo@2x.png"
+								src="../images/favicon.png"
 								alt="하루">
 						</h2>
 						<h3>언제 어디서나 하루하기!</h3>

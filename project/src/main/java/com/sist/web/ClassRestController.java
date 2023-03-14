@@ -46,13 +46,32 @@ public class ClassRestController {
 		return arr.toJSONString();
 	}
 	@GetMapping(value="class/class_list_vue.do",produces="text/plain;charset=utf-8")
-	public String class_list_vue(int cateno,int detail_cateno)
+	public String class_list_vue(int cateno,int detail_cateno,String page)
 	{
+		if(page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		System.out.println("page="+page);
+		System.out.println("detail_cateno"+detail_cateno);
+		System.out.println("cateno"+cateno);
 		Map map=new HashMap();
 		map.put("cateno", cateno);
 		map.put("detail_cateno", detail_cateno);
-
+		map.put("start", (curpage*20)-19);
+		map.put("end", curpage*20);
+		System.out.println((curpage*20)-19);
+		System.out.println(curpage*20);
 		List<ClassDetailVO> list=service.classListData(map);
+		int totalpage=service.classTotalPage();
+		String count=service.classRowCount(map);
+		map.put("count", count);
+	    final int BLOCK=5;
+		int startPage=((curpage-1)/BLOCK*BLOCK)+1;
+		int endPage=((curpage-1)/BLOCK*BLOCK)+BLOCK;
+		if(endPage>totalpage)
+			  endPage=totalpage;
+		  
+		  int i=0;
 		JSONArray arr=new JSONArray();
 		for(ClassDetailVO vo:list)
 		{
@@ -91,32 +110,20 @@ public class ClassRestController {
 			}
 			
 			obj.put("image", image);
-			
+			if(i==0)
+			{
+				obj.put("curpage", curpage);
+				  obj.put("totalpage", totalpage);
+				  obj.put("startPage", startPage);
+				  obj.put("endPage", endPage);
+				  obj.put("count", count);
+			}
 			arr.add(obj);
+			i++;
 		}
 		return arr.toJSONString();
 	}
 	
-	
-	/*
-	 * List<ClassDetailVO> list=service.classListData(map); JSONArray arr=new
-	 * JSONArray(); for(ClassDetailVO vo:list) {
-	 * //cno,title,image,location,perprice,jjim_count,cateno,
-	 * //detail_cateno,onoff,tutor_info_nickname JSONObject obj=new JSONObject();
-	 * obj.put("cno", vo.getCno()); obj.put("title", vo.getTitle());
-	 * obj.put("cateno", vo.getCateno()); obj.put("detail_cateno",
-	 * vo.getDetail_cateno()); obj.put("locateion", vo.getLocation());
-	 * 
-	 * obj.put("perprice", vo.getPerprice()); obj.put("jjim_count",
-	 * vo.getJjim_count()); obj.put("onoff", vo.getOnoff());
-	 * obj.put("tutor_info_nickname", vo.getTutor_info_nickname()); String
-	 * image=vo.getImage(); int size=image.indexOf("^"); if(size<0) { image=image; }
-	 * else { image=image.substring(0,image.indexOf("^")); }
-	 * 
-	 * obj.put("image", image);
-	 * 
-	 * arr.add(obj); } return arr.toJSONString(); }
-	 */
 	@GetMapping(value="class/cookie_data_vue.do",produces = "text/plain;charset=UTF-8")
 	public String class_cookie_data(HttpServletRequest request)
 	{

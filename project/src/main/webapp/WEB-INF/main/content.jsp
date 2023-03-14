@@ -36,7 +36,7 @@
 					<div class="sub_content">
 						<ul>
 							<li class="depth2" v-for="dvo in detail_cate_list"><a
-								:href="'../class/class_list.do?cateno='+vo.cateno+'&detail_cateno='+dvo.detail_cateno">{{dvo.detail_catename}}</a></li>
+								:href="'../class/class_list.do?cateno='+dvo.cateno+'&detail_cateno='+dvo.detail_cateno">{{dvo.detail_catename}}</a></li>
 							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=45">자기계발</a></li> -->
 							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=47">취업·이직</a></li> -->
 							<!-- 							<li class="depth2"><a href="/Home/Search/?cateMain=43">직무역량</a></li> -->

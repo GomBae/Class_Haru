@@ -73,8 +73,8 @@
 
     <!-- selected_list -->
     <div class="selected_list">
-        <button type="button" class="del_search_field" data-view-type="cateSub">라탄</button>        
-        <button type="reset" class="btn_reset" onclick="$('.del_search_field').each(function(i,d){ $(d).click();});">초기화</button>
+        <button type="button" class="del_search_field">{{class_list.catename}}</button>        
+        <button type="reset" class="btn_reset">초기화</button>
     </div>
     <!-- // selected_list -->
 
@@ -84,7 +84,7 @@
       <span>공예/DIY</span>
    </div>
     <!-- result_count -->
-    <p class="result_count">검색 결과 27개</p>
+    <p class="result_count">검색 결과 {{count}}개</p>
     <!-- // result_count -->
     <!-- search_result -->
     <!-- // category_path -->
@@ -92,7 +92,7 @@
       <!-- class_card_list -->
       <ul class="class_card_list" >
         <li class="swiper-slide" v-for="cvo in class_list">
-            <a href="/vod/view/37602">
+            <a :href="'../class/class_detail.do?cno='+cvo.cno">
             <div class="thumb lazyloaded" data-bg="//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png" style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png&quot;);">        
             </div>      
           <div class="card_cnt">            
@@ -141,7 +141,27 @@
             <!-- // class_card_list -->
             <!-- pagination -->
             <div class="pagination">
-                <a href="#" class="act">1</a><a href="/Home/Search/?page=2&amp;query=&amp;cateMain=&amp;cateSub=307&amp;region=&amp;day=&amp;time=&amp;tType=&amp;region=&amp;classTypeCode=&amp;regionMain=&amp;orderIdx=&amp;code=&amp;org=" class="">2</a>&nbsp;&nbsp;            </div>
+              <ul>
+                <li v-if="startPage>1">
+                  <a v-on:click="prev()">&laquo; 이전</a>
+                </li>
+                <li class="current" v-for="i in range(startPage,endPage)" v-if="i===curpage">
+                  <a v-on:click="pageClick(i)">{{i}}</a>
+                </li>
+                <li v-else>
+                  <a v-on:click="pageClick(i)">{{i}}</a>
+                </li>
+                <li v-if="endPage<totalpage">
+                  <a v-on:click="next()">다음 &raquo;</a>
+                </li>
+               </ul>
+              <!-- <input type="button" value="이전"class="btn btn-sm btn-danger" v-on:click="prev()">
+                {{curpage}} page / {{totalpage}} pages
+              <input type="button" value="다음"class="btn btn-sm btn-warning" v-on:click="next()"> -->
+              
+               <!--  <a href="#" class="act">1</a><a href="/Home/Search/?page=2&amp;query=&amp;cateMain=&amp;cateSub=307&amp;region=&amp;day=&amp;time=&amp;tType=&amp;region=&amp;classTypeCode=&amp;regionMain=&amp;orderIdx=&amp;code=&amp;org=" class="">2</a>&nbsp;&nbsp;-->            
+            </div> 
+            
             <!-- // pagination -->
         </section>
         <!--// search_result -->
@@ -152,33 +172,86 @@
     	data:{
     		cateno:${cateno},
     		detail_cateno:${detail_cateno},
-
     		class_list:[],
-    		cate_info:{}
+    		cate_info:{},
+    		curpage:1,
+    		totalpage:0,
+    		startPage:0,
+    		endPage:0,
+    		count:0
     		
     	},
     	mounted:function(){
-    		let _this=this;
+    		this.pageChange();
+    		/*let _this=this;
     		axios.get("http://localhost/web/class/class_cate_vue.do",{
     			cateno:_this.cateno,
     			detail_cateno:_this.detail_cateno
-    		}).then(function(response){
+      		}).then(function(response){
     			console.log(response.data)
     			_this.cate_info=response.data
     		})
     		
     		axios.get("http://localhost/web/class/class_list_vue.do",{
     			params:{
-     				cateno:_this.cateno,
-    				detail_cateno:_this.detail_cateno
+     				cateno:this.cateno,
+    				detail_cateno:this.detail_cateno,
+    				page:_this.curpage
      			}
     		}).then(function(response){
     			console.log(response.data)
     			_this.class_list=response.data
-    		})
-    	}
-    })
-    
+    			_this.curpage=response.data[0].curpage
+                _this.totalpage=response.data[0].totalpage
+                _this.startPage=response.data[0].startPage
+                _this.endPage=response.data[0].endPage
+                _this.count=response.data[0].count
+    		}) */
+    	},
+    	methods:{
+    		 pageChange:function(){
+    	           let _this=this;
+    	           axios.get("http://localhost/web/class/class_list_vue.do",{
+    	              params:{
+    	            	 cateno:this.cateno,
+    	            	 detail_cateno:this.detail_cateno,
+    	                 page:this.curpage,
+    	                 
+    	              }
+    	           }).then(function(response){
+    	              console.log(response.data);
+    	              _this.class_list=response.data
+    	              _this.curpage=response.data[0].curpage
+    	              _this.totalpage=response.data[0].totalpage
+    	              _this.startPage=response.data[0].startPage
+    	              _this.endPage=response.data[0].endPage
+    	              _this.count=response.data[0].count
+    	              
+    	           })
+    	        },
+    	        range:function(min,max){
+    	              let array=[],
+    	              j=0;
+    	              for(let i=min;i<=max;i++){
+    	                 array[j]=i;
+    	                 j++;
+    	              }
+    	              return array;
+    	           },
+    	           prev:function(){
+    	              this.curpage=this.startPage-1;
+    	              this.pageChange();
+    	           },
+    	           next:function(){
+    	              this.curpage=this.endPage+1;
+    	              this.pageChange();
+    	           },
+    	           pageClick:function(page){
+    	              this.curpage=page
+    	              this.pageChange();
+    	           }
+    	     }
+    	  })
     </script>
 </body>
 </html>

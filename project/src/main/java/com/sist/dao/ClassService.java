@@ -15,7 +15,9 @@ public class ClassService {
 	@Autowired
 	private ClassMapper cmapper;
 	
-
+	@Autowired
+	private JjimMapper jMapper;
+	
 //	@Select("SELECT cateno,catename FROM ch_category_2_3")
 	public List<CategoryVO> classCateData(){
 		return cmapper.classCateData();
@@ -42,5 +44,24 @@ public class ClassService {
 	{
 		return cmapper.classDetailData(cno);
 	}
-	
+
+//	@SelectKey(keyProperty="ajno",resultType=int.class,before=true,
+//	   statement="SELECT NVL(MAX(ajno)+1,1) as btno FROM ch_alljjim_2_3 ")
+	//@Insert("INSERT INTO ch_alljjim_2_3 VALUES(#{ajno},#{cno},#{id})")
+//	public void jjimInsert(JJimVO vo)
+//	{
+//		jMapper.jjimInsert(vo);
+//	}
+//	
+//	//@Delete("DELETE FROM ch_alljjim_2_3 WHERE cno=#{cno}")
+//	public void jjimDelete(int cno)
+//	{
+//		jMapper.jjimDelete(cno);
+//	}
+//	
+//	//@Select("SELECT COUNT(*) FROM ch_alljjim_2_3 WHERE cno=#{cno} AND id=#{id}")
+//	public int jjimCount(int cno,String id)
+//	{
+//		return jMapper.jjimCount(cno, id);
+//	}
 }

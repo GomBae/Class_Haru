@@ -3,6 +3,7 @@ import java.util.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,9 +50,15 @@ public class ClassController {
 	}
 	
 	@GetMapping("class/class_detail.do")
-	public String class_detail(int cno,Model model)
+	public String class_detail(int cno,Model model,HttpSession session)
 	{
+		String id=(String)session.getAttribute("id");
+		JJimVO vo=new JJimVO();
+		vo.setAjno(cno);
+		vo.setId(id);
+		model.addAttribute("vo",vo);
 		model.addAttribute("cno",cno);
 		return "class/class_detail";
 	}
+	
 }

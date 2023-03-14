@@ -9,6 +9,7 @@ import java.util.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.sist.dao.*;
 import com.sist.vo.*;
@@ -16,6 +17,8 @@ import com.sist.vo.*;
 public class ClassRestController {
 	@Autowired
 	private ClassService service;
+	@Autowired
+	private JjimDAO dao;
 	
 	@GetMapping(value="class/class_cate_vue.do",produces="text/plain;charset=utf-8")
 	public String class_cate_vue() {
@@ -62,7 +65,7 @@ public class ClassRestController {
 			obj.put("title", vo.getTitle());
 			obj.put("cateno", vo.getCateno());
 			obj.put("detail_cateno", vo.getDetail_cateno());
-			obj.put("locateion", vo.getLocation());
+			obj.put("location", vo.getLocation());
 			
 			obj.put("perprice", vo.getPerprice());
 			obj.put("jjim_count", vo.getJjim_count());
@@ -125,18 +128,25 @@ public class ClassRestController {
 	public String class_detail_vue(int cno)
 	{
 		ClassDetailVO vo=service.classDetailData(cno);
-		
+
 		JSONObject obj=new JSONObject();
 		obj.put("cno", vo.getCno());
 		obj.put("cateno", vo.getCateno());
 		obj.put("detail_cateno", vo.getDetail_cateno());
 		obj.put("title", vo.getTitle());
 		String image=vo.getImage();
-		String image1=image.substring(0,image.indexOf("^"));
-		String image2=image.substring(image.indexOf("^")+1);
-//        image=image.substring(0,image.indexOf("^"));
-        obj.put("image1", image1);
-        obj.put("image2", image2);
+		int size=image.indexOf("^");
+		if(size<0)
+		{
+			image=image;
+		}
+		else
+		{
+			image=image.substring(0,image.indexOf("^"));
+		}
+		
+		obj.put("image", image);
+
 		obj.put("tno", vo.getTno());
 		String place=vo.getPlace();
 		place=place.substring(0,place.indexOf("^"));
@@ -166,4 +176,5 @@ public class ClassRestController {
 		
 		return obj.toJSONString();
 	}
+	
 }

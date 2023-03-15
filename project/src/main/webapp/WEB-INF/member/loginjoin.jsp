@@ -14,16 +14,16 @@
                 <h2 class="tit">간편하게 가입하고 하루의<br/> 다양한 튜터를 만나보세요.</h2>
                 <div class="box_inp">
                     <div class="line_inp">
-                        <input type="text" name="name" id="userName" placeholder="이름(실명)을 입력해주세요">
+                        <input type="text" name="name" ref="name" v-model="name" id="userName" placeholder="이름(실명)을 입력해주세요">
 						<p class="info_error" id="nameError1">이름(실명)을 입력해주세요.</p>
                     </div>
                     <div class="line_inp">
-                        <input type="text" name="email" id="userEmail" placeholder="이메일 주소를 입력해주세요">
+                        <input type="text" name="email" ref="email" v-model="email" id="userEmail" placeholder="이메일 주소를 입력해주세요">
                         <p class="info_error" id="emailError1">이메일 형식에 맞지 않습니다.</p>
                         <p class="info_error" id="emailError2">이메일 주소를 입력해주세요.</p>
                     </div>                    
                     <div class="line_inp line_pw">
-                        <input type="password" name="password" id="userPassword" placeholder="비밀번호를 입력해주세요">
+                        <input type="password" name="password" ref="password" v-model="password" id="userPassword" placeholder="비밀번호를 입력해주세요">
                         <button type="button" class="type_pwd hide"></button>                        
                         <p class="info_error" id="passError1">비밀번호는 영문 숫자조합 8자리 이상 입력해주세요.</p>
                         <p class="info_error" id="passError2">비밀번호를 입력해주세요.</p>

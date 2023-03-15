@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
 /*----- board_main 관련 -----*/
+/* 태그 */
+.all_tag{
+  background:#d1eeee;
+  margin:0 10px 0 0;padding:5px 10px;
+  border:0;border-radius:50px;
+}
 /* 게시판 메뉴(type) */
 .board_menu a{
   display:block;
@@ -42,7 +48,7 @@
 }
 /* 정렬버튼 : 최신순/조회수순/댓글많은순 */
 .view_btn{
-  width:70%;
+  width:60%;
   float:left;
 }
 /* 글작성 버튼 */

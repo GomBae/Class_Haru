@@ -13,6 +13,14 @@
 <!-- 게시판 css -->
 <link rel="stylesheet" href="../css/board_style.css">
 <style type="text/css">
+*{
+  color:black;
+}
+.all_tag{
+  background:#d1eeee;
+  margin:0 10px 0 0;padding:5px 10px;
+  border:0;border-radius:50px;
+}
 /* 상세보기 제목 */
 h1.board_title{
   margin: 0 0 20px 0;
@@ -53,19 +61,21 @@ div div a.all_btn{
   margin:20px 0; width:100%;
   font-size:16px; line-height:200%; white-space:pre;
 }
+/* 마지막 공백 태그 비표시 */
+/* .all_tag:last-child{
+  display:none;
+} */
 </style>
 </head>
 <body>
 <div id="app" class="container" style="margin:50px auto;padding:0;">
-  
-    <%-- 글, 댓글에 수정,삭제 버튼 추가하기 --%>
-    <%-- 제목, 글정보 --%>
-    
+    세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin }
+    <%-- 제목, 글정보 --%> 
     <h1 class="board_title">{{bvo.title}}</h1>
     
     <div>
 		<div class="board_info">
-	        <img src="" style="width:40px;height:40px;background:pink;">
+	        <img :src="bvo.image" style="width:40px;height:40px;background:pink;">
 	        <span class="nickname">{{bvo.nickname}}</span>
 	        <i class="fa-regular fa-file-lines"></i>&nbsp;{{bvo.dbday}}&nbsp;&nbsp;&nbsp;
 	        <i class="fa-regular fa-eye"></i>&nbsp;{{bvo.hit}}&nbsp;&nbsp;&nbsp;
@@ -75,10 +85,10 @@ div div a.all_btn{
 	    <%-- 상단 버튼 : 목록이동, 수정, 삭제 --%>
 	    <div style="float:right;">
 	       <a :href="'../board/board_main.do?btype='+bvo.btype" class="all_btn"><i class="fa-solid fa-angle-left" style="width:25px;text-align:center;"></i></a>
-	       <%-- <c:if test="${sessionScope.id!=null }"> --%>
+	       <!-- <div v-if="bvo.res=='ok'" style="display:inline"> -->
 	          <a :href="'../board/board_update.do?bno='+bvo.bno" class="all_btn">수정</a>
 	          <span class="all_btn" v-on:click="del()" style="border:1px solid gray;">삭제</span>
-	       <%-- </c:if> --%>
+	       <!-- </div> -->
 	    </div>
     </div>
     
@@ -86,11 +96,11 @@ div div a.all_btn{
     <div class="board_allcontent" style="">{{bvo.content}}</div>
     
     <%-- 태그 --%>
-    <div class="board_tag" style="margin: 20px 0 20px 0;">
+<!--     <div class="board_tag" style="margin: 20px 0 20px 0;">
 	  <div v-if="bvo.tag!=null">
-	    <span class="all_btn" v-for="t in bvo.tag.split(' ')" style="background:#eaeaea;margin:0 10px 0 0;padding:5px 10px;border:0;">{{t}}</span>
+	    <span class="all_tag" v-for="t in bvo.tag.split(' ')">{{t}}</span>
 	  </div>
-	</div>
+	</div> -->
 			      
     <hr style="margin:30px 0;border-top:1px solid lightgray;">
     

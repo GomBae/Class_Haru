@@ -77,6 +77,21 @@ public class BoardDAO {
 	}
 		
 	
+	//게시판 검색결과 총개수
+//	@Select("SELECT count(*) "
+//			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
+//			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+//			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
+//			+"            WHERE a.id=b.id "
+//			+"            AND btype=#{btype}) "
+//			+"      WHERE title LIKE '%'||#{word}||'%' "
+//			+"      OR CONTENT LIKE '%'||#{word}||'%') ")
+//	public int boardSearchCount()
+//	{
+//		return mapper.boardSearchCount();
+//	}
+	
+	
 	//태그 개별 저장 => keyup할 때마다 insert, 삭제 버튼 누르면 delete
 	/*
 	@SelectKey(keyProperty="btno",resultType=int.class,before=true,

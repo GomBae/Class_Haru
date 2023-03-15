@@ -15,6 +15,9 @@ public class ClassService {
 	@Autowired
 	private ClassMapper cmapper;
 	
+	@Autowired
+	private JjimMapper jMapper;
+
 
 //	@Select("SELECT cateno,catename FROM ch_category_2_3")
 	public List<CategoryVO> classCateData(){
@@ -52,3 +55,4 @@ public class ClassService {
 	}
 	
 }
+

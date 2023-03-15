@@ -168,90 +168,90 @@
     </main>
     <script>
     new Vue({
-    	el:'.container',
-    	data:{
-    		cateno:${cateno},
-    		detail_cateno:${detail_cateno},
-    		class_list:[],
-    		cate_info:{},
-    		curpage:1,
-    		totalpage:0,
-    		startPage:0,
-    		endPage:0,
-    		count:0
-    		
-    	},
-    	mounted:function(){
-    		this.pageChange();
-    		/*let _this=this;
-    		axios.get("http://localhost/web/class/class_cate_vue.do",{
-    			cateno:_this.cateno,
-    			detail_cateno:_this.detail_cateno
-      		}).then(function(response){
-    			console.log(response.data)
-    			_this.cate_info=response.data
-    		})
-    		
-    		axios.get("http://localhost/web/class/class_list_vue.do",{
-    			params:{
-     				cateno:this.cateno,
-    				detail_cateno:this.detail_cateno,
-    				page:_this.curpage
-     			}
-    		}).then(function(response){
-    			console.log(response.data)
-    			_this.class_list=response.data
-    			_this.curpage=response.data[0].curpage
+       el:'.container',
+       data:{
+          cateno:${cateno},
+          detail_cateno:${detail_cateno},
+          class_list:[],
+          cate_info:{},
+          curpage:1,
+          totalpage:0,
+          startPage:0,
+          endPage:0,
+          count:0
+          
+       },
+       mounted:function(){
+          this.pageChange();
+          /*let _this=this;
+          axios.get("http://localhost/web/class/class_cate_vue.do",{
+             cateno:_this.cateno,
+             detail_cateno:_this.detail_cateno
+            }).then(function(response){
+             console.log(response.data)
+             _this.cate_info=response.data
+          })
+          
+          axios.get("http://localhost/web/class/class_list_vue.do",{
+             params:{
+                 cateno:this.cateno,
+                detail_cateno:this.detail_cateno,
+                page:_this.curpage
+              }
+          }).then(function(response){
+             console.log(response.data)
+             _this.class_list=response.data
+             _this.curpage=response.data[0].curpage
                 _this.totalpage=response.data[0].totalpage
                 _this.startPage=response.data[0].startPage
                 _this.endPage=response.data[0].endPage
                 _this.count=response.data[0].count
-    		}) */
-    	},
-    	methods:{
-    		 pageChange:function(){
-    	           let _this=this;
-    	           axios.get("http://localhost/web/class/class_list_vue.do",{
-    	              params:{
-    	            	 cateno:this.cateno,
-    	            	 detail_cateno:this.detail_cateno,
-    	                 page:this.curpage,
-    	                 
-    	              }
-    	           }).then(function(response){
-    	              console.log(response.data);
-    	              _this.class_list=response.data
-    	              _this.curpage=response.data[0].curpage
-    	              _this.totalpage=response.data[0].totalpage
-    	              _this.startPage=response.data[0].startPage
-    	              _this.endPage=response.data[0].endPage
-    	              _this.count=response.data[0].count
-    	              
-    	           })
-    	        },
-    	        range:function(min,max){
-    	              let array=[],
-    	              j=0;
-    	              for(let i=min;i<=max;i++){
-    	                 array[j]=i;
-    	                 j++;
-    	              }
-    	              return array;
-    	           },
-    	           prev:function(){
-    	              this.curpage=this.startPage-1;
-    	              this.pageChange();
-    	           },
-    	           next:function(){
-    	              this.curpage=this.endPage+1;
-    	              this.pageChange();
-    	           },
-    	           pageClick:function(page){
-    	              this.curpage=page
-    	              this.pageChange();
-    	           }
-    	     }
-    	  })
+          }) */
+       },
+       methods:{
+           pageChange:function(){
+                  let _this=this;
+                  axios.get("http://localhost/web/class/class_list_vue.do",{
+                     params:{
+                       cateno:this.cateno,
+                       detail_cateno:this.detail_cateno,
+                        page:this.curpage
+                        
+                     }
+                  }).then(function(response){
+                     console.log(response.data);
+                     _this.class_list=response.data
+                     _this.curpage=response.data[0].curpage
+                     _this.totalpage=response.data[0].totalpage
+                     _this.startPage=response.data[0].startPage
+                     _this.endPage=response.data[0].endPage
+                     _this.count=response.data[0].count
+                     
+                  })
+               },
+               range:function(min,max){
+                     let array=[],
+                     j=0;
+                     for(let i=min;i<=max;i++){
+                        array[j]=i;
+                        j++;
+                     }
+                     return array;
+                  },
+                  prev:function(){
+                     this.curpage=this.startPage-1;
+                     this.pageChange();
+                  },
+                  next:function(){
+                     this.curpage=this.endPage+1;
+                     this.pageChange();
+                  },
+                  pageClick:function(page){
+                     this.curpage=page
+                     this.pageChange();
+                  }
+            }
+         })
     </script>
 </body>
 </html>

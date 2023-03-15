@@ -79,4 +79,5 @@ public class MypageRestController {
 		}
 		return arr.toJSONString();
 	}
+
 }

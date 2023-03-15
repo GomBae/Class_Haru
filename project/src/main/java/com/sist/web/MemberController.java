@@ -19,10 +19,10 @@ public class MemberController {
 		return "member/loginpage";
 	}
 	
-	@GetMapping("member/loginjoin.do")
-	public String member_join() {
-		return "member/loginjoin";
-	}
+//	@GetMapping("member/loginjoin.do")
+//	public String member_join() {
+//		return "member/loginjoin";
+//	}
 	
 	@GetMapping("member/loginemail.do")
 	public String member_loginEmail() {

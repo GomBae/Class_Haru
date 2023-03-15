@@ -20,6 +20,12 @@ public class ReserveController {
 		return "reserve/reserve";
 	}
 	
+	@GetMapping("reserve/reserve_check.do")
+	public String reserve_reserve_check()
+	{
+		return "";
+	}
+	
 	@GetMapping("reserve/reserve_pay.do")
 	public String reserve_resreve_pay(int cno,Model model)
 	{

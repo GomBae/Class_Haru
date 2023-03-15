@@ -9,13 +9,16 @@ import java.util.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 import com.sist.dao.*;
 import com.sist.vo.*;
 @RestController
 public class ClassRestController {
 	@Autowired
 	private ClassService service;
+
+	@Autowired
+	private JjimDAO dao;
 	
 	@GetMapping(value="class/class_cate_vue.do",produces="text/plain;charset=utf-8")
 	public String class_cate_vue() {
@@ -45,6 +48,7 @@ public class ClassRestController {
 		}
 		return arr.toJSONString();
 	}
+	
 	@GetMapping(value="class/class_list_vue.do",produces="text/plain;charset=utf-8")
 	public String class_list_vue(int cateno,int detail_cateno,String page)
 	{
@@ -63,7 +67,10 @@ public class ClassRestController {
 		System.out.println(curpage*20);
 		List<ClassDetailVO> list=service.classListData(map);
 		int totalpage=service.classTotalPage();
-		String count=service.classRowCount(map);
+		Map cmap =new HashMap();
+		cmap.put("cateno", cateno);
+		cmap.put("detail_cateno", detail_cateno);
+		String count=service.classRowCount(cmap);
 		map.put("count", count);
 	    final int BLOCK=5;
 		int startPage=((curpage-1)/BLOCK*BLOCK)+1;
@@ -72,16 +79,21 @@ public class ClassRestController {
 			  endPage=totalpage;
 		  
 		  int i=0;
+
 		JSONArray arr=new JSONArray();
 		for(ClassDetailVO vo:list)
 		{
 			//cno,title,image,location,perprice,jjim_count,cateno,
 			//detail_cateno,onoff,tutor_info_nickname
+			
 			JSONObject obj=new JSONObject();
 			obj.put("cno", vo.getCno());
 			obj.put("title", vo.getTitle());
 			obj.put("cateno", vo.getCateno());
 			obj.put("detail_cateno", vo.getDetail_cateno());
+
+			obj.put("location", vo.getLocation());
+
 			String location=vo.getLocation();
 			if(location==null)
 			{
@@ -93,6 +105,7 @@ public class ClassRestController {
 			}
 			
 			obj.put("location", location);
+
 			
 			obj.put("perprice", vo.getPerprice());
 			obj.put("jjim_count", vo.getJjim_count());
@@ -110,6 +123,9 @@ public class ClassRestController {
 			}
 			
 			obj.put("image", image);
+
+			
+
 			if(i==0)
 			{
 				obj.put("curpage", curpage);
@@ -120,6 +136,7 @@ public class ClassRestController {
 			}
 			arr.add(obj);
 			i++;
+			
 		}
 		return arr.toJSONString();
 	}
@@ -158,23 +175,38 @@ public class ClassRestController {
 		}
 		return arr.toJSONString();
 	}
-	
+		
 	@GetMapping(value="class/class_detail_vue.do",produces = "text/plain;charset=UTF-8")
 	public String class_detail_vue(int cno)
 	{
 		ClassDetailVO vo=service.classDetailData(cno);
-		
+
 		JSONObject obj=new JSONObject();
 		obj.put("cno", vo.getCno());
 		obj.put("cateno", vo.getCateno());
 		obj.put("detail_cateno", vo.getDetail_cateno());
 		obj.put("title", vo.getTitle());
 		String image=vo.getImage();
+
+		int size=image.indexOf("^");
+		if(size<0)
+		{
+			image=image;
+		}
+		else
+		{
+			image=image.substring(0,image.indexOf("^"));
+		}
+		
+		obj.put("image", image);
+
+
 		String image1=image.substring(0,image.indexOf("^"));
 		String image2=image.substring(image.indexOf("^")+1);
 //        image=image.substring(0,image.indexOf("^"));
         obj.put("image1", image1);
         obj.put("image2", image2);
+
 		obj.put("tno", vo.getTno());
 		String place=vo.getPlace();
 		place=place.substring(0,place.indexOf("^"));
@@ -205,3 +237,4 @@ public class ClassRestController {
 		return obj.toJSONString();
 	}
 }
+

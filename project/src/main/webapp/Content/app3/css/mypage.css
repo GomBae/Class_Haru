@@ -8,8 +8,31 @@
 	font-weight: bold;
 	border-radius: 5px;
 	font-size: 10px;
-	padding: 5px 7px;;
+	padding: 5px 7px;
 }
+.mintBtn a{
+	text-align: center;
+	width:70px;
+	height:25px;
+	background-color: #45c5c5;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 10px;
+	padding: 5px 7px;
+}
+/* .mintBtn:hover{ */
+/* 	text-align: center; */
+/* 	width:70px; */
+/* 	height:25px; */
+/* 	background-color: #FFF; */
+/* 	border-color: #45c5c5; */
+/* 	color: #45c5c5; */
+/* 	font-weight: bold; */
+/* 	border-radius: 5px; */
+/* 	font-size: 10px; */
+/* 	padding: 5px 7px; */
+/* } */
 .mintBtn_m{
 	text-align: center;
 	width:70px;
@@ -19,8 +42,31 @@
 	font-weight: bold;
 	border-radius: 5px;
 	font-size: 12px;
-	padding: 5px 7px;;
+	padding: 3px 0px;
 }
+.mintBtn_m a{
+	text-align: center;
+	width:70px;
+	height:25px;
+	background-color: #45c5c5;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 5px 7px;
+}
+/* .mintBtn_m:hover{ */
+/* 	text-align: center; */
+/* 	width:70px; */
+/* 	height:25px; */
+/* 	background-color: #FFF; */
+/* 	border-color: #45c5c5; */
+/* 	color: #45c5c5; */
+/* 	font-weight: bold; */
+/* 	border-radius: 5px; */
+/* 	font-size: 10px; */
+/* 	padding: 5px 7px;; */
+/* } */
 .mintBtn_o{
 	text-align: center;
 	width:70px;
@@ -57,10 +103,6 @@
 	font-size: 15px;
 	font-weight: 550;
 	color: #45c5c5;
-}
-.my_menu:hover {
-	cursor: pointer;
-	text-decoration: underline;
 }
 #my_menus {
 	font-size: 17px;

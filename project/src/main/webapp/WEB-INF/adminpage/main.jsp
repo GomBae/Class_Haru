@@ -17,18 +17,18 @@
 </head>
 <body>
 <div class="container">
-	<jsp:include page="../adminpage/header.jsp"></jsp:include>
-	
-	<div style="width:20%;height:100%;padding:5px;float:left;">
-		<jsp:include page="../adminpage/menu.jsp"></jsp:include>
-	</div>
-	
-	<div style="width:80%;float:left;">
-<%-- 		<jsp:include page="${admin_jsp }"></jsp:include> --%>
-	  <div class=rows>
-	  	<jsp:include page="../adminpage/home.jsp"></jsp:include>
-	  </div>
-	</div>
+   <jsp:include page="../adminpage/header.jsp"></jsp:include>
+   
+   <div style="width:20%;height:100%;padding:5px;float:left;">
+      <jsp:include page="../adminpage/menu.jsp"></jsp:include>
+   </div>
+   
+   <div style="width:80%;float:left;">
+<%--       <jsp:include page="${admin_jsp }"></jsp:include> --%>
+     <div class=rows>
+        <jsp:include page="../adminpage/home.jsp"></jsp:include>
+     </div>
+   </div>
 </div>
 </body>
 </html>

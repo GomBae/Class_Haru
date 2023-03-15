@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class TextVO {
 	private int tno;
-	private String id,msg,receiver,dbday,ok;
-	private Date regdate;
+	private String id,nickname,msg,receiver,dbday,recvday,ok;
+	private Date regdate,recvdate;
 }

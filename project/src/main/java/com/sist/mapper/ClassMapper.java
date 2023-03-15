@@ -55,6 +55,13 @@ public interface ClassMapper {
 	         + "WHERE cno=#{cno}")
 	 public ClassDetailVO classDetailData(int cno);
 	
+
+//	@Select("SELECT rno,content,heart,comment_count,curriculum,preparation,kindness,delivery,time,id,cno,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
+//			+"FROM (SELECT /*+(ch_review_2_3 ch_rv_rno_pk_2_3)*/rno,content,heart,comment_count,curriculum,preparation,kindness,delivery,time,id,cno,regdate "
+//			+"FROM ch_review_2_3) "
+//			+"WHERE cno=#{cno}")
+//	public List<ReviewVO> classReview(int cno);
+
 	@Select("SELECT CEIL(COUNT(*)/10.0) FROM ch_classdetail_2_3")
 	public int classTotalPage();
 	
@@ -71,4 +78,8 @@ public interface ClassMapper {
 		  +"WHERE num BETWEEN #{start} AND #{end}")
    public List<FoodVO> foodLocationFindData(Map map);*/
 	
+
+}
+
+
 }

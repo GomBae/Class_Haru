@@ -10,12 +10,19 @@ import java.util.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+import javax.servlet.http.HttpSession;
+
+
 import com.sist.dao.*;
 import com.sist.vo.*;
 @RestController
 public class ClassRestController {
 	@Autowired
 	private ClassService service;
+
+	@Autowired
+	private JjimDAO dao;
+
 	
 	@GetMapping(value="class/class_cate_vue.do",produces="text/plain;charset=utf-8")
 	public String class_cate_vue() {
@@ -46,6 +53,14 @@ public class ClassRestController {
 		return arr.toJSONString();
 	}
 	@GetMapping(value="class/class_list_vue.do",produces="text/plain;charset=utf-8")
+
+	public String class_list_vue(int cateno,int detail_cateno)
+	{
+		Map map=new HashMap();
+		map.put("cateno", cateno);
+		map.put("detail_cateno", detail_cateno);
+		List<ClassDetailVO> list=service.classListData(map);
+  }
 	public String class_list_vue(int cateno,int detail_cateno,String page)
 	{
 		if(page==null)
@@ -72,6 +87,7 @@ public class ClassRestController {
 			  endPage=totalpage;
 		  
 		  int i=0;
+
 		JSONArray arr=new JSONArray();
 		for(ClassDetailVO vo:list)
 		{
@@ -82,6 +98,9 @@ public class ClassRestController {
 			obj.put("title", vo.getTitle());
 			obj.put("cateno", vo.getCateno());
 			obj.put("detail_cateno", vo.getDetail_cateno());
+
+			obj.put("location", vo.getLocation());
+
 			String location=vo.getLocation();
 			if(location==null)
 			{
@@ -93,6 +112,7 @@ public class ClassRestController {
 			}
 			
 			obj.put("location", location);
+
 			
 			obj.put("perprice", vo.getPerprice());
 			obj.put("jjim_count", vo.getJjim_count());
@@ -110,6 +130,10 @@ public class ClassRestController {
 			}
 			
 			obj.put("image", image);
+
+			
+			arr.add(obj);
+
 			if(i==0)
 			{
 				obj.put("curpage", curpage);
@@ -120,6 +144,7 @@ public class ClassRestController {
 			}
 			arr.add(obj);
 			i++;
+
 		}
 		return arr.toJSONString();
 	}
@@ -163,18 +188,33 @@ public class ClassRestController {
 	public String class_detail_vue(int cno)
 	{
 		ClassDetailVO vo=service.classDetailData(cno);
-		
+
 		JSONObject obj=new JSONObject();
 		obj.put("cno", vo.getCno());
 		obj.put("cateno", vo.getCateno());
 		obj.put("detail_cateno", vo.getDetail_cateno());
 		obj.put("title", vo.getTitle());
 		String image=vo.getImage();
+
+		int size=image.indexOf("^");
+		if(size<0)
+		{
+			image=image;
+		}
+		else
+		{
+			image=image.substring(0,image.indexOf("^"));
+		}
+		
+		obj.put("image", image);
+
+
 		String image1=image.substring(0,image.indexOf("^"));
 		String image2=image.substring(image.indexOf("^")+1);
 //        image=image.substring(0,image.indexOf("^"));
         obj.put("image1", image1);
         obj.put("image2", image2);
+
 		obj.put("tno", vo.getTno());
 		String place=vo.getPlace();
 		place=place.substring(0,place.indexOf("^"));
@@ -204,4 +244,9 @@ public class ClassRestController {
 		
 		return obj.toJSONString();
 	}
+
 }
+
+
+}
+

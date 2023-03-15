@@ -3,6 +3,8 @@ import java.util.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,14 @@ public class ClassController {
 	{
 		System.out.println(cateno);
 		System.out.println(detail_cateno);
+
+		Map map = new HashMap();
+
+		map.put("cateno", cateno);
+		map.put("detail_cateno", detail_cateno);
+		List<ClassDetailVO> list=service.classListData(map);
+		List<CategoryVO> cList=service.classCateData();
+
 		
 		  //Map map = new HashMap();
 		  
@@ -40,7 +50,6 @@ public class ClassController {
 		return "class/class_list";
 	}
 	
-
 	@GetMapping("class/class_before_detail.do")
 	public String class_before_detail(int cno,HttpServletResponse response,RedirectAttributes ra)
 	{
@@ -53,6 +62,18 @@ public class ClassController {
 	}
 	
 	@GetMapping("class/class_detail.do")
+	public String class_detail(int cno,Model model,HttpSession session)
+	{
+		String id=(String)session.getAttribute("id");
+		JJimVO vo=new JJimVO();
+		vo.setAjno(cno);
+		vo.setId(id);
+		model.addAttribute("vo",vo);
+		model.addAttribute("cno",cno);
+		return "class/class_detail";
+	}
+	
+
 	public String class_detail(int cno,Model model)
 	{
 		model.addAttribute("cno",cno);

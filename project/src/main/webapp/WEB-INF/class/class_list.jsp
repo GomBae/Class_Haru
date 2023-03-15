@@ -73,6 +73,10 @@
 
     <!-- selected_list -->
     <div class="selected_list">
+
+        <button type="button" class="del_search_field" data-view-type="cateSub">라탄</button>        
+        <button type="reset" class="btn_reset" onclick="$('.del_search_field').each(function(i,d){ $(d).click();});">초기화</button>
+
         <button type="button" class="del_search_field">{{class_list.catename}}</button>        
         <button type="reset" class="btn_reset">초기화</button>
     </div>
@@ -82,9 +86,16 @@
     <div class="category_path">
       <span>요리·공예·취미</span>
       <span>공예/DIY</span>
+
+      <span>라탄</span>
+   </div>
+    <!-- result_count -->
+    <p class="result_count">검색 결과 27개</p>
+
    </div>
     <!-- result_count -->
     <p class="result_count">검색 결과 {{count}}개</p>
+
     <!-- // result_count -->
     <!-- search_result -->
     <!-- // category_path -->
@@ -92,6 +103,7 @@
       <!-- class_card_list -->
       <ul class="class_card_list" >
         <li class="swiper-slide" v-for="cvo in class_list">
+            <a href="href="/vod/view/37602">
             <a :href="'../class/class_detail.do?cno='+cvo.cno">
             <div class="thumb lazyloaded" data-bg="//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png" style="background-image: url(&quot;//img.taling.me/Content/Uploads/Images/24df302defe649078b32cd669fbada4fd9f6280e.png&quot;);">        
             </div>      
@@ -108,7 +120,9 @@
             </p>            
             <div class="talent_info">                
               <span class="user">{{cvo.jjim_count}}</span>
+              <span class="reward_badge" style="background-image:url('//front-img.taling.me/Content/app3/img/icon/icClasscardReview@2x.png')">{{cvo.rivew}}</span>            
               <!-- <span class="reward_badge" style="background-image:url('//front-img.taling.me/Content/app3/img/icon/icClasscardReview@2x.png')">{{cvo.rivew}}</span>    리뷰 개수 출력   -->      
+
             </div>        
           </div>    
           </a>    
@@ -173,6 +187,15 @@
     		cateno:${cateno},
     		detail_cateno:${detail_cateno},
     		class_list:[],
+    		cate_info:{}	
+    	},
+    	mounted:function(){
+    		let _this=this;
+    		axios.get("http://localhost/web/class/class_cate_vue.do",{
+    			cateno:_this.cateno,
+    			detail_cateno:_this.detail_cateno
+    		}).then(function(response){
+    		class_list:[],
     		cate_info:{},
     		curpage:1,
     		totalpage:0,
@@ -194,6 +217,8 @@
     		
     		axios.get("http://localhost/web/class/class_list_vue.do",{
     			params:{
+     				cateno:_this.cateno,
+    				detail_cateno:_this.detail_cateno
      				cateno:this.cateno,
     				detail_cateno:this.detail_cateno,
     				page:_this.curpage
@@ -201,6 +226,10 @@
     		}).then(function(response){
     			console.log(response.data)
     			_this.class_list=response.data
+    		})
+    	}
+    })
+
     			_this.curpage=response.data[0].curpage
                 _this.totalpage=response.data[0].totalpage
                 _this.startPage=response.data[0].startPage

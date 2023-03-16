@@ -98,20 +98,18 @@ public class BoardDAO {
 			   statement="SELECT NVL(MAX(btno)+1,1) as btno FROM ch_boardtag_2_3 ")
 	@Insert("INSERT INTO ch_boardtag_2_3 VALUES(#{btno},#{bno},#{tag})")
 	*/
-	public void tagInsert(BoardTagVO vo)
-	{
-		mapper.tagInsert(vo);
-	}
-	
-	
+//	public void tagInsert(BoardTagVO vo)
+//	{
+//		mapper.tagInsert(vo);
+//	}
 	//태그 개별 삭제
 	/*
 	@Delete("DELETE FROM ch_boardtag_2_3 WHERE btno=#{btno} ")
 	*/
-	public void tagDelete(int btno)
-	{
-		mapper.tagDelete(btno);
-	}
+//	public void tagDelete(int btno)
+//	{
+//		mapper.tagDelete(btno);
+//	}
 	
 	
 	//게시글 작성

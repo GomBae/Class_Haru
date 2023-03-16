@@ -29,11 +29,12 @@ public class JjimDAO {
 	public void jjimInsert(Map map)
 	{
 		mapper.jjimInsert(map);
-
-	public void jjimInsert(ClassDetailVO vo)
-	{
-		mapper.jjimInsert(vo);
 	}
+	
+//	public void jjimInsert(ClassDetailVO vo)
+//	{
+//		mapper.jjimInsert(vo);
+//	}
 	
 //	@Delete("DELETE FROM ch_alljjim_2_3 WHERE cno=#{cno}")
 	public void jjimDelete(int cno)
@@ -46,10 +47,11 @@ public class JjimDAO {
 	public int jjimCount(Map map)
 	{
 		return mapper.jjimCount(map);
-
-	public int jjimCount(int cno,String id)
-	{
-		return mapper.jjimCount(cno, id);
-
 	}
+	
+//	public int jjimCount(int cno,String id)
+//	{
+//		return mapper.jjimCount(cno, id);
+//
+//	}
 }

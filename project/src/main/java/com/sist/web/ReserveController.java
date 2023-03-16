@@ -1,8 +1,15 @@
 package com.sist.web;
+import java.util.StringTokenizer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.sist.vo.*;
 import com.sist.dao.*;
@@ -20,16 +27,11 @@ public class ReserveController {
 		return "reserve/reserve";
 	}
 	
-	@GetMapping("reserve/reserve_check.do")
-	public String reserve_reserve_check()
-	{
-		return "";
-	}
-	
 	@GetMapping("reserve/reserve_pay.do")
-	public String reserve_resreve_pay(int cno,Model model)
+	public String reserve_pay()
 	{
-		model.addAttribute("cno",cno);
 		return "reserve/reserve_pay";
 	}
+
+
 }

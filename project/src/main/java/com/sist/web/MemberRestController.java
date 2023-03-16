@@ -25,7 +25,7 @@ public class MemberRestController {
 		{
 			//id,pwd,tel,name,nickname,intro,image,tutor,admin,msg
 			session.setAttribute("mvo", vo);
-
+			System.out.println(vo);
 		}
 		return res;
 	}

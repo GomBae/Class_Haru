@@ -22,13 +22,13 @@ public class JjimController {
 	   {
 
 	      return "jjim/insert";
-	      return "redirect:../class/class_detail.do?cno=";
+//	      return "redirect:../class/class_detail.do?cno=";
 	   }
 	
 	@GetMapping("jjim/delete.do")
 	   public String jjim_delete()
 	   {
 	      return "jjim/delete";
-	      return "redirect:../class/class_detail.do?cno=";
+//	      return "redirect:../class/class_detail.do?cno=";
 	   }
 }

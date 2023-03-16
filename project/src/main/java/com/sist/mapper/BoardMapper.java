@@ -11,7 +11,7 @@ import com.sist.vo.*;
 
 public interface BoardMapper {
 	
-	//게시판별 리스트
+	//게시판별 리스트, 최신순 정렬
 	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
 			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate,rownum as num "
 			+"FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
@@ -39,17 +39,17 @@ public interface BoardMapper {
 	public List<BoardVO> boardSearchList(Map map);
 	
 	//게시판 검색결과 총개수
-//	@Select("SELECT count(*) "
-//			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
-//			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
-//			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
-//			+"            WHERE a.id=b.id "
-//			+"            AND btype=#{btype}) "
-//			+"      WHERE title LIKE '%'||#{word}||'%' "
-//			+"      OR CONTENT LIKE '%'||#{word}||'%') ")
-//	public int boardSearchCount();
+	@Select("SELECT count(*) "
+			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
+			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
+			+"            WHERE a.id=b.id "
+			+"            AND btype=#{btype}) "
+			+"      WHERE title LIKE '%'||#{word}||'%' "
+			+"      OR CONTENT LIKE '%'||#{word}||'%') ")
+	public int boardSearchCount();
 	
-	//게시판 검색결과 총페이지`
+	//게시판 검색결과 총페이지
 	@Select("SELECT CEIL(count(*)/4.0) FROM ch_board_2_3 "
 			+"WHERE btype=#{btype} "
 			+"AND title LIKE '%'||#{word}||'%' "
@@ -73,16 +73,6 @@ public interface BoardMapper {
 	@Select("SELECT count(*) as replyCnt FROM ch_boardreply_2_3 "
 			+" WHERE bno=#{bno} ")
 	public int boardReplyCount(int bno);
-	
-	
-	//게시글 최신순 정렬 (bno DESC)
-	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
-			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate,rownum as num "
-			+"FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
-			+"FROM ch_board_2_3 a, ch_member_2_3 b WHERE a.id=b.id AND btype=#{btype} ORDER BY bno DESC)) "
-			+"WHERE num BETWEEN #{start} AND #{end} ")
-	public List<BoardVO> boardListOrderByRegdate(Map map);
-	
 	
 	//게시글 조회수순 정렬 (hit DESC)
 	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
@@ -118,28 +108,13 @@ public interface BoardMapper {
 			+"AND rownum<=5 ")
 	public List<BoardVO> boardWriterTop5(BoardVO vo);
 	
-	
-	//게시글 insert 전 태그 처리
-	//태그 개별 저장 => keyup할 때마다 insert, 삭제 버튼 누르면 delete
-	@SelectKey(keyProperty="btno",resultType=int.class,before=true,
-			   statement="SELECT NVL(MAX(btno)+1,1) as btno FROM ch_boardtag_2_3 ")
-	@Insert("INSERT INTO ch_boardtag_2_3 VALUES(#{btno},#{bno},#{tag})")
-	public void tagInsert(BoardTagVO vo);
-	
-	
-	//태그 개별 삭제
-	@Delete("DELETE FROM ch_boardtag_2_3 WHERE btno=#{btno} ")
-	public void tagDelete(int btno);
-	
-	
+
 	//게시글 작성 insert
 	//태그 1개의 문자열로 저장 : input 통해 태그를 하나씩 입력하면 각각 input(hidden)에 값이 공백과 함께 추가되도록 제이쿼리 작성, 그걸 태그테이블에 저장
 	@SelectKey(keyProperty="bno",resultType=int.class,before=true,
 			   statement="SELECT NVL(MAX(bno)+1,1) as bno FROM ch_board_2_3 ")
 	@Insert("INSERT INTO ch_board_2_3 VALUES("
 			+"#{bno},#{btype},#{id},#{title},#{content},SYSDATE,0,#{tag}) ")
-//	@Insert("INSERT INTO ch_board_2_3 VALUES("
-//			+"#{bno},#{btype},'haruharu@naver.com',#{title},#{content},SYSDATE,0,#{tag}) ")
 	public void boardInsert(BoardVO vo);
 	
 	

@@ -93,20 +93,22 @@ $(function(){
 		</div>
 		
 		<%-- 태그 입력란 --%>
-<%-- 		<div id="insert_tag" style="margin:0 0 30px 0;">
+ 		<div id="insert_tag" style="margin:0 0 30px 0;">
 			  <div class="input_name">태그<span style="color:lightgray;">&nbsp;&nbsp;&nbsp;본문과 관련된 태그를 입력해주세요.</span></div>
-			  <input type="text" class="input_text" v-model="tag">
-			  입력된 태그 출력
-			  <div id="print_tag">
+			  <input type="text" class="input_text" v-model="tag" ref="tag">
+			  <!-- 입력된 태그 출력 -->
+<!-- 			  <div id="print_tag">
 			  
-			  </div>
-		</div> --%>
+			  </div> -->
+<!-- 			  입력된 전체태그 하나로 모으기
+			  <input id="tagAll" type=hidden ref="tag"/> -->
+		</div>
 		
-		<div class="board_tag" style="margin: 20px 0 20px 0;">
+<!-- 		<div class="board_tag" style="margin: 20px 0 20px 0;">
 		   <div v-if="tag!=null">
 		      <span class="all_btn all_tag" v-for="t in tag.split(' ')" style="background:#d1eeee;margin:0 10px 0 0;padding:5px 10px;border:0;border-radius:50px;">{{t}}</span>
 		   </div>
-		</div>
+		</div> -->
 		
 		<%-- 내용 입력란 --%>
 		<div style="margin:0 0 15px 0;">본문</div>
@@ -133,7 +135,7 @@ $(function(){
 			title:'',
 			tag:'',
 			content:''
-		}, 
+		},
 		mounted:function(){ 
 			let _this=this
 			axios.get('http://localhost/web/board/board_update_vue.do',{
@@ -154,7 +156,7 @@ $(function(){
 					params:{
 						bno:this.bno,
 						title:this.title,
-						tag:this.tag,
+						tag:this.$refs.tag.value, 
 						content:this.content
 					}
 				}).then(function(response){

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ReserveVO {
-	private int crno,cno,inwon;
-	private String id,has_schedule,cdate,ctime,msg,ok;
+	private int crno,cno,inwon,totalperprice_num,score;
+	private String image,title,tutor,id,totalperprice,totalprice,ok,sche_info,tutorMsg,schedule,place,location;
 	private Date regdate;
 }

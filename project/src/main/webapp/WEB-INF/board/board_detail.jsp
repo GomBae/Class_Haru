@@ -69,7 +69,9 @@ div div a.all_btn{
 </head>
 <body>
 <div id="app" class="container" style="margin:50px auto;padding:0;">
-    세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin }
+
+    <%-- 세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin } --%>
+    
     <%-- 제목, 글정보 --%> 
     <h1 class="board_title">{{bvo.title}}</h1>
     
@@ -85,10 +87,10 @@ div div a.all_btn{
 	    <%-- 상단 버튼 : 목록이동, 수정, 삭제 --%>
 	    <div style="float:right;">
 	       <a :href="'../board/board_main.do?btype='+bvo.btype" class="all_btn"><i class="fa-solid fa-angle-left" style="width:25px;text-align:center;"></i></a>
-	       <!-- <div v-if="bvo.res=='ok'" style="display:inline"> -->
+	       <div v-if="bvo.id==bvo.sessionId" style="display:inline">
 	          <a :href="'../board/board_update.do?bno='+bvo.bno" class="all_btn">수정</a>
 	          <span class="all_btn" v-on:click="del()" style="border:1px solid gray;">삭제</span>
-	       <!-- </div> -->
+	       </div>
 	    </div>
     </div>
     
@@ -96,11 +98,11 @@ div div a.all_btn{
     <div class="board_allcontent" style="">{{bvo.content}}</div>
     
     <%-- 태그 --%>
-<!--     <div class="board_tag" style="margin: 20px 0 20px 0;">
+    <div class="board_tag" style="margin: 20px 0 20px 0;">
 	  <div v-if="bvo.tag!=null">
 	    <span class="all_tag" v-for="t in bvo.tag.split(' ')">{{t}}</span>
 	  </div>
-	</div> -->
+	</div>
 			      
     <hr style="margin:30px 0;border-top:1px solid lightgray;">
     
@@ -123,18 +125,18 @@ div div a.all_btn{
 	    <div class="reply_all" style="clear:both;">
 	        
 	        <%-- 댓글 1개(전체 개수만큼 반복) --%>
-		    <div class="reply_item">
-			    <%-- 댓글정보 --%>
+<%-- 		    <div class="reply_item">
+			    댓글정보
 			    <div class="reply_info">
 			        <img src="" style="width:40px;height:40px;background:pink;">
 			        <span style="margin:0 10px 0 10px;width:120px;font-size:16px;">유저닉네임</span>&nbsp;&nbsp;
 			        <span style="color:gray;font-size:14px;">2023-03-04</span>&nbsp;&nbsp;
 			    </div>
-			    <%-- 댓글내용 --%>
+			    댓글내용
 			    <div class="reply_content">저요!!</div>
 		        <button class="all_btn" style="font-size:16px;padding:5px 10px;background:#eaeaea;">답글</button>
 		        <hr style="margin:30px 0;border-top:1px solid lightgray;">
-		    </div>
+		    </div> --%>
 		    
 	    </div>
 	    
@@ -161,9 +163,6 @@ div div a.all_btn{
 			  })
 		},
 		methods:{
-			del_check:function(){
-				
-			},
 			del:function(){
 				let _this=this
 				axios.get('http://localhost/web/board/board_delete_vue.do',{
@@ -172,7 +171,7 @@ div div a.all_btn{
 					}
 				}).then(function(response){
 					location.href="../board/board_main.do?btype="+_this.bvo.btype
-				})
+				}) 
 			} 
 		}
 	})

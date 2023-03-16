@@ -1,6 +1,7 @@
 package com.sist.dao;
 import com.sist.vo.*;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -24,13 +25,14 @@ public class ReserveDAO {
 		return mapper.classScheduleInfo(cno);
 	}
 	
-	//회원 전화번호
+	//클래스신청 저장 insert
 	/*
-	@Select("SELECT id,tel FROM ch_member_2_3 "
-			+"WHERE id=#{id} ")
+	@Insert("INSERT INTO ch_reserve_2_3 VALUES("
+			+"#{crno},#{cno},#{id},#{schedule},#{place},#{inwon},#{totalprice},#{tutormsg},sysdate,'n')")
 	*/
-	public MemberVO userTel(String id)
+	public void reserveInsert(ReserveVO vo)
 	{
-		return mapper.userTel(id);
+		mapper.reserveInsert(vo);
 	}
+
 }

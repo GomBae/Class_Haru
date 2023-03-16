@@ -18,6 +18,7 @@
 }
 
 </style>
+<script src="../Scripts/renewal2203/js/index.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -41,23 +42,24 @@ $(function(){
 <body>
 <div id="app" class="container" style="padding:0;">
 
-세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin }
+<%-- 세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin } --%>
+
   <%-- 메뉴 --%>
   <div style="width:20%; float:left;">
   
 	  <%-- 선택된 게시판만 글씨 강조 --%>
 	  <%-- 게시판 메뉴 --%>
-	  <div class="board_menu" style="padding:50px 0 50px 30px;font-weight:bold;">
+	  <div class="board_menu" style="padding:50px 0 50px 30px;font-weight:bold;font-size:16px;">
 		  <input id="btype" type=hidden :btype="btype">
 		  <a id="btype1" href="../board/board_main.do?btype=1">자유주제</a>
 		  <a id="btype2" href="../board/board_main.do?btype=2">스터디 & 모임</a>
 		  <a id="btype3" href="../board/board_main.do?btype=3">공지사항</a>
 	  </div>
 	  
-	  <%-- 게시글 최다 작성 Top5 --%>
+	  <%-- 게시글 최다 작성 랭킹 --%>
  	  <div class="board_rank" style="padding:5px;">
 	      <div class="board_rank_box" style="padding:15px;border:1px solid lightgray;">
-		      <h4 style="margin:0 0 15px 0;font-size:14px;text-align:center;">올해 게시글 작성 TOP 5</h4>
+		      <h4 style="margin:0 0 15px 0;font-size:14px;text-align:center;">올해 게시글 작성 랭킹</h4>
 		      
 		      <%-- 유저 1명(전체 반복) --%>
 		      <c:forEach var="wvo" items="${writerList }">
@@ -88,7 +90,7 @@ $(function(){
 	    </div>
 	      
 	    <%-- 태그 검색창 --%>
-<!-- 	    <div class="board_search">
+<!--  	    <div class="board_search">
 	      <i class="fa-regular fa-hashtag"></i>
 	      <input type=text placeholder="태그로 검색해보세요!">
 	      <button style="width:95px;height:45px;background:#eaeaea;border:0;">초기화</button>
@@ -129,14 +131,14 @@ $(function(){
 			      <p class="board_content">{{vo.content}}</p>
 			      
 			      <%-- 태그 (공백으로 잘라서 전체 출력하기)--%>
-<!-- 			      <div class="board_tag" style="margin: 10px 0;">
+  			      <div class="board_tag" style="margin: 10px 0;">
 			        <div v-if="vo.tag!=null">
 			          <span class="all_btn all_tag" v-for="t in vo.tag.split(' ')" style="background:#d1eeee;margin:0 10px 0 0;padding:5px 10px;border:0;border-radius:50px;">{{t}}</span>
 			        </div>
-			      </div> -->
+			      </div>
 			      
 			      <%-- 게시글 정보(작성자,작성일,조회수,댓글수) --%>
-			      <div class="board_bottom" style="display:flex;justify-content:space-between;">
+			      <div class="board_bottom" style="display:flex;justify-content:space-between;align-items:center;">
 			        <%-- 작성자, 작성일 --%>
 			        <div style="margin: 10px 0;">
 			          <span>{{vo.nickname}}&nbsp;&nbsp;|&nbsp;&nbsp;{{vo.dbday}}</span>
@@ -232,12 +234,13 @@ $(function(){
  		  ,
 		  search:function(){
 			  let _this=this
-			  axios.get('http://localhost/web/board/board_main_search_vue.do',{
+			  axios.get('http://localhost/web/board/board_search_vue.do',{
 				  params:{
 					  btype:this.btype,
 					  word:this.word
 				  }
-			  }).then(function(response){
+			  })
+  			  .then(function(response){
 				  console.log(response.data)
 				  _this.board_list=response.data //search_list
 				  _this.curpage=response.data[0].curpage 

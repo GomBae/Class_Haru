@@ -68,53 +68,14 @@ $(function(){
 	{
 		$('#btype3').css({"background":"#45c5c5","color":"white"})
 	}
-	
-	//태그 입력 관련
-	
-	$('#insert_tag').keydown(function(e){
-		if(e.keyCode==13)
-		{
-			no=no+1
-			e.preventDefault()
-			var tag=$(this).val()
-			console.log(tag)
-			//var inputLength=$(this).val().length //입력한 값의 글자수
-			$('#print_tag').append('<span id="no'+no+'"class="all_btn all_tag">'+tag+" "+'<button class="remove_btn"><i class="fa-solid fa-xmark"></i></button></span>')
-			$('#insert_tag').val('')
-			
-			//입력된 태그 전체 합치기
-			tagAll=$('#print_tag').text().trim()
-			console.log("1) tagAll:"+tagAll) //확인용
-			
-			//span태그에 묶은 태그값 넣기
-			$('#tagAll').val(tagAll)
-			
-			//태그 삭제하기 (전체태그에서 뒤에서부터 제외할 문자길이만큼 자르기..?)
-/* 			$('.remove_btn').click(function(){
-				alert("삭제!")
-				$('span').remove('#no'+no)
-				no=no-1
-				console.log(no)
-			}) */
-		}
-		
-		$('.remove_btn').click(function(){
-			alert("삭제!")
-			$('span').remove('#no'+no)
-			no=no-1
-			console.log(no)
-		})
-	})
-	console.log("2) tahAll:"+tagAll) 
 
-
-	//제목,내용 미입력 시 등록버튼 비활성화 처리하기
 })
 </script>
 </head>
 <body>
 <div class="container" id="app">
 
+<%-- 세션아이디 : ${sessionScope.mvo.id }, 관리자여부 : ${sessionScope.mvo.admin } --%>
 
   <div style="margin:50px auto;width:100%;">
 
@@ -131,7 +92,7 @@ $(function(){
 		</div>
 		
 		<%-- 공지사항 등록 관련 안내 --%>
-<%-- 		<div v-if="btype==3">
+ 		<div v-if="btype==3">
         <c:if test="${sessionScope.mvo.admin=='n' }">
 			  <h3 style="margin:60px 0 20px 0;font-size:24px;font-weight:bold;">
 			    <i style="font-size:24px;color:#45c5c5;" class="fa-solid fa-circle-exclamation"></i>
@@ -139,7 +100,7 @@ $(function(){
 			  </h3>
 			  <h4 style="margin:0 0 60px 0;font-size:20px;">상단에서 다른 게시판을 선택해주세요!</h4>
 		</c:if>
-		</div> --%>
+		</div>
 
 	<%-- 게시글 작성 영역 --%>
 	<div>
@@ -151,16 +112,10 @@ $(function(){
 		</div>
 		
 		<%-- 태그 입력란 --%>
-<%-- 		<div class="input_area" style="margin:0 0 30px 0;">
-			  <div class="input_name">태그<span style="color:gray;">&nbsp;&nbsp;&nbsp;본문과 관련된 태그를 입력해보세요!</span></div>
-			  <input type="text" class="input_text" id="insert_tag">
-			  입력된 태그 출력
-			  <div id="print_tag" style="margin:20px 0;">
-			   
-			  </div>
-			  입력된 전체태그 하나로 모으기
-			  <input id="tagAll" type=text ref="tag"/>
-		</div> --%>
+ 		<div class="input_area" style="margin:0 0 30px 0;">
+			  <div class="input_name">태그<span style="color:gray;">&nbsp;&nbsp;&nbsp;본문과 관련된 키워드를 입력해보세요!</span></div>
+			  <input type="text" class="input_text" id="insert_tag" ref="tag"> <!-- ref:tag 위치 잠시 옮김 -->
+		</div>
 		
 		<%-- 내용 입력란 --%>
 		<div style="margin:0 0 15px 0;">본문</div>
@@ -200,14 +155,6 @@ $(function(){
 			title:'',
 			content:''
 		},
-		//
-/* 		mounted:function(){
-			let _this=this
-			axios.get('http://localhost/web/board/idCheck_vue.do').then(function(response){
-				console.log(response.data)
-				_this.id=response.data
-			})
-		}, */
 		methods:{
 			write:function(){
 				let _this=this
@@ -223,11 +170,6 @@ $(function(){
 					location.href="../board/board_main.do?btype="+_this.btype
 				})
 			}
-/* 			,
-			sendTag:function(){
-				let _this=this
-				axios.get('')
-			} */
 		}
 	})
 	

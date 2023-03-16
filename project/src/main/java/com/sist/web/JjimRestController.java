@@ -26,7 +26,6 @@ public class JjimRestController {
 	private JjimDAO dao;
 	
 	@GetMapping("jjim/insert_vue.do")
-
 	public void jjim_insert_vue(int cno,HttpSession session)
 	{
 		String id=(String)session.getAttribute("id");
@@ -37,13 +36,9 @@ public class JjimRestController {
 		System.out.println(id);
 		System.out.println(cno);
 		dao.jjimInsert(map);
-
-	public void jjim_insert_vue(ClassDetailVO vo)
-	{
-		dao.jjimInsert(vo);
-
 	}
 	
+
 	@GetMapping("jjim/delete_vue.do")
 	public void jjim_delete_vue(int cno)
 	{

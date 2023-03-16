@@ -31,7 +31,7 @@
 					<li class="depth1">
 						<p class="tit">SUPPORT</p>
 						<ul class="depth2">
-							<li><a href="#">FAQ</a></li>
+							<li><a href="../faq/faq.do">FAQ</a></li>
 							<li><a href="#">하루센터</a></li>
 						</ul>
 					</li>
@@ -40,12 +40,13 @@
 						<ul class="depth2">
 							<li><a href="#">기업교육</a></li>
 						</ul>
+<!-- 						eeawwaa -->
 					</li>
 					<li class="depth1 taling_cs">
 						<p class="tit">HARU CENTER</p>
 						<ul class="depth2">
 							<li class="cs" id="custom-button-trigger"
-								style="color: #ff005a; cursor: pointer;">하루에게 문의하기</li>
+								style="color: #ff005a; cursor: pointer;"><a href="../chat/chat.do">하루에게 문의하기</a></li>
 							<li>
 								<p>운영시간</p>
 								<p>평일 10:00 ~ 17:00 점심 13:00 ~14:00</p>

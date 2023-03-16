@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.sist.mapper.MainMapper;
 import com.sist.vo.ClassDetailVO;
@@ -21,4 +22,5 @@ public class MainDAO {
 	public List<ClassDetailVO> nowPopularClass(){
 		return mapper.nowPopularClass();
 	}
+	
 }

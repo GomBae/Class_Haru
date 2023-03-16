@@ -17,11 +17,7 @@
 				<a href="../main/main.do"><span class="blind">클래스하루</span></a>
 			</h1>
 			<!-- // logo -->
-			<!-- gnb -->
-			<div class="gnb">
-				<a href="../main/main.do" class="act">홈HOME</a>
-			</div>
-			<!-- // gnb -->
+
 			<!-- search_area -->
 			<div class="search_area">
 				<form class="" action="#" name="search">
@@ -62,7 +58,7 @@
 							<ul class="lnb">
 								<li><a href="#">내 프로필</a></li>
 <!-- 								<li><a href="javascript:void(0)" id="btn-menu-logout">로그아웃</a></li> -->
-								<li><a href="../member/logout.do" id="btn-menu-logout">로그아웃</a></li>
+								<li><a href="../member/logout_vue.do" id="btn-menu-logout">로그아웃</a></li>
 							</ul>
 						</li>
 					</c:if>

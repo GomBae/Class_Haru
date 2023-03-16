@@ -5,6 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.cont_login .btn_submit {
+    width: 100%;
+    height: 48px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 48px;
+    background-color: #45c5c5;
+}
+</style>
 </head>
 <body>
 <!-- login_main -->

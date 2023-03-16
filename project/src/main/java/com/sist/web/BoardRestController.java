@@ -57,7 +57,7 @@ public class BoardRestController {
          obj.put("content",vo.getContent());
          obj.put("tag",vo.getTag());
          obj.put("id",vo.getId()); //세션id
-         obj.put("nickname",vo.getNickname());
+         obj.put("name",vo.getName());
          obj.put("dbday",vo.getDbday());
          obj.put("hit",vo.getHit());
          replyCnt=dao.boardReplyCount(vo.getBno());
@@ -105,7 +105,7 @@ public class BoardRestController {
          obj.put("content",vo.getContent());
          obj.put("tag",vo.getTag());
          obj.put("id",vo.getId());
-         obj.put("nickname",vo.getNickname());
+         obj.put("name",vo.getName());
          obj.put("dbday",vo.getDbday());
          obj.put("hit",vo.getHit());
          int replycount=vo.getReplyCnt();
@@ -151,7 +151,7 @@ public class BoardRestController {
       obj.put("bno",vo.getBno());
       obj.put("btype",vo.getBtype());
       obj.put("title",vo.getTitle());
-      obj.put("nickname",vo.getNickname());
+      obj.put("name",vo.getName());
       obj.put("dbday",vo.getDbday());
       obj.put("image",vo.getImage());
       obj.put("content",vo.getContent());

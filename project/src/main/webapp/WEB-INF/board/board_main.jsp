@@ -58,7 +58,7 @@ $(function(){
      
      <%-- 게시글 최다 작성 랭킹 --%>
       <div class="board_rank" style="padding:5px;">
-         <div class="board_rank_box" style="padding:15px;border:1px solid lightgray;">
+         <div class="board_rank_box" style="padding:15px;border:1px solid lightgray;margin:0 0 70px 0;">
             <h4 style="margin:0 0 15px 0;font-size:14px;text-align:center;">올해 게시글 작성 랭킹</h4>
             
             <%-- 유저 1명(전체 반복) --%>
@@ -66,7 +66,7 @@ $(function(){
                <div class="rank_item" style="padding:5px 0;display:flex;justify-content:space-between;align-items:center;">
                  <div style="display:flex;align-items:center;">
                    <i class="fa-solid fa-crown" style="color:#ffc300;"></i>
-                   <span style="margin:0 0 0 5px;width:85px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="닉네임">${wvo.nickname }</span>
+                   <span style="margin:0 0 0 5px;width:85px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${wvo.name }</span>
                  </div>
                  <span style="margin:0 0 0 5px;font-size:12px;">${wvo.boardCnt }글</span>
                </div>
@@ -141,7 +141,7 @@ $(function(){
                <div class="board_bottom" style="display:flex;justify-content:space-between;align-items:center;">
                  <%-- 작성자, 작성일 --%>
                  <div style="margin: 10px 0;">
-                   <span>{{vo.nickname}}&nbsp;&nbsp;|&nbsp;&nbsp;{{vo.dbday}}</span>
+                   <span>{{vo.name}}&nbsp;&nbsp;|&nbsp;&nbsp;{{vo.dbday}}</span>
                  </div>
                  <%-- 조회수, 댓글수 --%>
                  <div style="margin:0;">

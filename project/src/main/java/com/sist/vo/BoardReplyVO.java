@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BoardReplyVO {
-	private int brno,bno,group_id,group_step,group_tab,root,depth;
-	private String id,msg;
+	private int brno,bno;
+	private String id,name,msg,dbday;
 	private Date regdate;
 }

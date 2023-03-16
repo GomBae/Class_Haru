@@ -12,9 +12,9 @@ import com.sist.vo.*;
 public interface BoardMapper {
 	
 	//게시판별 리스트, 최신순 정렬
-	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
-			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate,rownum as num "
-			+"FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+	@Select("SELECT btype,bno,id,name,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
+			+"FROM (SELECT btype,bno,id,name,title,content,tag,hit,regdate,rownum as num "
+			+"FROM (SELECT btype,bno,a.id,name,title,content,tag,hit,regdate "
 			+"FROM ch_board_2_3 a, ch_member_2_3 b WHERE a.id=b.id AND btype=#{btype} ORDER BY bno DESC)) "
 			+"WHERE num BETWEEN #{start} AND #{end} ")
 	public List<BoardVO> boardListData(Map map);
@@ -27,9 +27,9 @@ public interface BoardMapper {
 	
 	
 	//게시판 검색결과 리스트
-	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,rownum "
-			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
-			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+	@Select("SELECT btype,bno,id,name,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,rownum "
+			+"FROM (SELECT btype,bno,id,name,title,content,tag,hit,regdate "
+			+"      FROM (SELECT btype,bno,a.id,name,title,content,tag,hit,regdate "
 			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
 			+"            WHERE a.id=b.id "
 			+"            AND btype=#{btype}) "
@@ -40,8 +40,8 @@ public interface BoardMapper {
 	
 	//게시판 검색결과 총개수
 	@Select("SELECT count(*) "
-			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate "
-			+"      FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+			+"FROM (SELECT btype,bno,id,name,title,content,tag,hit,regdate "
+			+"      FROM (SELECT btype,bno,a.id,name,title,content,tag,hit,regdate "
 			+"            FROM ch_board_2_3 a,ch_member_2_3 b "
 			+"            WHERE a.id=b.id "
 			+"            AND btype=#{btype}) "
@@ -50,7 +50,7 @@ public interface BoardMapper {
 	public int boardSearchCount();
 	
 	
-	//게시판 검색결과 총페이지`
+	//게시판 검색결과 총페이지
 	@Select("SELECT CEIL(count(*)/4.0) FROM ch_board_2_3 "
 			+"WHERE btype=#{btype} "
 			+"AND title LIKE '%'||#{word}||'%' "
@@ -63,7 +63,7 @@ public interface BoardMapper {
 			+"hit=hit+1 "
 			+"WHERE bno=#{bno} ")
 	public void boardHitUpdate(int bno);
-	@Select("SELECT btype,a.bno,a.id,image,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
+	@Select("SELECT btype,a.bno,a.id,image,name,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
 			+"FROM ch_board_2_3 a, ch_member_2_3 b "
 			+"WHERE a.id=b.id "
 			+"AND bno=#{bno} ")
@@ -71,14 +71,14 @@ public interface BoardMapper {
 	
 	
 	//게시글 1개 댓글수
-	@Select("SELECT count(*) as replyCnt FROM ch_boardreply_2_3 "
+	@Select("SELECT count(*) as replyCnt FROM ch_reply_2_3 "
 			+" WHERE bno=#{bno} ")
 	public int boardReplyCount(int bno);
 	
 	//게시글 조회수순 정렬 (hit DESC)
-	@Select("SELECT btype,bno,id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
-			+"FROM (SELECT btype,bno,id,nickname,title,content,tag,hit,regdate,rownum as num "
-			+"FROM (SELECT btype,bno,a.id,nickname,title,content,tag,hit,regdate "
+	@Select("SELECT btype,bno,id,name,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num "
+			+"FROM (SELECT btype,bno,id,name,title,content,tag,hit,regdate,rownum as num "
+			+"FROM (SELECT btype,bno,a.id,name,title,content,tag,hit,regdate "
 			+"FROM ch_board_2_3 a, ch_member_2_3 b WHERE a.id=b.id AND btype=#{btype} ORDER BY hit DESC)) "
 			+"WHERE num BETWEEN #{start} AND #{end} ")
 	public List<BoardVO> boardListOrderByHit(Map map);
@@ -89,7 +89,7 @@ public interface BoardMapper {
 	@Select("SELECT bno,id,title,content,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,hit,rcnt,rownum "
 			+"FROM (SELECT b.bno,b.bid,b.title,b.content.b.regdate.b.hit,rcnt "
 			+"      FROM ch_board_2_3 b, "
-			+"           (SELECT bno,count(*) rcnt FROM ch_boardreply2_3 "
+			+"           (SELECT bno,count(*) rcnt FROM ch_reply2_3 "
 			+"            GROUP BY bno) r "
 			+"      WHERE b.bno=r.bno(+) "
 			+"      ORDER BY rcnt desc) "
@@ -98,15 +98,17 @@ public interface BoardMapper {
 	
 	
 	//올해 게시글 최다작성자 TOP5
-	@Select("SELECT a.id,nickname,boardCnt,rownum "
-			+"FROM (SELECT id,count(*) as boardCnt "
-			+"          FROM ch_board_2_3 "
-			+"          WHERE TO_CHAR(regdate,'YYYY')=TO_CHAR(SYSDATE,'YYYY') "
-			+"          GROUP BY id "
-			+"          ORDER BY count(*) DESC) a, "
-			+"          ch_member_2_3 b "
-			+"WHERE a.id=b.id "
-			+"AND rownum<=5 ")
+	@Select("SELECT id,name,boardCnt,rownum "
+			+"FROM (SELECT a.id,name,boardCnt "
+			+"          FROM (SELECT id,count(*) as boardCnt "
+			+"                    FROM ch_board_2_3 "
+			+"                    WHERE TO_CHAR(regdate,'YYYY')=TO_CHAR(SYSDATE,'YYYY') "
+			+"                    GROUP BY id "
+			+"                    ORDER BY count(*) DESC) a, "
+			+"                    ch_member_2_3 b "
+			+"          WHERE a.id=b.id "
+			+"          ORDER BY boardCnt DESC) "
+			+"WHERE rownum<=5 ")
 	public List<BoardVO> boardWriterTop5(BoardVO vo);
 	
 
@@ -120,7 +122,7 @@ public interface BoardMapper {
 	
 	
 	//게시글 수정용 상세보기 (board/board_update_vue.do)
-	@Select("SELECT btype,a.bno,a.id,nickname,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
+	@Select("SELECT btype,a.bno,a.id,name,title,content,tag,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday "
 			+"FROM ch_board_2_3 a, ch_member_2_3 b "
 			+"WHERE a.id=b.id "
 			+"AND bno=#{bno}")

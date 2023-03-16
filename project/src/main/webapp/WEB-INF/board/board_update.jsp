@@ -94,7 +94,7 @@ $(function(){
       
       <%-- 태그 입력란 --%>
        <div id="insert_tag" style="margin:0 0 30px 0;">
-           <div class="input_name">태그<span style="color:lightgray;">&nbsp;&nbsp;&nbsp;본문과 관련된 태그를 입력해주세요.</span></div>
+           <div class="input_name">태그<span style="color:lightgray;">&nbsp;&nbsp;&nbsp;본문과 관련된 키워드를 입력해주세요.</span></div>
            <input type="text" class="input_text" v-model="tag" ref="tag">
            <!-- 입력된 태그 출력 -->
 <!--            <div id="print_tag">

@@ -200,7 +200,7 @@ $(function(){
               }
            })
             .then(function(response){
-              location.href="../main/main.do"
+              location.href="../mypage/class.do"
            })
         }
      }

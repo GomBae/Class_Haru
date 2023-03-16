@@ -1,6 +1,13 @@
 package com.sist.dao;
 import com.sist.mapper.*;
 import com.sist.vo.*;
+
+import oracle.jdbc.internal.OracleTypes;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.*;
 
 import org.apache.ibatis.annotations.Delete;
@@ -13,48 +20,134 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BoardReplyDAO {
 	
-	@Autowired
-	private BoardReplyMapper mapper;
+	private Connection conn;
+	private CallableStatement cs;
+	private final String URL="jdbc:oracle:thin:@211.63.89.131:1521:XE";
 	
-	//댓글 리스트
-	/*
-	 * @Select("SELECT brno,bno,id,nickname,msg,group_tab,TO_CHAR(regdate,'YYYY-MM-DD HH24:MI:SS') "
-			+"FROM ch_boardreply_2_3 "
-			+"WHERE bno=#{bno}")
-	*/
-	public List<BoardReplyVO> replyList(int bno)
+	public BoardReplyDAO()
 	{
-		return mapper.replyList(bno);
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (Exception ex) {}
+	} 
+	
+	public void getConnection()
+	{
+		try {
+			conn=DriverManager.getConnection(URL,"hr","happy");
+		} catch (Exception ex) {}
 	}
 	
-	//댓글 작성 insert
-	/*
-	@Insert("INSERT INTO ch_boardreply_2_3 VALUES("
-			+"NVL(MAX(brno)+1,1),#{bno},'wowwow@naver.com',#{msg},SYSDATE,NVL(MAX(group_id)+1,1),0,0,0,0")
-	*/
-	public void replyInsert(BoardReplyVO vo)
+	public void disConnection()
 	{
-		mapper.replyInsert(vo);
+		try {
+			if(cs!=null) cs.close();
+			if(conn!=null) conn.close();
+		} catch (Exception ex) {}
 	}
 	
-	//댓글 수정 update
-	@Update("UPDATE ch_boardreply_2_3 SET "
-			+"msg=#{msg} "
-			+"WHERE brno=#{brno} ")
-	public void replyUpdate(String msg,int brno)
+	//댓글 읽기
+	public List<BoardReplyVO> boardReplyList(BoardReplyVO vo)
 	{
-		mapper.replyUpdate(msg, brno);
+		List<BoardReplyVO> list=new ArrayList<BoardReplyVO>();
+		try
+		{
+			getConnection();
+			String sql="{CALL ch_replylist(?,?)}";
+			cs=conn.prepareCall(sql);
+			cs.setInt(1, vo.getBno());
+			cs.registerOutParameter(2, OracleTypes.CURSOR);
+			cs.executeQuery();
+			
+			System.out.println("bno:"+cs.getString(2));
+			ResultSet rs=(ResultSet)cs.getObject(2);
+			while(rs.next())
+			{
+				BoardReplyVO rvo=new BoardReplyVO();
+				rvo.setBno(rs.getInt(1));
+				rvo.setBrno(rs.getInt(2));
+				rvo.setId(rs.getString(3));
+				rvo.setName(rs.getString(4));
+				rvo.setMsg(rs.getNString(5));
+				rvo.setDbday(rs.getString(6));
+			}
+			rs.close();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			disConnection();
+		}
+		return list;
 	}
 	
-	
-	//댓글 삭제 delete
-	/*
-	@Delete("DELETE FROM ch_boardreply_2_3 "
-			+"WHERE brno=#{brno} ")
-	*/
-	public void replyDelete(int brno)
+	//댓글쓰기
+	public void boardReplyInsert(BoardReplyVO vo)
 	{
-		mapper.replyDelete(brno);
+		try
+		{
+			getConnection();
+			String sql="{CALL ch_replyInsert(?,?,?)}";
+			cs=conn.prepareCall(sql);
+			cs.setInt(1, vo.getBno());
+			cs.setString(2, vo.getId());
+			cs.setString(3, vo.getMsg());
+			cs.executeQuery();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			disConnection();
+		}
 	}
 	
+	//댓글수정
+	public void boardReplyUpdate(BoardReplyVO vo)
+	{
+		try
+		{
+			getConnection();
+			String sql="{CALL ch_replyupdate(?,?,?)}";
+			cs=conn.prepareCall(sql);
+			cs.setInt(1, vo.getBrno());
+			cs.setString(2, vo.getId());
+			cs.setString(3, vo.getMsg());
+			cs.executeQuery();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			disConnection();
+		}
+		
+	}
+	//댓글삭제
+	public void boardReplyDelete(int brno)
+	{
+		try
+		{
+			getConnection();
+			String sql="{CALL ch_replydelete(?)}";
+			cs=conn.prepareCall(sql);
+			cs.setInt(1, brno);
+			cs.executeQuery();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			disConnection();
+		}
+		
+	}
 }
+
+
+

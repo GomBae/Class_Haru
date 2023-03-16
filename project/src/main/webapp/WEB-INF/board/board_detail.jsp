@@ -76,22 +76,22 @@ div div a.all_btn{
     <h1 class="board_title">{{bvo.title}}</h1>
     
     <div>
-		<div class="board_info">
-	        <img :src="bvo.image" style="width:40px;height:40px;background:pink;">
-	        <span class="nickname">{{bvo.nickname}}</span>
-	        <i class="fa-regular fa-file-lines"></i>&nbsp;{{bvo.dbday}}&nbsp;&nbsp;&nbsp;
-	        <i class="fa-regular fa-eye"></i>&nbsp;{{bvo.hit}}&nbsp;&nbsp;&nbsp;
-		    <i class="fa-regular fa-message"></i>&nbsp;{{bvo.replyCnt}}
-	    </div>
-	    
-	    <%-- 상단 버튼 : 목록이동, 수정, 삭제 --%>
-	    <div style="float:right;">
-	       <a :href="'../board/board_main.do?btype='+bvo.btype" class="all_btn"><i class="fa-solid fa-angle-left" style="width:25px;text-align:center;"></i></a>
-	       <div v-if="bvo.id==bvo.sessionId" style="display:inline">
-	          <a :href="'../board/board_update.do?bno='+bvo.bno" class="all_btn">수정</a>
-	          <span class="all_btn" v-on:click="del()" style="border:1px solid gray;">삭제</span>
-	       </div>
-	    </div>
+      <div class="board_info">
+           <img :src="bvo.image" style="width:40px;height:40px;background:pink;">
+           <span class="nickname">{{bvo.nickname}}</span>
+           <i class="fa-regular fa-file-lines"></i>&nbsp;{{bvo.dbday}}&nbsp;&nbsp;&nbsp;
+           <i class="fa-regular fa-eye"></i>&nbsp;{{bvo.hit}}&nbsp;&nbsp;&nbsp;
+          <i class="fa-regular fa-message"></i>&nbsp;{{bvo.replyCnt}}
+       </div>
+       
+       <%-- 상단 버튼 : 목록이동, 수정, 삭제 --%>
+       <div style="float:right;">
+          <a :href="'../board/board_main.do?btype='+bvo.btype" class="all_btn"><i class="fa-solid fa-angle-left" style="width:25px;text-align:center;"></i></a>
+          <div v-if="bvo.id==bvo.sessionId" style="display:inline">
+             <a :href="'../board/board_update.do?bno='+bvo.bno" class="all_btn">수정</a>
+             <span class="all_btn" v-on:click="del()" style="border:1px solid gray;">삭제</span>
+          </div>
+       </div>
     </div>
     
     <%-- 글내용 --%>
@@ -99,85 +99,85 @@ div div a.all_btn{
     
     <%-- 태그 --%>
     <div class="board_tag" style="margin: 20px 0 20px 0;">
-	  <div v-if="bvo.tag!=null">
-	    <span class="all_tag" v-for="t in bvo.tag.split(' ')">{{t}}</span>
-	  </div>
-	</div>
-			      
+     <div v-if="bvo.tag!=null">
+       <span class="all_tag" v-for="t in bvo.tag.split(' ')">{{t}}</span>
+     </div>
+   </div>
+               
     <hr style="margin:30px 0;border-top:1px solid lightgray;">
     
     <%-- 댓글 영역 --%>
     <div class="replyArea" style="margin:0 0 50px 0;">
     
    
-	    <%-- 댓글개수 --%>
-	    <div style="margin:25px 0;font-size:20px;font-weight:bold;">댓글&nbsp;
-	      <span style="font-size:24px;color:#45c5c5">{{bvo.replyCnt}}</span>
-	    </div>
-	    
-	    <%-- 댓글입력란 --%>
-	    <div class="replyInsertArea" style="width:100%;height:150px;margin:0 0 25px 0;">
-	       <textarea class="msgBox"></textarea>
-	       <button class="reply_btn" v-on:click="replyInsert()">댓글작성</button>
-	    </div>
-	    
-	    <%-- 작성된 댓글 --%>
-	    <div class="reply_all" style="clear:both;">
-	        
-	        <%-- 댓글 1개(전체 개수만큼 반복) --%>
-<%-- 		    <div class="reply_item">
-			    댓글정보
-			    <div class="reply_info">
-			        <img src="" style="width:40px;height:40px;background:pink;">
-			        <span style="margin:0 10px 0 10px;width:120px;font-size:16px;">유저닉네임</span>&nbsp;&nbsp;
-			        <span style="color:gray;font-size:14px;">2023-03-04</span>&nbsp;&nbsp;
-			    </div>
-			    댓글내용
-			    <div class="reply_content">저요!!</div>
-		        <button class="all_btn" style="font-size:16px;padding:5px 10px;background:#eaeaea;">답글</button>
-		        <hr style="margin:30px 0;border-top:1px solid lightgray;">
-		    </div> --%>
-		    
-	    </div>
-	    
-	    
+       <%-- 댓글개수 --%>
+       <div style="margin:25px 0;font-size:20px;font-weight:bold;">댓글&nbsp;
+         <span style="font-size:24px;color:#45c5c5">{{bvo.replyCnt}}</span>
+       </div>
+       
+       <%-- 댓글입력란 --%>
+       <div class="replyInsertArea" style="width:100%;height:150px;margin:0 0 25px 0;">
+          <textarea class="msgBox"></textarea>
+          <button class="reply_btn" v-on:click="replyInsert()">댓글작성</button>
+       </div>
+       
+       <%-- 작성된 댓글 --%>
+       <div class="reply_all" style="clear:both;">
+           
+           <%-- 댓글 1개(전체 개수만큼 반복) --%>
+<%--           <div class="reply_item">
+             댓글정보
+             <div class="reply_info">
+                 <img src="" style="width:40px;height:40px;background:pink;">
+                 <span style="margin:0 10px 0 10px;width:120px;font-size:16px;">유저닉네임</span>&nbsp;&nbsp;
+                 <span style="color:gray;font-size:14px;">2023-03-04</span>&nbsp;&nbsp;
+             </div>
+             댓글내용
+             <div class="reply_content">저요!!</div>
+              <button class="all_btn" style="font-size:16px;padding:5px 10px;background:#eaeaea;">답글</button>
+              <hr style="margin:30px 0;border-top:1px solid lightgray;">
+          </div> --%>
+          
+       </div>
+       
+       
     </div>
     
 </div>
 <script>
-	new Vue({
-		el:'.container',
-		data:{
-			bno:${bno}, 
-			bvo:{} //게시글 1개
-		},
-		mounted:function(){
-			  let _this=this
-			  axios.get('http://localhost/web/board/board_detail_vue.do',{
-				  params:{
-					  bno:_this.bno
-				  }
-			  }).then(function(response){
-				  console.log(response.data)
-				  _this.bvo=response.data
-			  })
-		},
-		methods:{
-			del:function(){
-				let _this=this
-				axios.get('http://localhost/web/board/board_delete_vue.do',{
-					params:{
-						bno:this.bno
-					}
-				}).then(function(response){
-					location.href="../board/board_main.do?btype="+_this.bvo.btype
-				}) 
-			} 
-		}
-	})
-	
+   new Vue({
+      el:'.container',
+      data:{
+         bno:${bno}, 
+         bvo:{} //게시글 1개
+      },
+      mounted:function(){
+           let _this=this
+           axios.get('http://localhost/web/board/board_detail_vue.do',{
+              params:{
+                 bno:_this.bno
+              }
+           }).then(function(response){
+              console.log(response.data)
+              _this.bvo=response.data
+           })
+      },
+      methods:{
+         del:function(){
+            let _this=this
+            axios.get('http://localhost/web/board/board_delete_vue.do',{
+               params:{
+                  bno:this.bno
+               }
+            }).then(function(response){
+               location.href="../board/board_main.do?btype="+_this.bvo.btype
+            }) 
+         } 
+      }
+   })
+   
 
-	
+   
 </script>
 </body>
 </html>

@@ -79,4 +79,18 @@ public class MypageRestController {
 		}
 		return arr.toJSONString();
 	}
+	
+//	@GetMapping(value = "mypage/text_detail_vue.do", produces = "text/plain;charset=UTF-8")
+//	public String text_detail(int tno) {
+//		TextVO vo=dao.myTextDetail(tno);
+//		JSONObject obj=new JSONObject();
+//		obj.put("tno", vo.getTno());
+//		obj.put("id", vo.getId());
+//		obj.put("nickname", vo.getNickname());
+//		obj.put("msg", vo.getMsg());
+//		obj.put("receiver", vo.getReceiver());
+//		obj.put("dbday", vo.getDbday());
+//		obj.put("recvday", vo.getRecvday());
+//		return obj.toJSONString();
+//	}
 }

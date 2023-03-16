@@ -35,7 +35,7 @@
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
   integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
 <script>
-  Kakao.init('c089c8172def97eb00c07217cae17495'); // 사용하려는 앱의 JavaScript 키 입력
+  Kakao.init('c7cd4faabebc415dba225e4cb584e409'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 <!-- pc,mobile 공통 스크립트 -->
 <script src="../Scripts/prototype.js"></script>

@@ -142,7 +142,7 @@
 	  	    </div>
 	  	    <div class="my_li">
 		  	    <li class="my_menu">내 정보</li>
-		  	    <span><li class="my_menu2">계정 정보</li></span>
+		  	    <span><li class="my_menu2"><a href="../mypage/profileUpdate.do">계정 정보</a></li></span>
 			</div>
 		</ul>
 	  </div>

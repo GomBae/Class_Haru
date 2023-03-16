@@ -49,7 +49,8 @@ public interface BoardMapper {
 			+"      OR CONTENT LIKE '%'||#{word}||'%') ")
 	public int boardSearchCount();
 	
-	//게시판 검색결과 총페이지
+	
+	//게시판 검색결과 총페이지`
 	@Select("SELECT CEIL(count(*)/4.0) FROM ch_board_2_3 "
 			+"WHERE btype=#{btype} "
 			+"AND title LIKE '%'||#{word}||'%' "
